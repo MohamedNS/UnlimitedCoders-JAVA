@@ -22,4 +22,15 @@
 - Gestion `Assurances`
 - Gestion `Produit`
 
+## Description des Classe
+
+### Classe **Medicament**
+- int `id`
+- int `code`
+- String `libelle`
+- float `prix`
+- String `type`
+- int `dosage`
+- String `description`
+- String `nom`
 

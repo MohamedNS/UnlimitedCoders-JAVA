@@ -34,3 +34,7 @@
 - String `description`
 - String `nom`
 
+### Classe **Ordonnance**
+- int `id`
+- int `consultation_id`
+- int `validite`

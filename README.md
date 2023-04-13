@@ -22,7 +22,7 @@
 - Gestion `Assurances`
 - Gestion `Produit`
 
-## Description des Classe
+## Description des Classes
 
 ### Classe **Medicament**
 - int `id`
@@ -38,3 +38,10 @@
 - int `id`
 - int `consultation_id`
 - int `validite`
+
+## Classe **Consultation**
+- int `id`
+- String `matriculeMedecin`
+- String `idPatient`
+- Date `DateConsultation`
+- float `montant`

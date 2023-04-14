@@ -111,6 +111,7 @@ public class HomeOrdonnanceController implements Initializable{
                 sv.ajouterOrdonnance(o);
                 this.notifier("Ajout");
                 afficherOrdonnance();
+                this.viderChamps();
             }
         }
         
@@ -259,6 +260,12 @@ public class HomeOrdonnanceController implements Initializable{
             return false;
         }
         return true;
+    }
+    public void viderChamps()
+    {
+        idConsultationText.setValue(null);
+        validiteText.setText("");
+        medicamentText.setValue(null);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -124,6 +124,8 @@ public class HomeConsultationController implements Initializable{
             sc.ajouterConsultation(c);
             this.notifier("Ajout");
             afficherListeConsultation();
+            this.viderChamps();
+            
         }
         }
     }
@@ -256,6 +258,14 @@ public class HomeConsultationController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         afficherListeConsultation();
+    }
+    public void viderChamps()
+    {
+        System.out.println("Ajout Effectue. On vide les champs");
+        matriculeMedecinText.setText("");
+        idPatientText.setText("");
+        dateConsultationText.setValue(null);
+        montantText.setText("");
     }
 
     

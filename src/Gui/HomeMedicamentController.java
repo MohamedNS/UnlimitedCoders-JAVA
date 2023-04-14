@@ -126,6 +126,7 @@ public class HomeMedicamentController implements Initializable{
                 sv.ajouterMedicament(m);
                 this.notifier("Ajout");
                 afficherListeMedicament();
+                this.viderChamps();
             }
         }
     }
@@ -241,6 +242,13 @@ public class HomeMedicamentController implements Initializable{
             return false;
         }
         return true;
+    }
+    public void viderChamps()
+    {
+        nomText.setText("");
+        dosageText.setText("");
+        prixText.setText("");
+        descriptionText.setText("");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

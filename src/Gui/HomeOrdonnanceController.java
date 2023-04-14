@@ -26,6 +26,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -89,6 +90,19 @@ public class HomeOrdonnanceController implements Initializable{
         alert.setContentText(msg);
         alert.show();
     }
+    public boolean notifierConfirmation(String msg)
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,msg,ButtonType.YES,ButtonType.NO);
+        alert.showAndWait();
+        if(alert.getResult() == ButtonType.YES)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     @FXML
     public void btnAjouter(ActionEvent evt)
     {
@@ -132,11 +146,19 @@ public class HomeOrdonnanceController implements Initializable{
         ServiceOrdonnance sv = new ServiceOrdonnance();
         
         Ordonnance o = (Ordonnance) ordonnanceTable.getSelectionModel().getSelectedItem();
-        sv.supprimerOrdonnance(o.getId());
-        this.notifier("Suppression");
-        afficherOrdonnance();
-        
-        
+        if(o == null)
+        {
+            this.notifierError("Veuillez Sélectionner une ordonnance avant");
+        }
+        else
+        {
+            if(this.notifierConfirmation("Voulez vous Supprimer l'Ordonnance : "+o.getId()))
+            {
+                sv.supprimerOrdonnance(o.getId());
+                this.notifier("Suppression");
+                afficherOrdonnance();
+            }
+        }
     }
     @FXML
     public void btnModifier(ActionEvent evt)
@@ -147,14 +169,23 @@ public class HomeOrdonnanceController implements Initializable{
         try{
             loader.load();
             Ordonnance o = (Ordonnance) ordonnanceTable.getSelectionModel().getSelectedItem();
-            ModifierOrdonnanceController mc = loader.getController();
-            mc.setTextFields(o);
-            Parent root = loader.getRoot();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage)btnRetour.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            
+            if(o == null)
+            {
+                this.notifierError("Veuillez sélectionner une ordonnance avant");
+            }
+            else
+            {
+                if(this.notifierConfirmation("Voulez vou modifier l'Ordonnance : "+o.getId()))
+                {
+                    ModifierOrdonnanceController mc = loader.getController();
+                    mc.setTextFields(o);
+                    Parent root = loader.getRoot();
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage)btnRetour.getScene().getWindow();
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
         }
         catch(IOException ex)
         {

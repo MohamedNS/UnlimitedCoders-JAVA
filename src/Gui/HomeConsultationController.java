@@ -24,6 +24,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -93,6 +94,19 @@ public class HomeConsultationController implements Initializable{
         alert.setContentText(msg);
         alert.show();
     }
+    public boolean notifierConfirmation(String msg)
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,msg,ButtonType.YES,ButtonType.NO);
+        alert.showAndWait();
+        if(alert.getResult() == ButtonType.YES)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     @FXML
     public void btnAjouter(ActionEvent evt)
@@ -125,7 +139,6 @@ public class HomeConsultationController implements Initializable{
             this.notifier("Ajout");
             afficherListeConsultation();
             this.viderChamps();
-            
         }
         }
     }
@@ -136,9 +149,19 @@ public class HomeConsultationController implements Initializable{
         ServiceConsultation sv = new ServiceConsultation();
         
         Consultation c = (Consultation) consultationTable.getSelectionModel().getSelectedItem();
-        sv.supprimerConsultation(c.getId());
-        this.notifier("Suppression");
-        afficherListeConsultation();
+        if(c == null)
+        {
+            this.notifierError("Veuillez sélectionner une consultation avant");
+        }
+        else
+        {
+            if(this.notifierConfirmation("Voulez Vous Supprimer La consultation : "+c.getId()))
+            {
+                sv.supprimerConsultation(c.getId());
+                afficherListeConsultation();
+                this.notifier("Suppression");
+            }
+        }
     }
     @FXML
     public void btnModifier(ActionEvent evt)
@@ -149,14 +172,24 @@ public class HomeConsultationController implements Initializable{
         try{
             loader.load();
             Consultation c = (Consultation)consultationTable.getSelectionModel().getSelectedItem();
-            ModifierConsultationController mc = loader.getController();
-            mc.setTextFields(c);
-            Parent root = loader.getRoot();
-            Scene scene = new Scene(root);
+            if(c == null)
+            {
+                this.notifierError("Veuillez sélectionner une consultation avant");
+            }
+            else
+            {
+                if(this.notifierConfirmation("Voulez Vous modifier La Consultation : "+c.getId()))
+                {
+                    ModifierConsultationController mc = loader.getController();
+                    mc.setTextFields(c);
+                    Parent root = loader.getRoot();
+                    Scene scene = new Scene(root);
 
-            Stage stage = (Stage)btnRetour.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
+                    Stage stage = (Stage)btnRetour.getScene().getWindow();
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
         }
         catch(IOException ex)
         {
@@ -259,6 +292,7 @@ public class HomeConsultationController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         afficherListeConsultation();
     }
+    
     public void viderChamps()
     {
         System.out.println("Ajout Effectue. On vide les champs");

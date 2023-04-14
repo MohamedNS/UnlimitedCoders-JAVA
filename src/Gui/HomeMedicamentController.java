@@ -23,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -92,6 +93,19 @@ public class HomeMedicamentController implements Initializable{
         alert.show();
     }
 
+    public boolean notifierConfirmation(String msg)
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,msg,ButtonType.YES,ButtonType.NO);
+        alert.showAndWait();
+        if(alert.getResult() == ButtonType.YES)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     @FXML
     public void btnRetour(ActionEvent evt)
     {
@@ -139,13 +153,23 @@ public class HomeMedicamentController implements Initializable{
         try{
             loader.load();
             Medicament m = (Medicament)medicamentTable.getSelectionModel().getSelectedItem();
-            ModifierMedicamentController mc = loader.getController();
-            mc.setTextFiels(m);
-            Parent root = loader.getRoot();
-            Scene scene = new Scene(root);
-            Stage stage = (Stage)btnRetour.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
+            if (m == null)
+            {
+                this.notifierError("Veuillez sélectionner un médicament avant");
+            }
+            else
+            {
+                if(this.notifierConfirmation("Voullez vous modifier ce médicament"))
+                {
+                    ModifierMedicamentController mc = loader.getController();
+                    mc.setTextFiels(m);
+                    Parent root = loader.getRoot();
+                    Scene scene = new Scene(root);
+                    Stage stage = (Stage)btnRetour.getScene().getWindow();
+                    stage.setScene(scene);
+                    stage.show();
+                }
+            }
         }
         catch(IOException ex)
         {
@@ -158,9 +182,19 @@ public class HomeMedicamentController implements Initializable{
         System.out.println("Supprimer Medicament Click");
         ServiceMedicament sv = new ServiceMedicament();
         Medicament m = (Medicament) medicamentTable.getSelectionModel().getSelectedItem();
-        sv.supprimerMedicament(m.getId());
-        this.notifier("Suppression");
-        afficherListeMedicament();
+        if(m == null)
+        {
+            this.notifierError("Veuillez sélectionner un médicament avant");
+        }
+        else
+        {
+            if(this.notifierConfirmation("Veuillez vous supprimer ce médicament"))
+            {
+                sv.supprimerMedicament(m.getId());
+                this.notifier("Suppression");
+                afficherListeMedicament();
+            }
+        }
     }
     @FXML
     private void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException

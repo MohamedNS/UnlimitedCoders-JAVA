@@ -30,7 +30,10 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="validiteText" layoutX="472.0" layoutY="208.0" prefHeight="60.0" prefWidth="240.0" />
+                        <TextField fx:id="validiteText" layoutX="472.0" layoutY="208.0" prefHeight="60.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="253.0" layoutY="216.0" prefHeight="43.0" prefWidth="135.0" text="Validite">
                            <font>
                               <Font size="20.0" />

@@ -30,13 +30,19 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="dosageText" layoutX="420.0" layoutY="212.0" prefHeight="50.0" prefWidth="240.0" />
+                        <TextField fx:id="dosageText" layoutX="420.0" layoutY="212.0" prefHeight="50.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="261.0" layoutY="221.0" prefHeight="32.0" prefWidth="131.0" text="Dosage">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="nomText" layoutX="420.0" layoutY="137.0" prefHeight="50.0" prefWidth="240.0" />
+                        <TextField fx:id="nomText" layoutX="420.0" layoutY="137.0" prefHeight="50.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="248.0" layoutY="285.0" prefHeight="32.0" prefWidth="140.0" text="    Prix">
                            <font>
                               <Font size="20.0" />
@@ -47,8 +53,14 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="prixText" layoutX="420.0" layoutY="276.0" prefHeight="50.0" prefWidth="240.0" />
-                        <TextArea fx:id="descriptionText" layoutX="420.0" layoutY="342.0" prefHeight="137.0" prefWidth="316.0" />
+                        <TextField fx:id="prixText" layoutX="420.0" layoutY="276.0" prefHeight="50.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <TextArea fx:id="descriptionText" layoutX="420.0" layoutY="342.0" prefHeight="137.0" prefWidth="316.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextArea>
                      </children></AnchorPane>
             </content>
           </Tab>

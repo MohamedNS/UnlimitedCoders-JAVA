@@ -25,13 +25,19 @@
                               <Font size="19.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="matriculeMedecinText" layoutX="512.0" layoutY="109.0" prefHeight="60.0" prefWidth="240.0" />
+                        <TextField fx:id="matriculeMedecinText" layoutX="502.0" layoutY="109.0" prefHeight="60.0" prefWidth="250.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="302.0" layoutY="108.0" prefHeight="50.0" prefWidth="190.0" text="Matricule Medecin">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="idPatientText" layoutX="506.0" layoutY="185.0" prefHeight="60.0" prefWidth="240.0" />
+                        <TextField fx:id="idPatientText" layoutX="506.0" layoutY="185.0" prefHeight="60.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="302.0" layoutY="196.0" prefHeight="50.0" prefWidth="179.0" text="Identifiant Patient">
                            <font>
                               <Font size="20.0" />
@@ -43,7 +49,10 @@
                            </font>
                         </Label>
                         <DatePicker fx:id="dateConsultationText" layoutX="508.0" layoutY="262.0" prefHeight="60.0" prefWidth="240.0" />
-                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0" />
+                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
                         <Label layoutX="296.0" layoutY="349.0" prefHeight="50.0" prefWidth="164.0" text="Montant">
                            <font>
                               <Font size="20.0" />

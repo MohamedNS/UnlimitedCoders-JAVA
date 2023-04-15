@@ -18,5 +18,8 @@ public interface InterfaceOrdonnance {
     public void modifierOrdonnance(Ordonnance o);
     public void supprimerOrdonnance(int id);
     public List<Ordonnance> afficherOrdonnance();
+    public String converitCritere(String str);
+    public String convertirOrdre(String str);
+    public List<Ordonnance> trierOrdonnances(String critere,String ordre);
     
 }

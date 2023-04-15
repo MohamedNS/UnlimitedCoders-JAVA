@@ -53,7 +53,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="ordonnanceTable" layoutX="26.0" layoutY="36.0" prefHeight="550.0" prefWidth="1125.0" style="-fx-background-color: #D5E0F2;">
+                        <TableView fx:id="ordonnanceTable" layoutX="26.0" layoutY="98.0" prefHeight="488.0" prefWidth="1125.0" style="-fx-background-color: #D5E0F2;">
                           <columns>
                             <TableColumn fx:id="idColonne" prefWidth="158.0" text="Identifiant" />
                             <TableColumn fx:id="consultationColonne" prefWidth="241.0" text="Consultation" />
@@ -64,6 +64,23 @@
                         <Button fx:id="btnSupprimer" layoutX="909.0" layoutY="604.0" mnemonicParsing="false" onAction="#btnSupprimer" prefHeight="50.0" prefWidth="111.0" style="-fx-background-color: #0066FF;" text="Supprimer" />
                         <Button fx:id="btnModifier" layoutX="1029.0" layoutY="604.0" mnemonicParsing="false" onAction="#btnModifier" prefHeight="51.0" prefWidth="110.0" style="-fx-background-color: #0066FF;" text="Modifier" />
                         <Button fx:id="btnPdf" layoutX="26.0" layoutY="603.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="52.0" prefWidth="86.0" style="-fx-background-color: #e51818;" text="PDF" />
+                        <Label layoutX="42.0" layoutY="17.0" prefHeight="29.0" prefWidth="86.0" text="Trier">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="critereChoice" layoutX="128.0" layoutY="19.0" prefWidth="150.0" />
+                        <Label layoutX="40.0" layoutY="52.0" prefHeight="29.0" prefWidth="91.0" text="Ordore">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="ordreChoice" layoutX="128.0" layoutY="53.0" prefWidth="150.0" />
+                        <Button fx:id="btnTrier" layoutX="296.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="36.0" prefWidth="97.0" style="-fx-background-color: #0066FF;" text="Trier">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
                      </children></AnchorPane>
             </content>
           </Tab>

@@ -107,5 +107,73 @@ public class ServiceOrdonnance implements InterfaceOrdonnance{
         }
 
     }
-    
+
+    @Override
+    public List<Ordonnance> trierOrdonnances(String str1, String str2) {
+        List<Ordonnance> listeOrdonnances = new ArrayList<>();
+        String critere = converitCritere(str1);
+        String ordre = convertirOrdre(str2);
+        ServiceMedicament sv = new ServiceMedicament();
+        try {
+            String req = "Select * from ordonnance order by "+critere+" "+ordre;
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next())
+            {
+                Ordonnance o = new Ordonnance();
+                o.setId(rs.getInt("id"));
+                o.setValidite(rs.getInt("validite"));
+                o.setConsultation_id(rs.getInt("consultation_id"));
+                String reqManytoMany = "SELECT * from ordonnance_medicament where ordonnance_id ="+o.getId();
+                Statement stManytoMany = cnx.createStatement();
+                ResultSet rsManytoMany = stManytoMany.executeQuery(reqManytoMany);
+                while(rsManytoMany.next())
+                {
+                    Medicament m = sv.trouverParId(rsManytoMany.getInt("medicament_id"));
+                    o.setNomMedicament();
+                    o.addMedicament(m);
+                }
+                listeOrdonnances.add(o);
+            }
+            
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return listeOrdonnances;
+    }
+
+    @Override
+    public String converitCritere(String str) {
+        String val = "";
+        switch (str) {
+            case "Identifiant":
+                val = "id";
+                break;
+            case "Consultation":
+                val = "consultation_id";
+                break;
+            case "Validite":
+                val = "validite";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
+    }
+
+    @Override
+    public String convertirOrdre(String str) {
+        String val = "";
+        switch (str) {
+            case "Croissant":
+                val = "asc";
+                break;
+            case "Decroissant":
+                val = "desc";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
+    }
 }

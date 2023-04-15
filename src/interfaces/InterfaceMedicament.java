@@ -17,5 +17,8 @@ public interface InterfaceMedicament {
     public void modifierMedicament(Medicament m);
     public void supprimerMedicament(int id);
     public List<Medicament> afficherMedicament();
+    public String convertiCritere(String str);
+    public String convertirOrdre(String ordre);
+    public List<Medicament> trierMedicament(String critere,String ordre);
     public Medicament trouverParId(int id);
 }

@@ -11,6 +11,7 @@ import com.itextpdf.text.DocumentException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -24,6 +25,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -37,6 +39,10 @@ import javafx.stage.Stage;
  */
 public class HomeMedicamentController implements Initializable{
 
+    
+    public static final  List<String> listeCriteres  = Arrays.asList("Identifiant","Nom","Dosage","Prix");
+    public static final List<String> listeOrdre = Arrays.asList("Croissant","Decroissant");
+
     //Bouttons
     @FXML
     public Button btnRetour;
@@ -48,6 +54,8 @@ public class HomeMedicamentController implements Initializable{
     public Button btnSupprimer;
     @FXML
     public Button btnPdf;
+    @FXML
+    public Button btnTrier;
 
     //Interface Ajouter
     @FXML
@@ -72,6 +80,10 @@ public class HomeMedicamentController implements Initializable{
     private TableColumn<?,?> prixColonne;
     @FXML
     private TableColumn<?,?> descriptionColonne;
+    @FXML
+    private ChoiceBox critereChoice;
+    @FXML
+    private ChoiceBox ordreChoice;
 
     public HomeMedicamentController()
     {
@@ -205,6 +217,31 @@ public class HomeMedicamentController implements Initializable{
         List<Medicament> listeMedicaments = sv.afficherMedicament();
         pdf.genererPdfMedicament("Medicament", listeMedicaments);
     }
+    @FXML
+    private void btnTrier(ActionEvent evt)
+    {
+        String critere = (String) critereChoice.getValue();
+        String ordre = (String) ordreChoice.getValue();
+        System.out.println("Boutton Trier Click");
+        if(critere == null || ordre == null)
+        {
+            this.notifierError("Remplissez les Champs 'Critere' et 'Ordre' avant");
+        }
+        else
+        {
+            ServiceMedicament sv = new ServiceMedicament();
+            List<Medicament> listeMedicaments = sv.trierMedicament(critere, ordre);
+            ObservableList<Medicament> list = FXCollections.observableArrayList(listeMedicaments);
+            idColonne.setCellValueFactory(new PropertyValueFactory<>("id"));
+            nomColonne.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            dosageColonne.setCellValueFactory(new PropertyValueFactory<>("dosage"));
+            prixColonne.setCellValueFactory(new PropertyValueFactory<>("prix"));
+            descriptionColonne.setCellValueFactory(new PropertyValueFactory<>("description"));
+            medicamentTable.setItems(list);
+
+        }
+
+    }
 
     public ObservableList<Medicament> getMedicaments()
     {
@@ -284,8 +321,17 @@ public class HomeMedicamentController implements Initializable{
         prixText.setText("");
         descriptionText.setText("");
     }
+    public void remplireChoiceBoxTri()
+    {
+        ObservableList<String> observableListCritere = FXCollections.observableArrayList(listeCriteres);
+        ObservableList<String> observableListOrdre = FXCollections.observableArrayList(listeOrdre);
+        critereChoice.setItems(observableListCritere);
+        ordreChoice.setItems(observableListOrdre);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        remplireChoiceBoxTri();
         afficherListeMedicament();
     }
     

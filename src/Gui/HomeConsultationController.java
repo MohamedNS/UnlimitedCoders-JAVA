@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -25,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -39,6 +42,8 @@ import javafx.stage.Stage;
  */
 public class HomeConsultationController implements Initializable{
 
+    public static final  List<String> listeCriteres  = Arrays.asList("Identifiant","Matricule Medecin","Id Patient","Date Consultation","Montant");
+    public static final List<String> listeOrdre = Arrays.asList("Croissant","Decroissant");
     @FXML
     private Button btnAjouter;
     @FXML
@@ -49,6 +54,8 @@ public class HomeConsultationController implements Initializable{
     private Button btnRetour;
     @FXML
     private Button bntPdf;
+    @FXML
+    private Button btnTrier;
 
     @FXML
     private TextField matriculeMedecinText;
@@ -72,6 +79,11 @@ public class HomeConsultationController implements Initializable{
     private TableColumn<?,?> dateConsultationColonne;
     @FXML
     private TableColumn<?,?> montantColonne;
+    
+    @FXML
+    private ChoiceBox critereChoice;
+    @FXML
+    private ChoiceBox ordreChoice;
 
 
     public HomeConsultationController()
@@ -115,31 +127,30 @@ public class HomeConsultationController implements Initializable{
         System.out.println("Ajout Consultation Click");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
         ServiceConsultation sc = new ServiceConsultation();
-        if (matriculeMedecinText.getText().isEmpty() && idPatientText.getText().isEmpty() &&
-                 montantText.getText().isEmpty())
+        if (matriculeMedecinText.getText().isEmpty() || idPatientText.getText().isEmpty() ||
+                 montantText.getText().isEmpty() || dateConsultationText.getValue() == null)
         {
-            this.notifierError("Operation Ajout Refusee");
+            this.notifierError("Operation Ajout Refusee.Remplissez Tous les champs");
         }
         else
         {
-            
-        String matricule = matriculeMedecinText.getText();
-        String idPatient = idPatientText.getText();
-        Float montant = Float.parseFloat(montantText.getText());
-        LocalDate dateConsultation = dateConsultationText.getValue();
+            String matricule = matriculeMedecinText.getText();
+            String idPatient = idPatientText.getText();
+            Float montant = Float.parseFloat(montantText.getText());
+            LocalDate dateConsultation = dateConsultationText.getValue();
 
-        if(this.validerMatriculeMedecin(matricule) && this.validerIdPatient(idPatient) && this.validierMontant(montant))
-        {
-            Consultation c = new Consultation();
-            c.setMatriculeMedecin(matricule);
-            c.setIdPatient(idPatient);
-            c.setMontant(montant);
-            c.setDateConsultation(java.sql.Date.valueOf(dateConsultation));
-            sc.ajouterConsultation(c);
-            this.notifier("Ajout");
-            afficherListeConsultation();
-            this.viderChamps();
-        }
+            if(this.validerMatriculeMedecin(matricule) && this.validerIdPatient(idPatient) && this.validierMontant(montant))
+            {
+                Consultation c = new Consultation();
+                c.setMatriculeMedecin(matricule);
+                c.setIdPatient(idPatient);
+                c.setMontant(montant);
+                c.setDateConsultation(java.sql.Date.valueOf(dateConsultation));
+                sc.ajouterConsultation(c);
+                this.notifier("Ajout");
+                afficherListeConsultation();
+                this.viderChamps();
+            }
         }
     }
     @FXML
@@ -218,6 +229,29 @@ public class HomeConsultationController implements Initializable{
         this.notifier("Generation PDF");
         
     }
+    @FXML
+    public void btnTrier(ActionEvent evt)
+    {
+        String critere = (String) critereChoice.getValue();
+        String ordre = (String) ordreChoice.getValue();
+        if(critere == null || ordre == null)
+        {
+            this.notifierError("Remplissez les Champs 'Critre' et 'Ordre' avant");
+        }
+        else
+        {
+            ServiceConsultation sv = new ServiceConsultation();
+            System.out.println("Boutton Trie Click");
+            List<Consultation> listeConsultations = sv.trierConsultations(critere, ordre);
+            ObservableList<Consultation> list = FXCollections.observableArrayList(listeConsultations);
+            idColonne.setCellValueFactory(new PropertyValueFactory<>("id"));
+            matriculeColonne.setCellValueFactory(new PropertyValueFactory<>("matriculeMedecin"));
+            idPatientColonne.setCellValueFactory(new PropertyValueFactory<>("idPatient"));
+            dateConsultationColonne.setCellValueFactory(new PropertyValueFactory<>("dateConsultation"));
+            montantColonne.setCellValueFactory(new PropertyValueFactory<>("montant"));
+            consultationTable.setItems(list);
+        }
+    }
 
     public ObservableList<Consultation> getConsultations()
     {
@@ -290,6 +324,7 @@ public class HomeConsultationController implements Initializable{
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        remplireChoiceBoxTri();
         afficherListeConsultation();
     }
     
@@ -300,6 +335,22 @@ public class HomeConsultationController implements Initializable{
         idPatientText.setText("");
         dateConsultationText.setValue(null);
         montantText.setText("");
+    }
+
+    public void remplireChoiceBoxTri()
+    {
+        ObservableList<String> observableListCritere = FXCollections.observableArrayList();
+        ObservableList<String> observableListOrdre = FXCollections.observableArrayList();
+        for(String item:listeCriteres)
+        {
+            observableListCritere.add(item);
+        }
+        for(String item: listeOrdre)
+        {
+            observableListOrdre.add(item);
+        }
+        critereChoice.setItems(observableListCritere);
+        ordreChoice.setItems(observableListOrdre);
     }
 
     

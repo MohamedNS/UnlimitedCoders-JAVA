@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Services;
+import Entity.Consultation;
 import Entity.Medicament;
 import Utils.MyConnection;
 import interfaces.InterfaceMedicament;
@@ -120,6 +121,73 @@ public class ServiceMedicament implements InterfaceMedicament{
         }
         return m;
         
+    }
+
+    @Override
+    public List<Medicament> trierMedicament(String str1, String str2) {
+        List<Medicament> listeMedicaments = new ArrayList<>();
+        String critere = convertiCritere(str1);
+        String ordre = convertirOrdre(str2);
+        
+        try{
+            String req = "Select * from medicament order by "+critere+" "+ordre;
+            Statement st =cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next())
+            {
+                Medicament m = new Medicament();
+                m.setId(rs.getInt("id"));
+                m.setNom(rs.getString("nom"));
+                m.setDosage(rs.getInt("dosage"));
+                m.setPrix(rs.getFloat("prix"));
+                m.setDescription(rs.getString("description"));
+                listeMedicaments.add(m);
+            }
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        return listeMedicaments;
+    }
+
+    @Override
+    public String convertiCritere(String str) {
+        String val = "";
+        switch (str) {
+            case "Identifiant":
+                val = "id";
+                break;
+            case "Nom":
+                val = "nom";
+                break;
+            case "Dosage":
+                val = "dosage";
+                break;
+            case "Prix":
+                val = "prix";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
+    }
+
+    @Override
+    public String convertirOrdre(String ordre) {
+        String val = "";
+
+        switch (ordre) {
+            case "Croissant":
+                val = "asc";
+                break;
+            case "Decroissant":
+                val = "desc";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
     }
     
 }

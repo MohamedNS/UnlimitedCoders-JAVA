@@ -99,4 +99,73 @@ public class ServiceConsultation implements InterfaceConsultation{
         }
     }
 
+    @Override
+    public List<Consultation> trierConsultations(String str1, String str2) {
+        List<Consultation> listeConsultations = new ArrayList<>();
+        String critere = convertirCritre(str1);
+        String ordre = convertirOrdre(str2);
+        try{
+            String req = "Select * from consultation order by "+critere+" "+ordre;
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while(rs.next())
+            {
+                Consultation c = new Consultation();
+                c.setId(rs.getInt("id"));
+                c.setMatriculeMedecin(rs.getString("matriculemedecin"));
+                c.setIdPatient(rs.getString("idpatient"));
+                c.setDateConsultation(rs.getDate("dateconsultation"));
+                c.setMontant(rs.getFloat("montant"));
+                listeConsultations.add(c);
+            }
+            
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+        return listeConsultations;
+    }
+
+    @Override
+    public String convertirCritre(String str) {
+        String val = "";
+        switch (str) {
+            case "Identifiant":
+                val = "id";
+                break;
+            case "Matricule Medecin":
+                val = "matriculemedecin";
+                break;
+            case "Id Patient":
+                val = "idpatient";
+                break;
+            case "Date Consultation":
+                val = "dateconsultation";
+                break;
+            case "Montant":
+                val = "montant";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
+    }
+
+    @Override
+    public String convertirOrdre(String str) {
+        String val = "";
+        switch (str) {
+            case "Croissant":
+                val = "asc";
+                break;
+            case "Decroissant":
+                val = "desc";
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return val;
+    }
+
 }

@@ -16,5 +16,8 @@ public interface InterfaceConsultation {
     public void modifierConsultation(Consultation c);
     public void supprimerConsultation(int id);
     public List<Consultation> afficherConsultation();
+    public String convertirCritre(String str);
+    public String convertirOrdre(String str);
+    public List<Consultation> trierConsultations(String critere,String ordre);
     
 }

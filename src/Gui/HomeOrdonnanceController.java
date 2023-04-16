@@ -10,6 +10,7 @@ import Services.ServiceConsultation;
 import Services.ServiceMedicament;
 import Services.ServiceOrdonnance;
 import Services.ServicePDF;
+import Services.ServiceMail;
 import com.itextpdf.text.DocumentException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -31,6 +32,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -55,6 +57,8 @@ public class HomeOrdonnanceController implements Initializable{
     private Button btnPdf;
     @FXML
     private Button bntTrier;
+	@FXML
+	private Button btnEnvoyer;
 
     //interface Afficher
     @FXML
@@ -79,6 +83,14 @@ public class HomeOrdonnanceController implements Initializable{
     private ChoiceBox critereChoice;
     @FXML
     private ChoiceBox ordreChoice;
+
+	//interface mail
+	@FXML
+	private TextField toText;
+	@FXML
+	private TextField subjectText;
+	@FXML
+	private TextArea textemailText;
 
     public HomeOrdonnanceController()
     {
@@ -232,6 +244,26 @@ public class HomeOrdonnanceController implements Initializable{
             ordonnanceTable.setItems(list);
         }
     }
+
+	@FXML
+	public void btnEnvoyer(ActionEvent evt)
+	{
+		System.out.println("Bouttone Mail Click");
+		if(toText.getText().isEmpty() || subjectText.getText().isEmpty() || textemailText.getText().isEmpty() )
+		{
+			this.notifierError("Avant d'envoyer un Mail, Remplissez tous les champs");
+		}
+		else
+		{
+			String adresseTo = toText.getText();
+			String subject = subjectText.getText();
+			String text = textemailText.getText();
+			ServiceMail.sendMail(adresseTo, subject, text);
+			this.notifier("Message envoyé avec succées vers : "+adresseTo);
+		}
+		
+
+	}
     public void show()
     {
         try{

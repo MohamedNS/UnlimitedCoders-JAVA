@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -84,6 +85,55 @@
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab text="Mail">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="163.0" layoutY="86.0" prefHeight="30.0" prefWidth="94.0" text="From">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="163.0" layoutY="134.0" text="To">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="159.0" layoutY="181.0" prefHeight="29.0" prefWidth="72.0" text="Subjet">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="159.0" layoutY="235.0" text="Text">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="toText" layoutX="257.0" layoutY="127.0" prefHeight="43.0" prefWidth="459.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="subjectText" layoutX="257.0" layoutY="181.0" prefHeight="43.0" prefWidth="454.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextArea fx:id="textemailText" layoutX="257.0" layoutY="235.0" prefHeight="278.0" prefWidth="501.0" />
+                        <Label layoutX="257.0" layoutY="72.0" prefHeight="44.0" prefWidth="460.0" text="healthified.consultation.module@gmail.com">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnEnvoyer" layoutX="832.0" layoutY="576.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="52.0" prefWidth="117.0" style="-fx-background-color: #0066FF;" text="Envoyer">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
         </tabs>
       </TabPane>
       <Button fx:id="btnRetour" layoutX="28.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #0066FF;" text="Retour" />

@@ -22,4 +22,5 @@ public interface InterfaceMedicament {
     public List<Medicament> trierMedicament(String critere,String ordre);
     public Medicament trouverParId(int id);
 	public Medicament trouverParNom(String nom);
+	public float calculerMoyennePrix();
 }

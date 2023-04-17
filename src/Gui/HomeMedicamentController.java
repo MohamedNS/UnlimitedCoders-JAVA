@@ -7,7 +7,9 @@ package Gui;
 import Entity.Medicament;
 import Services.ServiceMedicament;
 import Services.ServicePDF;
+import Utils.MyConnection;
 import com.itextpdf.text.DocumentException;
+import java.sql.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -20,12 +22,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Side;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -84,6 +93,17 @@ public class HomeMedicamentController implements Initializable{
     private ChoiceBox critereChoice;
     @FXML
     private ChoiceBox ordreChoice;
+
+	//Interface Statistiques
+	@FXML
+	private Label moyennePrixLabel;
+	@FXML
+	private PieChart plusutilisePi;
+	@FXML
+	private BarChart<String,Number> prixbar;
+
+	
+	private Connection cnx;
 
     public HomeMedicamentController()
     {
@@ -265,6 +285,81 @@ public class HomeMedicamentController implements Initializable{
         descriptionColonne.setCellValueFactory(new PropertyValueFactory<>("description"));
         medicamentTable.setItems(list);
     }
+
+	public void remplirePiChart()
+	{
+		cnx = MyConnection.getInstance().getConnection();
+		ObservableList<PieChart.Data> data = FXCollections.observableArrayList();
+		try {
+			String req = "SELECT COUNT(*) AS count, medicament.nom FROM medicament INNER JOIN ordonnance_medicament ON medicament.id = ordonnance_medicament.medicament_id GROUP BY medicament.nom";
+			PreparedStatement pt = cnx.prepareStatement(req);
+			ResultSet rs = pt.executeQuery();
+			while(rs.next())
+			{
+				data.add(new PieChart.Data(rs.getString("nom"), rs.getInt("count")));
+			}
+			plusutilisePi.setTitle("Médicaments plus prescrits");
+			plusutilisePi.setData(data);
+
+	    } catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+	    }
+	}
+	public void remplirePrixBar()
+	{
+		cnx = MyConnection.getInstance().getConnection();
+		CategoryAxis xAxis = new CategoryAxis();
+		NumberAxis yAxis = new NumberAxis();
+		int count = 0;
+		float rangeStart = 0;
+		float rangeEnd = 10;
+
+		//BarChart<String,Number> pribar = new BarChart<>(xAxis,yAxis);
+		System.out.println("BarChart : "+BarChart.class.toString());
+		prixbar.setTitle("Médicament Par Prix");
+		xAxis.setLabel("Marge des prix");
+		yAxis.setAccessibleHelp("Nombre des médicmaents");
+
+		try{
+			String req = "SELECT prix from medicament order by prix";
+			Statement st = cnx.createStatement();
+			ResultSet rs = st.executeQuery(req);
+			XYChart.Series<String,Number> series = new XYChart.Series<>();
+
+			while(rs.next())
+			{
+				System.out.println("Prix : "+String.valueOf(rs.getFloat("prix")));
+				float prix = rs.getFloat("prix");
+				if(prix >= rangeStart && prix<rangeEnd)
+				{
+					count++;
+				}
+				else
+				{
+					series.getData().add(new XYChart.Data<>(String.format("%.1f-%.1f",rangeStart,rangeEnd),count));
+					count = 1;
+					rangeStart = rangeEnd;
+					rangeEnd += 10;
+				}
+			}
+			prixbar.getData().add(series);
+
+		}
+		catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+
+		
+	}
+	public void afficherStatistiques()
+	{
+		ServiceMedicament sv = new ServiceMedicament();
+		String moyenne = String.format("%.2f", sv.calculerMoyennePrix());
+		moyennePrixLabel.setText(moyenne+" TND");
+		this.remplirePiChart();
+		this.remplirePrixBar();
+	}
     public void show()
     {
         try {
@@ -333,6 +428,7 @@ public class HomeMedicamentController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         remplireChoiceBoxTri();
         afficherListeMedicament();
+		afficherStatistiques();
     }
     
 }

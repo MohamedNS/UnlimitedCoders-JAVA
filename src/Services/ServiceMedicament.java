@@ -145,6 +145,23 @@ public class ServiceMedicament implements InterfaceMedicament{
 		}
 		return m;
 	}
+	@Override
+	public float calculerMoyennePrix()
+	{
+		float val = 0;
+		try {
+			String req = "Select avg(prix) from medicament";
+			Statement st = cnx.createStatement();
+			ResultSet rs = st.executeQuery(req);
+			while(rs.next())
+			{
+				val = rs.getFloat(1);
+			}
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		return val;
+	}
 
     @Override
     public List<Medicament> trierMedicament(String str1, String str2) {

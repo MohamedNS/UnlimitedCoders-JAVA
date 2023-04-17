@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.List;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -261,11 +263,18 @@ public class HomeOrdonnanceController implements Initializable{
 		}
 		else
 		{
-			String adresseTo = toText.getText();
-			String subject = subjectText.getText();
-			String text = textemailText.getText();
-			sv.sendMail(adresseTo, subject, text);
-			this.notifier("Message envoyé avec succées vers : "+adresseTo);
+			if(this.validerEmail(toText.getText()))
+			{
+				String adresseTo = toText.getText();
+				String subject = subjectText.getText();
+				String text = textemailText.getText();
+				sv.sendMail(adresseTo, subject, text);
+				this.notifier("Message envoyé avec succées vers : "+adresseTo);
+			}
+			else
+			{
+				this.notifierError("L'adresse mail : ' "+toText.getText()+"' n'est pas une adresse mail valide");
+			}
 		}
 		
 
@@ -359,6 +368,16 @@ public class HomeOrdonnanceController implements Initializable{
         }
         return true;
     }
+	public boolean validerEmail(String email)
+	{
+		 String emailPattern = "^[a-zA-Z0-9_+&*-]+(?:\\." +
+                          "[a-zA-Z0-9_+&*-]+)*@" +
+                          "(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    
+		Pattern pattern = Pattern.compile(emailPattern);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
     public void viderChamps()
     {
         idConsultationText.setValue(null);

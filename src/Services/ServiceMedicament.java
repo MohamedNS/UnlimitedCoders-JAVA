@@ -120,8 +120,31 @@ public class ServiceMedicament implements InterfaceMedicament{
             System.out.println(ex.getMessage());
         }
         return m;
-        
     }
+	@Override
+	public Medicament trouverParNom(String nom)
+	{
+		Medicament m = new Medicament();
+		try {
+			String req = "SELECT * from medicament where nom=?";
+			PreparedStatement pt = cnx.prepareStatement(req);
+			pt.setString(1, nom);
+			ResultSet rs = pt.executeQuery();
+			
+			while(rs.next())
+			{
+				m.setId(rs.getInt("id"));
+				m.setNom(nom);
+				m.setDosage(rs.getInt("dosage"));
+				m.setPrix(rs.getFloat("prix"));
+				m.setDescription(rs.getString("description"));
+			}
+
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		return m;
+	}
 
     @Override
     public List<Medicament> trierMedicament(String str1, String str2) {

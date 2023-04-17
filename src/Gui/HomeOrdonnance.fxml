@@ -31,7 +31,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="validiteText" layoutX="472.0" layoutY="208.0" prefHeight="60.0" prefWidth="240.0">
+                        <TextField fx:id="validiteText" layoutX="472.0" layoutY="208.0" prefHeight="60.0" prefWidth="240.0" promptText="Validite en Jours">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
@@ -46,7 +46,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="medicamentText" layoutX="472.0" layoutY="283.0" prefHeight="60.0" prefWidth="240.0" />
+                        <ChoiceBox fx:id="medicamentText" accessibleRole="CHECK_BOX" layoutX="472.0" layoutY="283.0" prefHeight="60.0" prefWidth="240.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -111,15 +111,18 @@
                         </Label>
                         <TextField fx:id="toText" layoutX="257.0" layoutY="127.0" prefHeight="43.0" prefWidth="459.0">
                            <font>
-                              <Font size="20.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="subjectText" layoutX="257.0" layoutY="181.0" prefHeight="43.0" prefWidth="454.0">
+                        <TextField fx:id="subjectText" layoutX="257.0" layoutY="181.0" prefHeight="43.0" prefWidth="454.0" promptText="Sujet de votre mail">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </TextField>
-                        <TextArea fx:id="textemailText" layoutX="257.0" layoutY="235.0" prefHeight="278.0" prefWidth="501.0" />
+                        <TextArea fx:id="textemailText" layoutX="257.0" layoutY="235.0" prefHeight="278.0" prefWidth="501.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextArea>
                         <Label layoutX="257.0" layoutY="72.0" prefHeight="44.0" prefWidth="460.0" text="healthified.consultation.module@gmail.com">
                            <font>
                               <Font size="20.0" />

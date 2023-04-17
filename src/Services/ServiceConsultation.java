@@ -99,6 +99,31 @@ public class ServiceConsultation implements InterfaceConsultation{
         }
     }
 
+	@Override
+	public Consultation trouverParId(int id)
+	{
+		Consultation c = new Consultation();
+		try{
+			String req = "SELECT * from consultation where id="+id;
+			Statement st = cnx.createStatement();
+			ResultSet rs = st.executeQuery(req);
+			while(rs.next())
+			{
+				c.setId(rs.getInt("id"));
+				c.setMatriculeMedecin(rs.getString("matriculemedecin"));
+				c.setIdPatient(rs.getString("idpatient"));
+				c.setDateConsultation(rs.getDate("dateconsultation"));
+				c.setMontant(rs.getFloat("montant"));
+			}
+		}
+		catch(SQLException ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		return c;
+		
+	}
+
     @Override
     public List<Consultation> trierConsultations(String str1, String str2) {
         List<Consultation> listeConsultations = new ArrayList<>();

@@ -21,4 +21,5 @@ public interface InterfaceMedicament {
     public String convertirOrdre(String ordre);
     public List<Medicament> trierMedicament(String critere,String ordre);
     public Medicament trouverParId(int id);
+	public Medicament trouverParNom(String nom);
 }

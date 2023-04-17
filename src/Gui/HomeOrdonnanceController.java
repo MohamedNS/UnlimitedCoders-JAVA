@@ -129,6 +129,9 @@ public class HomeOrdonnanceController implements Initializable{
     {
         System.out.println("Ajout Ordonnance Click");
         ServiceOrdonnance sv = new ServiceOrdonnance();
+		ServiceMail svMail = new ServiceMail();
+		ServiceConsultation svConsultation = new ServiceConsultation();
+		ServiceMedicament svMedicament = new ServiceMedicament();
         int consultationId = (int) idConsultationText.getSelectionModel().getSelectedItem();
         if(validiteText.getText().isEmpty())
         {
@@ -147,7 +150,9 @@ public class HomeOrdonnanceController implements Initializable{
                 this.notifier("Ajout");
                 afficherOrdonnance();
                 this.viderChamps();
-            }
+				svMail.notifierValidite(o, svConsultation.trouverParId(o.getConsultation_id()),svMedicament.trouverParNom(
+					nomMedicament));
+		            }
         }
         
     }
@@ -248,6 +253,7 @@ public class HomeOrdonnanceController implements Initializable{
 	@FXML
 	public void btnEnvoyer(ActionEvent evt)
 	{
+		ServiceMail sv = new ServiceMail();
 		System.out.println("Bouttone Mail Click");
 		if(toText.getText().isEmpty() || subjectText.getText().isEmpty() || textemailText.getText().isEmpty() )
 		{
@@ -258,7 +264,7 @@ public class HomeOrdonnanceController implements Initializable{
 			String adresseTo = toText.getText();
 			String subject = subjectText.getText();
 			String text = textemailText.getText();
-			ServiceMail.sendMail(adresseTo, subject, text);
+			sv.sendMail(adresseTo, subject, text);
 			this.notifier("Message envoyé avec succées vers : "+adresseTo);
 		}
 		

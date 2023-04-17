@@ -4,6 +4,14 @@
  */
 
 package Services;
+import Entity.Consultation;
+import Entity.Medicament;
+import Entity.Ordonnance;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import javax.mail.*;
 import java.util.Properties;
 import javax.mail.internet.InternetAddress;
@@ -14,8 +22,11 @@ import javax.mail.internet.MimeMessage;
  * @author bytesudoer
  */
 public class ServiceMail {
+	public void ServiceMail()
+	{
+	}
 
-	public static void sendMail(String to,String subject,String text)
+	public void sendMail(String to,String subject,String text)
 	{
 		String senderMail = "healthified.consultation.module@gmail.com";
 		String senderPassword = "cqdebkknidkqytzj";
@@ -49,7 +60,41 @@ public class ServiceMail {
 		    } catch (MessagingException e) {
 				System.out.println(e.getMessage());
 		    }
-		}
+	}
+
+	public void notifierValidite(Ordonnance o,Consultation c,Medicament m)
+	{
+		Date dateConsultation = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-YYYY");
+		int validite = o.getValidite();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(dateConsultation);
+		calendar.add(Calendar.DAY_OF_MONTH, validite);
+		Date dateLimite = calendar.getTime();
+
+		String subject = "Rappel Ordonnance : "+formatter.format(dateLimite);
+
+		String textMail = "\n"
+				+ "Votre médecin a affecté une ordonnance à votre dernière consultation."+"\n"
+				+ "\n"
+				+ "\n"
+				+ "Notification Ordonnance\n"
+				+ "Identifiant Consultation : "+c.getDateConsultation()+"\n"
+				+ "Matricule Medecin : "+c.getMatriculeMedecin()+"\n"
+				+ "Identifiant Patient : "+c.getIdPatient()+"\n"
+				+ "Date Consultation : "+c.getDateConsultation().toString()+"\n"
+				+ "Liste des Medicaments : "+"\n"
+				+ "--------------------------------------------------------------------\n"
+				+ "Nom               |         Prix        |                Description\n"
+				+ m.getNom()+"\t\t\t" + m.getPrix()+"\t\t\t"+m.getDescription()+"\n"
+				+ "\n"
+				+ "\n"
+				+ "Votre Ordonnance Sera valable jusqu'a "+formatter.format(dateLimite)
+			+"\n"
+				+ "Généré le "+LocalDate.now().toString();
+		this.sendMail("mohamednour.soussi@esprit.tn", subject, textMail);
+	}
+	
 
 
 }

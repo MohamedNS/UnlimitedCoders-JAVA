@@ -6,7 +6,9 @@ package Gui;
 import Entity.Consultation;
 import Services.ServiceConsultation;
 import Services.ServicePDF;
+import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.pdf.PdfPTable;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -217,14 +219,14 @@ public class HomeConsultationController implements Initializable{
         mc.show();
     }
     @FXML
-    public void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException
+    public void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException, BadElementException, IOException
     {
         System.out.println("Boutton PDF Click");
         Consultation c = (Consultation) consultationTable.getSelectionModel().getSelectedItem();
         ServiceConsultation sv = new ServiceConsultation();
         List<Consultation>listeConsultations = sv.afficherConsultation();
         ServicePDF pdf = new ServicePDF();
-        pdf.genererPdfConsultation("Consultation", listeConsultations);
+	    pdf.genererPdfConsultation("Consultation", listeConsultations);
         this.notifier("Generation PDF");
         
     }
@@ -314,7 +316,7 @@ public class HomeConsultationController implements Initializable{
     }
     public boolean validierMontant(float montant)
     {
-        if(montant == 0 && montant< 0)
+        if(montant< 0)
         {
             this.notifierError("Le champ 'Montant' doit etre un entier positif");
             return false;

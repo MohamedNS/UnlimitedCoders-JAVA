@@ -134,13 +134,13 @@ public class HomeOrdonnanceController implements Initializable{
 		ServiceMail svMail = new ServiceMail();
 		ServiceConsultation svConsultation = new ServiceConsultation();
 		ServiceMedicament svMedicament = new ServiceMedicament();
-        int consultationId = (int) idConsultationText.getSelectionModel().getSelectedItem();
-        if(validiteText.getText().isEmpty())
+        if(validiteText.getText().isEmpty() || idConsultationText.getSelectionModel().isEmpty() || medicamentText.getSelectionModel().isEmpty())
         {
-            this.notifierError("Operation Ajout refusee");
+            this.notifierError("Operation Ajout refusee.Remplissez tous les champs");
         }
         else
         {
+			int consultationId = (int) idConsultationText.getSelectionModel().getSelectedItem();
             int validite = Integer.parseInt(validiteText.getText());
             String nomMedicament = (String)medicamentText.getSelectionModel().getSelectedItem();
             if(this.validerIdConsultation(consultationId) && this.validerValidier(validite) && this.validerNomMedicament(nomMedicament))
@@ -221,7 +221,7 @@ public class HomeOrdonnanceController implements Initializable{
         }
     }
     @FXML
-    private void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException
+    private void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException, IOException
     {
         System.out.println("Boutton PDF Click");
         ServiceOrdonnance sv = new ServiceOrdonnance();

@@ -8,6 +8,7 @@ import Entity.Medicament;
 import Services.ServiceMedicament;
 import Services.ServicePDF;
 import Utils.MyConnection;
+import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
 import java.sql.*;
 import java.io.FileNotFoundException;
@@ -152,13 +153,13 @@ public class HomeMedicamentController implements Initializable{
     {
         System.out.println("Ajout Medicament Click");
         ServiceMedicament sv = new ServiceMedicament();
-        String nom = nomText.getText();
-        if(dosageText.getText().isEmpty() && prixText.getText().isEmpty())
+        if(nomText.getText().isEmpty() || dosageText.getText().isEmpty() || prixText.getText().isEmpty() || descriptionText.getText().isEmpty())
         {
             this.notifierError("Operation Ajout Refusee");
         }
         else
         {
+			String nom = nomText.getText();
             Integer dosage = Integer.parseInt(dosageText.getText());
             Float prix = Float.parseFloat(prixText.getText());
             String description = descriptionText.getText();
@@ -229,7 +230,7 @@ public class HomeMedicamentController implements Initializable{
         }
     }
     @FXML
-    private void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException
+    private void btnPdf(ActionEvent evt) throws FileNotFoundException, DocumentException, BadElementException, IOException
     {
         System.out.println("Boutton PDF Click");
         ServiceMedicament sv = new ServiceMedicament();
@@ -315,7 +316,7 @@ public class HomeMedicamentController implements Initializable{
 		float rangeEnd = 10;
 
 		//BarChart<String,Number> pribar = new BarChart<>(xAxis,yAxis);
-		System.out.println("BarChart : "+BarChart.class.toString());
+		//System.out.println("BarChart : "+BarChart.class.toString());
 		prixbar.setTitle("Médicament Par Prix");
 		xAxis.setLabel("Marge des prix");
 		yAxis.setAccessibleHelp("Nombre des médicmaents");
@@ -328,7 +329,7 @@ public class HomeMedicamentController implements Initializable{
 
 			while(rs.next())
 			{
-				System.out.println("Prix : "+String.valueOf(rs.getFloat("prix")));
+				//System.out.println("Prix : "+String.valueOf(rs.getFloat("prix")));
 				float prix = rs.getFloat("prix");
 				if(prix >= rangeStart && prix<rangeEnd)
 				{

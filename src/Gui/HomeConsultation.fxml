@@ -50,7 +50,7 @@
                            </font>
                         </Label>
                         <DatePicker fx:id="dateConsultationText" layoutX="508.0" layoutY="262.0" prefHeight="60.0" prefWidth="240.0" />
-                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0">
+                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0" promptText="en TND">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>

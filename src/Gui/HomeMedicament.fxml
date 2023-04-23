@@ -35,7 +35,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="dosageText" layoutX="420.0" layoutY="212.0" prefHeight="50.0" prefWidth="240.0">
+                        <TextField fx:id="dosageText" layoutX="420.0" layoutY="212.0" prefHeight="50.0" prefWidth="240.0" promptText="x Fois par Jour">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
@@ -58,7 +58,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="prixText" layoutX="420.0" layoutY="276.0" prefHeight="50.0" prefWidth="240.0">
+                        <TextField fx:id="prixText" layoutX="420.0" layoutY="276.0" prefHeight="50.0" prefWidth="240.0" promptText=" en TND">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>

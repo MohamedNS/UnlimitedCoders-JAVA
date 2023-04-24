@@ -45,3 +45,15 @@
 - String `idPatient`
 - Date `DateConsultation`
 - float `montant`
+- ## Classe **RendezVous **
+ - int id
+ - Timestamp date
+ - Utilisateur medecin
+ - Utilisateur patient
+ - String description
+ - String etat
+- ## Classe **Calendrier **
+ -    private int id
+ - Timestamp heure_debut
+ - Timestamp heure_fin
+ - Utilisateur medecin

@@ -53,7 +53,7 @@
  - String description
  - String etat
 - ## Classe **Calendrier **
- -    private int id;
- - Timestamp heure_debut;
- - Timestamp heure_fin;
- - Utilisateur medecin;
+ -    private int id
+ - Timestamp heure_debut
+ - Timestamp heure_fin
+ - Utilisateur medecin

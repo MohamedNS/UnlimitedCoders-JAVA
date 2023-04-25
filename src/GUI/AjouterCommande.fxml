@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCommandeController">
+   <children>
+      <Pane prefHeight="579.0" prefWidth="670.0" style="-fx-background-color: #D5E0F2;">
+         <children>
+            <Text layoutX="210.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez Choisir Vos Produits">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="confirmerButton" layoutX="187.0" layoutY="474.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="71.0" prefWidth="117.0" style="-fx-background-color: #2ff702;" text="Confirmer">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="annulerButton" layoutX="365.0" layoutY="474.0" mnemonicParsing="false" onAction="#annuler" prefHeight="71.0" prefWidth="117.0" style="-fx-background-color: #f70202;" text="Annuler" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <TableView fx:id="produitsTab" layoutX="42.0" layoutY="82.0" prefHeight="380.0" prefWidth="336.0">
+              <columns>
+                <TableColumn fx:id="matriculeCol" prefWidth="111.0" text="Matricule Produit" />
+                <TableColumn fx:id="nomCol" prefWidth="126.0" text="Nom Produit" />
+                  <TableColumn fx:id="prixCol" prefWidth="94.0" text="Prix Unitaire" />
+              </columns>
+            </TableView>
+            <Button fx:id="switchBtn" layoutX="384.0" layoutY="271.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="33.0" text="&gt;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <TableView fx:id="outTable" layoutX="423.0" layoutY="82.0" prefHeight="380.0" prefWidth="203.0">
+              <columns>
+                <TableColumn fx:id="outName" prefWidth="199.0" text="Nom Produit à Commander" />
+              </columns>
+            </TableView>
+            <Button fx:id="removeButton" layoutX="384.0" layoutY="217.0" mnemonicParsing="false" onAction="#remove" prefHeight="38.0" prefWidth="33.0" text="&lt;">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

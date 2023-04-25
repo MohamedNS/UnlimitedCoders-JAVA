@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="227.0" prefWidth="600.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+   <children>
+      <Button fx:id="ajouterproduit" layoutX="65.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#ajouterproduit" style="-fx-background-color: #0066FF;" text="ajouter produit" visible="false" />
+      <Button fx:id="ajoutercat" layoutX="425.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercat" style="-fx-background-color: #0066FF;" text="ajouter categorie" visible="false" />
+      <Button fx:id="ajoutercomm" layoutX="234.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercomm" style="-fx-background-color: #0066FF;" text="ajouter commande" visible="false" />
+      <Button fx:id="afficherproduit" layoutX="235.0" layoutY="92.0" mnemonicParsing="false" onAction="#afficherproduit" prefHeight="69.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Produits">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button fx:id="affichercommande" layoutX="54.0" layoutY="92.0" mnemonicParsing="false" onAction="#affichercommande" onMouseClicked="#affichercommande" prefHeight="70.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Commandes">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font></Button>
+      <Label layoutX="223.0" layoutY="25.0" prefHeight="27.0" prefWidth="138.0" text=" Menu Principale">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="afficherproduit1" layoutX="419.0" layoutY="92.0" mnemonicParsing="false" onAction="#afficherCategories" prefHeight="69.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Catégories">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

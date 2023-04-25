@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="647.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.UsersList">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="14.0" layoutY="14.0" prefHeight="649.0" prefWidth="1087.0" />
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="649.0" prefWidth="1087.0" style="-fx-background-color: teal;">
+         <children>
+            <AnchorPane prefHeight="649.0" prefWidth="317.0" style="-fx-background-color: teal;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane layoutY="21.0" prefHeight="61.0" prefWidth="317.0" style="-fx-background-color: orange; -fx-background-radius: 5;">
+                     <children>
+                        <Label layoutX="25.0" layoutY="17.0" text="Users" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutY="106.0" prefHeight="544.0" prefWidth="317.0" style="-fx-background-color: teal;">
+                     <children>
+                        <Button fx:id="btnsupp" focusTraversable="false" layoutX="79.0" layoutY="388.0" mnemonicParsing="false" onAction="#supp" prefHeight="61.0" prefWidth="146.0" style="-fx-background-color: orange; -fx-background-radius: 8;" text="Delete" textFill="#fcf8f8">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" top="30.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="346.0" layoutY="1.0" prefHeight="649.0" prefWidth="820.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <BorderPane prefHeight="649.0" prefWidth="769.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <Pane prefHeight="120.0" prefWidth="810.0" style="-fx-background-color: teal;" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="redirectProfilePage" focusTraversable="false" layoutX="680.0" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="13.0" prefWidth="75.0" style="-fx-background-color: orange; -fx-background-radius: 8;" text="Return" textFill="#fcf8f8">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <cursor>
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <TableView fx:id="table" prefHeight="519.0" prefWidth="669.0" BorderPane.alignment="CENTER">
+                           <columns>
+                              <TableColumn fx:id="name" prefWidth="177.5999755859375" text="name" />
+                              <TableColumn fx:id="description" prefWidth="130.39996337890625" text="description" />
+                              <TableColumn fx:id="phone" prefWidth="187.20001220703125" text="phone" />
+                              <TableColumn fx:id="picture" prefWidth="123.0" text="picture" />
+                           </columns>
+                        </TableView>
+                     </center>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -98,6 +100,8 @@ public class HomeMedicamentController implements Initializable{
     private ChoiceBox critereChoice;
     @FXML
     private ChoiceBox ordreChoice;
+	@FXML
+	private TextField rechercheText;
 
 	//Interface Statistiques
 	@FXML
@@ -296,6 +300,37 @@ public class HomeMedicamentController implements Initializable{
         descriptionColonne.setCellValueFactory(new PropertyValueFactory<>("description"));
         medicamentTable.setItems(list);
     }
+	public void rechercheIncrementee()
+	{
+		idColonne.setCellValueFactory(new PropertyValueFactory<>("id"));
+		nomColonne.setCellValueFactory(new PropertyValueFactory<>("nom"));
+		dosageColonne.setCellValueFactory(new PropertyValueFactory<>("dosage"));
+		prixColonne.setCellValueFactory(new PropertyValueFactory<>("prix"));
+		descriptionColonne.setCellValueFactory(new PropertyValueFactory<>("description"));
+		ObservableList<Medicament> list  = getMedicaments();
+		medicamentTable.setItems(list);
+		FilteredList<Medicament> filteredTable = new FilteredList<>(list,b->true);
+		rechercheText.textProperty().addListener((observable,oldValue,newValue)->{
+			filteredTable.setPredicate(rec->{
+				if(newValue == null || newValue.isEmpty())
+				{
+					return true;
+				}
+				String lowerCasefilter = newValue.toLowerCase();
+				if(rec.getNom().toLowerCase().indexOf(newValue) != -1)
+				{
+					return true;
+				}
+				else
+					return false;
+				
+			});
+		});
+		SortedList<Medicament> sortedList = new SortedList<>(filteredTable);
+		sortedList.comparatorProperty().bind(medicamentTable.comparatorProperty());
+		medicamentTable.setItems(sortedList);
+		
+	}
 
 	public void remplirePiChart()
 	{
@@ -439,6 +474,7 @@ public class HomeMedicamentController implements Initializable{
     public void initialize(URL url, ResourceBundle rb) {
         remplireChoiceBoxTri();
         afficherListeMedicament();
+		rechercheIncrementee();
 		afficherStatistiques();
     }
     

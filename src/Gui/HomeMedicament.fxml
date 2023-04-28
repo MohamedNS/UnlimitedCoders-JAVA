@@ -103,6 +103,11 @@
                            </font>
                         </Button>
                         <Button fx:id="btnExcel" layoutX="143.0" layoutY="615.0" mnemonicParsing="false" onAction="#btnExcel" prefHeight="42.0" prefWidth="91.0" style="-fx-background-color: #008000;" text="Excel" />
+                        <TextField fx:id="rechercheText" layoutX="491.0" layoutY="21.0" prefHeight="42.0" prefWidth="475.0" promptText="Chercher Médicament par nom">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
                      </children></AnchorPane>
             </content>
           </Tab>

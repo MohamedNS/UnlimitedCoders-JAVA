@@ -30,8 +30,9 @@ import static Services.RendezVousCrud.cnx2;
 
 public class EmailReminderJob implements Job {
 
-    private final String username = "mouheb.naddari@esprit.tn";
-    private final String password = "223JMT3512";
+   
+    private final String username = "healthified.consultation.module@gmail.com";
+    private final String password ="cqdebkknidkqytzj";
 
     private final String mailSubject = "Appointment Reminder";
 

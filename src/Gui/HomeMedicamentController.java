@@ -342,7 +342,7 @@ public class HomeMedicamentController implements Initializable{
 			ResultSet rs = pt.executeQuery();
 			while(rs.next())
 			{
-				data.add(new PieChart.Data(rs.getString("nom"), rs.getInt("count")));
+				data.add(new PieChart.Data(rs.getString("nom")+ " x" +rs.getInt("count"), rs.getInt("count")));
 			}
 			plusutilisePi.setTitle("Médicaments plus prescrits");
 			plusutilisePi.setData(data);

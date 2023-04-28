@@ -102,6 +102,7 @@
                               <Font size="20.0" />
                            </font>
                         </Button>
+                        <Button fx:id="btnExcel" layoutX="143.0" layoutY="615.0" mnemonicParsing="false" onAction="#btnExcel" prefHeight="42.0" prefWidth="91.0" style="-fx-background-color: #008000;" text="Excel" />
                      </children></AnchorPane>
             </content>
           </Tab>

@@ -5,10 +5,12 @@
 package Gui;
 import Entity.Consultation;
 import Services.ServiceConsultation;
+import Services.ServiceExcel;
 import Services.ServicePDF;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfPTable;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -34,6 +36,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 
@@ -55,6 +58,8 @@ public class HomeConsultationController implements Initializable{
     private Button btnRetour;
     @FXML
     private Button bntPdf;
+	@FXML
+	private Button btnExcel;
     @FXML
     private Button btnTrier;
 
@@ -120,6 +125,31 @@ public class HomeConsultationController implements Initializable{
             return false;
         }
     }
+	public File selectedFile()
+	{
+		FileChooser filechooser = new FileChooser();
+		filechooser.setTitle("Choisissez un Fichier à importer");
+		return filechooser.showOpenDialog(btnAjouter.getScene().getWindow());
+	}
+
+	public boolean notifierOperationExcel()
+	{
+		ButtonType  importExcel = new ButtonType("Importer");
+		ButtonType exportExcel = new ButtonType("Exporter");
+		
+		Alert alert = new Alert(Alert.AlertType.NONE,"Choisissez une option",importExcel,exportExcel);
+		alert.setTitle("Menu Excel");
+		alert.showAndWait();
+		if(alert.getResult() == importExcel)
+		{
+			return true;
+		}
+		else if(alert.getResult() == exportExcel)
+		{
+			return false;
+		}
+		return false;
+	}
 
     @FXML
     public void btnAjouter(ActionEvent evt)
@@ -230,6 +260,32 @@ public class HomeConsultationController implements Initializable{
         this.notifier("Generation PDF");
         
     }
+	@FXML
+	private void btnExcel(ActionEvent evt) throws FileNotFoundException
+	{
+		System.out.println("Boutton Excel Click");
+		ServiceConsultation sv = new ServiceConsultation();
+		ServiceExcel svExcel = new ServiceExcel();
+		List<Consultation> listeConsultation = sv.afficherConsultation();
+		svExcel.generateExcelConsultation(listeConsultation, "Consultation");
+		if(this.notifierOperationExcel())
+		{
+			System.out.println("Operation Excel Import");
+			File file = this.selectedFile();
+			System.out.println("Selceted File : "+file);
+			List<Consultation> listeImport = svExcel.importerExcelConsultation(file);
+			for(Consultation c:listeImport)
+			{
+				sv.ajouterConsultation(c);
+			}
+			this.notifier("Import Excel");
+			this.afficherListeConsultation();
+		}
+		else
+		{
+			System.out.println("Operation Excel Export");
+		}
+	}
     @FXML
     public void btnTrier(ActionEvent evt)
     {

@@ -12,7 +12,9 @@ import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.DocumentException;
 import java.sql.*;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.Writer;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -64,6 +66,8 @@ public class HomeMedicamentController implements Initializable{
     public Button btnSupprimer;
     @FXML
     public Button btnPdf;
+	@FXML
+	public Button btnExcel;
     @FXML
     public Button btnTrier;
 
@@ -175,7 +179,7 @@ public class HomeMedicamentController implements Initializable{
                 afficherListeMedicament();
                 this.viderChamps();
             }
-        }
+        }	
     }
     @FXML
     public void btnModifier(ActionEvent evt)
@@ -238,6 +242,12 @@ public class HomeMedicamentController implements Initializable{
         List<Medicament> listeMedicaments = sv.afficherMedicament();
         pdf.genererPdfMedicament("Medicament", listeMedicaments);
     }
+
+	@FXML
+	private void btnExcel(ActionEvent evt)
+	{
+		System.out.println("Boutton Excel Click");	
+	}
     @FXML
     private void btnTrier(ActionEvent evt)
     {

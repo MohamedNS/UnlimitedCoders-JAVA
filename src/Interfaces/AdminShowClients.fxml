@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AdminShowClientsController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="-2.0" layoutY="-2.0" prefHeight="604.8" prefWidth="1104.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="61.0" prefWidth="1106.0" styleClass="semi-top-form" stylesheets="@dashbord.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="182.0" layoutY="-60.0" prefHeight="55.0" prefWidth="1099.0" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="BANK" layoutX="14.0" layoutY="33.0" size="1.5em" />
+                              <Label layoutX="51.0" layoutY="18.0" text="Bank-IN">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="top-form" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="538.0" prefWidth="249.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="538.4" prefWidth="249.6" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="92.0" layoutY="88.0" size="7em" />
+                              <Label layoutX="88.0" layoutY="111.0" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="145.0" prefHeight="22.0" prefWidth="246.0" text="SHOW CLIENTS" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                                 <font>
+                                    <Font name="Tahoma" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="99.10000610351562" layoutX="127.0" layoutY="179.0" startX="-101.70001220703125" stroke="#c9c9c9" />
+                              <Button fx:id="home_btn" layoutX="44.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#home" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Home">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="add_agent_btn" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#addagent" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Add Agent">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="44.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#showusers" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Show Agents">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#logout" stylesheets="@dashbord.css">
+                                 <graphic>
+                                    <FontAwesomeIcon fx:id="logout" fill="WHITE" glyphName="SIGN_OUT" size="2em" text="" />
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="60.0" layoutY="499.0" text="Logout" textFill="WHITE" />
+                              <Button layoutX="44.0" layoutY="330.0" mnemonicParsing="false" onMouseClicked="#showclients" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Show Clients">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="addagent_form" layoutX="45.0" layoutY="45.0" prefHeight="538.4" prefWidth="850.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="7.0" layoutY="8.0" prefHeight="521.0" prefWidth="834.0" stylesheets="@dashbord.css">
+                                 <children>
+                                    <AnchorPane layoutY="1.0" prefHeight="299.0" prefWidth="834.0" stylesheets="@dashbord.css">
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                       <children>
+                                          <TableView fx:id="table_view" layoutX="5.0" layoutY="46.0" onMouseClicked="#UserSelect" onTouchMoved="#UserSelect" prefHeight="250.0" prefWidth="824.0">
+                                             <columns>
+                                                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                                                <TableColumn fx:id="nom" prefWidth="123.99999237060547" text="Nom" />
+                                                <TableColumn fx:id="prenom" prefWidth="143.199951171875" text="prenom" />
+                                                <TableColumn fx:id="telephone" prefWidth="153.60003662109375" text="Telephone" />
+                                                <TableColumn fx:id="mail" prefWidth="243.20010375976562" text="email" />
+                                                <TableColumn fx:id="banned" prefWidth="83.20001220703125" text="banned" />
+                                             </columns>
+                                          </TableView>
+                                          <TextField fx:id="search" layoutX="9.0" layoutY="7.0" prefHeight="32.0" prefWidth="254.0" promptText="Search" styleClass="search" stylesheets="@dashbord.css" />
+                                          <FontAwesomeIcon glyphName="SEARCH" layoutX="13.0" layoutY="28.0" size="1.5em" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="debloque_btn" layoutX="725.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#DebloqueUser" prefHeight="38.0" prefWidth="94.0" styleClass="update-btn" stylesheets="@dashbord.css" text="debloquer" />
+                                    <Button fx:id="bloque_btn" layoutX="641.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#BloqueUser" prefHeight="37.0" prefWidth="76.0" styleClass="delete-btn" stylesheets="@dashbord.css" text="bloquer" />
+                                    <Label layoutX="39.0" layoutY="339.0" text="Nom :" />
+                                    <TextField fx:id="tnom" layoutX="101.0" layoutY="335.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                                    <Label layoutX="39.0" layoutY="371.0" text="Prenom :" />
+                                    <TextField fx:id="tprenom" layoutX="101.0" layoutY="367.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                                    <Label layoutX="39.0" layoutY="404.0" text="Email :" />
+                                    <TextField fx:id="temail" layoutX="101.0" layoutY="400.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                                    <Label layoutX="39.0" layoutY="437.0" text="Phone :" />
+                                    <TextField fx:id="ttelephone" layoutX="101.0" layoutY="433.0" styleClass="textfield" stylesheets="@dashbord.css" />
+                                 </children>
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

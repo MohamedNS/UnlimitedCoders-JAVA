@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AdminHomeController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="-2.0" layoutY="-2.0" prefHeight="604.8" prefWidth="1104.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="61.0" prefWidth="1106.0" styleClass="semi-top-form" stylesheets="@dashbord.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="8.0" prefHeight="55.0" prefWidth="1099.0" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="-6.199999999999818" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIcon glyphName="BANK" layoutX="14.0" layoutY="33.0" size="1.5em" />
+                              <Label layoutX="51.0" layoutY="18.0" text="Home">
+                                 <font>
+                                    <Font name="Segoe UI Black" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <styleClass>
+                              <String fx:value="top-form" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="538.0" prefWidth="249.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutY="-5.0" prefHeight="548.8" prefWidth="260.0" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-5.0">
+                           <children>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="92.0" layoutY="88.0" size="7em" />
+                              <Label layoutX="88.0" layoutY="111.0" text="Welcome," textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="3.0" layoutY="145.0" prefHeight="22.0" prefWidth="246.0" text="ADMIN" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                                 <font>
+                                    <Font name="Tahoma" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="99.10000610351562" layoutX="127.0" layoutY="179.0" startX="-101.70001220703125" stroke="#c9c9c9" />
+                              <Button fx:id="home_btn" layoutX="44.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#home" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Home">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="HOME" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="add_agent_btn" layoutX="44.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#addagent" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Add User">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="salary_btn" layoutX="44.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#showusers" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Show Agent">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="44.0" layoutY="332.0" mnemonicParsing="false" onMouseClicked="#showclients" prefHeight="35.0" prefWidth="180.0" styleClass="nav-btn" stylesheets="@dashbord.css" text="Show Clients">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.2em" />
+                                 </graphic>
+                              </Button>
+                              <Button layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#logout" stylesheets="@dashbord.css">
+                                 <graphic>
+<!--                                    <FontAwesomeIcon fx:id="logout" fill="WHITE" glyphName="SIGN_OUT" size="2em" text="" />-->
+                                 </graphic>
+                                 <styleClass>
+                                    <String fx:value="logout" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                              </Button>
+                              <Label layoutX="60.0" layoutY="499.0" text="Logout" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="159.0" layoutY="133.0" prefHeight="538.4" prefWidth="850.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="526.0" prefWidth="838.0" stylesheets="@dashbord.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane prefHeight="180.0" prefWidth="838.0" stylesheets="@dashbord.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                       </styleClass>
+                                       <children>
+                                          <AnchorPane layoutX="14.0" layoutY="12.0" prefHeight="156.0" prefWidth="264.0" styleClass="card" stylesheets="@dashbord.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="31.0" layoutY="86.0" size="4em" />
+                                                <Label layoutX="95.0" layoutY="111.0" text="Total Agent" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="home_totalagent" alignment="CENTER_RIGHT" layoutX="134.0" layoutY="14.0" prefHeight="30.0" prefWidth="108.0" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="289.0" layoutY="12.0" prefHeight="156.0" prefWidth="264.0" styleClass="card" stylesheets="@dashbord.css">
+                                             <children>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="CHECK" layoutX="39.0" layoutY="89.0" size="4em" />
+                                                <Label layoutX="103.0" layoutY="114.0" text="Total Present" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="home_totalpresent" alignment="CENTER_RIGHT" layoutX="142.0" layoutY="17.0" prefHeight="30.0" prefWidth="108.0" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="565.0" layoutY="12.0" prefHeight="156.0" prefWidth="264.0" styleClass="card" stylesheets="@dashbord.css">
+                                             <children>
+                                                <Label layoutX="97.0" layoutY="113.0" text="Total Clients" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="home_totalclient" alignment="CENTER_RIGHT" layoutX="136.0" layoutY="16.0" prefHeight="30.0" prefWidth="108.0" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="Tahoma" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="41.0" layoutY="88.0" size="4em" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <BarChart fx:id="home_chart" layoutX="169.0" layoutY="218.0" prefHeight="293.0" prefWidth="500.0" title="Agent Data Chart">
+                                       <xAxis>
+                                          <CategoryAxis side="BOTTOM" />
+                                       </xAxis>
+                                       <yAxis>
+                                          <NumberAxis side="LEFT" />
+                                       </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="home_form1" layoutX="10.0" layoutY="10.0" prefHeight="538.4" prefWidth="850.4" stylesheets="@dashbord.css" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

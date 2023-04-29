@@ -3,12 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entity;
-
-/**
- *
- * @author L390
- */
-public class Calendrier {
-    
-}
+package Entities;
+ 
+public enum Role 
+{admin,user,agent}

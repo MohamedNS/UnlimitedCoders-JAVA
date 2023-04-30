@@ -28,6 +28,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javax.mail.MessagingException;
+
 
 /**
  * FXML Controller class
@@ -62,7 +64,7 @@ ServiceUser userService = new ServiceUser();
     }    
 
     @FXML
-    private void register(MouseEvent event) throws IOException {
+    private void register(MouseEvent event) throws IOException, MessagingException {
                 if (validateString(nom) & validateString(prenom) & validateEmail(email)
                 & validatePassword(password)) {
      

@@ -64,16 +64,7 @@ public class User {
         this.isbanned = isbanned;
     }
 
-    /**
-     *
-     * @param nom
-     * @param prenom
-     * @param email
-     * @param telephone
-     * @param image
-     * @param roles
-     * @param isbanned
-     */
+   
     public User(String nom, String prenom, String email, String telephone, String image, String roles, int isbanned) {
         this.nom = nom;
         this.prenom = prenom;

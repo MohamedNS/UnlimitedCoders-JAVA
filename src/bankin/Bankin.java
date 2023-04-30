@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import ConnectionDB.MyConnection;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 import java.util.logging.Level;

@@ -35,7 +35,8 @@ public class ForgetpassController implements Initializable {
     private Scene scene;
     private Parent root;
     public static final String ACCOUNT_SID = "AC02db107c7ec6a46914416263860ec7ce";
-    public static final String AUTH_TOKEN = "e9f065bd26939ffc055b8686745da669";
+    public static final String AUTH_TOKEN = "1db0b1fef6bfa5bf5da87040c073f527";
+    
     ServiceUser serviceUser = new ServiceUser();
     public String y, z;
     public String username, pass, mesg;
@@ -78,7 +79,7 @@ public class ForgetpassController implements Initializable {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
-        mesg = "votre code est : " + y;
+        mesg = "Your Healthified Reset Code is : " + y;
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         com.twilio.rest.api.v2010.account.Message messages = com.twilio.rest.api.v2010.account.Message.creator(new PhoneNumber(serviceUser.sendSMS(z)),

@@ -6,4 +6,4 @@
 package Entities;
  
 public enum Role 
-{admin,user,agent}
+{admin,pharmacien,medecin}

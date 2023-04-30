@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import Entities.User;
 import ConnectionDB.MyConnection;
 import Entities.Role;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -12,7 +13,11 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javax.mail.MessagingException;
 import org.mindrot.jbcrypt.BCrypt;
+
+
+
 
 public class ServiceUser {
 
@@ -23,12 +28,12 @@ public class ServiceUser {
         cnx = MyConnection.getInstance().getConnection();
     }
 
-    public boolean register(User user) {
+   public boolean register(User user) throws MessagingException {
         String roleType1 = "";
         roleType1 = "[\"ROLE_USER\"]";
         String ban ="0";
         //Date date = new Date(0);
-        //java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+//        java.sql.Date sqlDate = new java.sql.Date(date.getTime());
         LocalDate currentDate = LocalDate.now();
 
         try {
@@ -42,9 +47,11 @@ public class ServiceUser {
             pst.setString(3, user.getTelephone());
             pst.setString(7, String.valueOf(currentDate));
             pst.setString(8, String.valueOf(ban));
-
+            String send = user.getTelephone();
             if (pst.executeUpdate() > 0) {
                 System.out.println("You have registered successfully.");
+                System.out.println(send);
+                EnvoiyerEmail.envoyer(send);
                 return true;
             } else {
                 System.out.println("Something went wrong.");
@@ -167,10 +174,11 @@ public class ServiceUser {
 
     public boolean AddAgent(User user) {
         String roleType2 = "";
-        roleType2 = "[\"ROLE_AGENT\"]";
+        roleType2 = "[\"ROLE_PHARMARCIEN\"]";
+        LocalDate currentDate = LocalDate.now();
 
         try {
-            String requete = "insert into user (nom,prenom,email,password,roles,telephone)values (?,?,?,?,?,?)";
+            String requete = "insert into user (nom,prenom,email,password,roles,telephone,created_at)values (?,?,?,?,?,?,?)";
             PreparedStatement pst = MyConnection.getInstance().getConnection().prepareStatement(requete);
             pst.setString(1, user.getNom());
             pst.setString(2, user.getPrenom());
@@ -178,6 +186,7 @@ public class ServiceUser {
             pst.setString(4, BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
             pst.setString(5, roleType2);
             pst.setString(3, user.getTelephone());
+            pst.setString(7, String.valueOf(currentDate));
 
             if (pst.executeUpdate() > 0) {
                 System.out.println("You have registered successfully.");
@@ -331,7 +340,7 @@ public class ServiceUser {
 
     public void resetPassword(String pass, String telephone) {
         try {
-            String req = "UPDATE user SET password = '" + BCrypt.hashpw(pass, BCrypt.gensalt()) + "' WHERE telephone =  '" + telephone + "'";
+            String req = "UPDATE user SET password = '" + BCrypt.hashpw(pass, BCrypt.gensalt()) + "' WHERE telephone =  '" + telephone + "";
 
             Statement st = MyConnection.getInstance().getConnection().prepareStatement(req);
             st.executeUpdate(req);

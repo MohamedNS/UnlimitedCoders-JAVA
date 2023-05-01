@@ -7,8 +7,13 @@ import java.util.ResourceBundle;
 
 import entities.categorie;
 import entities.produit;
+import java.util.function.Predicate;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +27,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import services.CategorieCrud;
@@ -59,12 +65,66 @@ public class AfficherCategoriesController implements Initializable {
 	private Button updateButton;
 
 	CategorieCrud categorieCrud;
+        @FXML
+    private TextField searchField;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		this.categorieCrud = new CategorieCrud();
 		this.populateTable();
+                final CategorieCrud ac = new CategorieCrud();
+                ObservableList<categorie> categories= FXCollections.observableArrayList(ac.afficherCategorie());
+
+       
+                
+                 // Set up filtered list
+       final FilteredList<categorie> filteredList = new FilteredList<>(categories , new Predicate<categorie>() {
+            @Override
+            public boolean test(categorie categorie) {
+                return true;
+            }
+        });
+        final SortedList<categorie> sortedList = new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(categoriesTable.comparatorProperty());
+        categoriesTable.setItems(sortedList);
+
+// Set up search field listener
+        searchField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, final String newValue) {
+                filteredList.setPredicate(new Predicate<categorie>() {
+                    @Override
+                    public boolean test(categorie categorie) {
+                        if (newValue == null || newValue.isEmpty()) {
+                            return true;
+                        }
+
+                        String[] keywords = newValue.toLowerCase().split(" ");
+                        boolean matchAll = true;
+                        for (String keyword : keywords) {
+                            if (keyword.isEmpty()) {
+                                continue;
+                            }
+                            boolean match = false;
+                            if (Integer.toString(categorie.getId()).contains(keyword)) {
+                                match = true;
+                            } else if (categorie.getNom().toLowerCase().contains(keyword)) {
+                                match = true;
+                            
+                            } else if (categorie.getDescription().toLowerCase().contains(keyword)) {
+                                match = true;
+                            }
+                            if (!match) {
+                                matchAll = false;
+                                break;
+                            }
+                        }
+                        return matchAll;
+                    }
+                });
+            }
+        });
 	}
 
 	@FXML

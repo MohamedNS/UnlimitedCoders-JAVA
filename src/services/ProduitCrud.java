@@ -1,13 +1,25 @@
-package services;
+ package services;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import entities.categorie;
 import entities.produit;
 import interfaces.InterfaceProduit;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import utils.MyConnection;
 
 public class ProduitCrud implements InterfaceProduit {
@@ -109,5 +121,61 @@ public class ProduitCrud implements InterfaceProduit {
 		}
 		return list;
 	}
-
+	
+	public List<produit> afficherProduitByKey(String key) {
+		List<produit> list = new ArrayList<>();
+		try {
+			String req = "SELECT * FROM `produit` WHERE nom LIKE '%"+key+"%' OR matricule_asseu	LIKE '%"+key+"%'";
+			PreparedStatement ps = conn.prepareStatement(req);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				produit p = new produit();
+				p.setId(rs.getInt("id"));
+				p.setNom(rs.getString("nom"));
+				p.setMatricule_asseu(rs.getString("matricule_asseu"));
+				p.setPrix(rs.getString("prix"));
+				p.setCategorie(rs.getInt("categorie_id"));
+				list.add(p);
+			}
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+		return list;
+	}
+ public void Qr( Stage primaryStage,produit p) {
+         //Stage primaryStage = null;
+    QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        String myWeb = p.toString() ;
+        int width = 300;
+        int height = 300;
+        String fileType = "png";
+        BufferedImage bufferedImage = null;
+        try {
+            BitMatrix byteMatrix = qrCodeWriter.encode(myWeb, BarcodeFormat.QR_CODE, width, height);
+            bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            bufferedImage.createGraphics();
+            Graphics2D graphics = (Graphics2D) bufferedImage.getGraphics();
+            graphics.setColor(Color.WHITE);
+            graphics.fillRect(0, 0, width, height);
+            graphics.setColor(Color.BLACK);
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    if (byteMatrix.get(i, j)) {
+                        graphics.fillRect(i, j, 1, 1);
+                    }
+                }
+            }
+            System.out.println("Success...");
+        } catch (WriterException ex) {
+            //Logger.getLogger(JavaFX_QRCo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ImageView qrView = new ImageView();
+        qrView.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
+        StackPane root = new StackPane();
+        root.getChildren().add(qrView);
+        Scene scene = new Scene(root, 350, 350);
+        primaryStage.setTitle("QR CODE!");
+        primaryStage.setScene(scene);
+       primaryStage.show();
+    }
 }

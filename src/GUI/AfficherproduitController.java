@@ -6,8 +6,12 @@
 package GUI;
 
 import entities.produit;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -25,12 +29,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import services.ProduitCrud;
 
 /**
@@ -67,7 +78,20 @@ public class AfficherproduitController implements Initializable {
     @FXML
     private Button addButton;
     
+    @FXML
+    private TextField searchBar;
+    
+    @FXML
+    private Button exportEx;
+     @FXML
+    private Button importEx;
+
+    
     ProduitCrud pc;
+    @FXML
+    private Button refreshButton;
+    @FXML
+    private Button btnqr;
 
     /**
      * Initializes the controller class.
@@ -80,10 +104,6 @@ public class AfficherproduitController implements Initializable {
     	
     }
     
-    @FXML
-    private Button afficherproduit;
-    @FXML
-    private Button Actualiser;
 
     @FXML
     private void home(MouseEvent event) throws IOException {
@@ -202,5 +222,105 @@ public class AfficherproduitController implements Initializable {
     	}
     }
     
+    @FXML
+    void search(KeyEvent event) {
+    	if(this.searchBar.getText().length() == 0) {
+    		this.afficherProduit();
+    	}else {
+    		ObservableList<produit> produits = FXCollections.observableArrayList(this.pc.afficherProduitByKey(this.searchBar.getText()));
+            System.out.println(produits);
+            tabProduit.setItems(produits);
+            colNom.setCellValueFactory(new PropertyValueFactory<produit, String>("nom"));
+            colPrix.setCellValueFactory(new PropertyValueFactory<produit, String>("prix"));
+            colMatricule.setCellValueFactory(new PropertyValueFactory<produit, String>("matricule_asseu"));
+    	}
+    }
+    
+    @FXML
+    private void exporterEx(ActionEvent event) {
+   ProduitCrud ac = new ProduitCrud();
+    ObservableList<produit> produits = FXCollections.observableArrayList(ac.afficherProduit());
+    XSSFWorkbook wb = new XSSFWorkbook();
+    XSSFSheet sheet = wb.createSheet("Details Produit");
+    XSSFRow header = sheet.createRow(0);
+    header.createCell(0).setCellValue("Categorie id");
+    header.createCell(1).setCellValue("Nom Produit");
+    header.createCell(2).setCellValue("Matricule asseu");
+    header.createCell(3).setCellValue("Prix");
+   
+   
+    int rowNum = 1;
+    for (produit produit : produits) {
+        XSSFRow row = sheet.createRow(rowNum++);
+        row.createCell(0).setCellValue(produit.getCategorie());
+        row.createCell(1).setCellValue(produit.getNom());
+        row.createCell(2).setCellValue(produit.getMatricule_asseu());
+        row.createCell(3).setCellValue(produit.getPrix());
+    }
+
+    try {
+        FileOutputStream fileOut = new FileOutputStream("Produit.xlsx");
+        wb.write(fileOut);
+        fileOut.close();
+        wb.close();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Export Excel");
+        alert.setHeaderText("Exportation terminée");
+        alert.setContentText("La table produit a été exportée avec succès en une table Excel.");
+        alert.showAndWait();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    }
+    @FXML
+private void importerEx(ActionEvent event) {
+    FileChooser fileChooser = new FileChooser();
+    FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Excel files (*.xlsx)", "*.xlsx");
+    fileChooser.getExtensionFilters().add(extFilter);
+    File file = fileChooser.showOpenDialog(null);
+    if (file != null) {
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            XSSFWorkbook workbook = new XSSFWorkbook(fis);
+            XSSFSheet sheet = workbook.getSheetAt(0);
+
+            Iterator<Row> rowIterator = sheet.iterator();
+            rowIterator.next(); // skip header row
+
+            while (rowIterator.hasNext()) {
+                Row row = rowIterator.next();
+                produit produit = new produit();
+                row.createCell(0).setCellValue(produit.getCategorie());
+        row.createCell(1).setCellValue(produit.getNom());
+        row.createCell(2).setCellValue(produit.getMatricule_asseu());
+        row.createCell(3).setCellValue(produit.getPrix());
+                ProduitCrud ac = new ProduitCrud();
+                ac.ajouterProduit(produit);
+            }
+
+            workbook.close();
+            fis.close();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Import Excel");
+            alert.setHeaderText("Importation terminée");
+            alert.setContentText("Les données ont été importées avec succès depuis le fichier Excel.");
+            alert.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+    @FXML
+    private void qr(MouseEvent event) {
+        Stage qrStage = new Stage();
+            produit p;
+        
+        p=tabProduit.getSelectionModel().getSelectedItem();
+        ProduitCrud pd=new ProduitCrud();
+        pd.Qr(qrStage,p);
+    }
+
 
 }

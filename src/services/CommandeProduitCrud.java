@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 
@@ -92,7 +93,7 @@ public class CommandeProduitCrud {
 	}
 
 	
-	//POSSIBLE METIER???
+	//POSSIBLE METIEr
 	public void addDetails(CommandeProduit cp) throws SQLException {
 		String req = "INSERT INTO commande_produit (id_commande, id_produit, quantite) " + "VALUES ("
 				+ cp.getId_commande() + "," + cp.getId_produit() + "," + cp.getQnt() + ")";
@@ -102,5 +103,9 @@ public class CommandeProduitCrud {
 		String req2 = "UPDATE commande SET prix = prix + " + prixToAggregate;
 		ste.executeUpdate(req2);
 	}
+	
+	
+	
+	
 
 }

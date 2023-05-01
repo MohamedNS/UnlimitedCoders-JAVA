@@ -34,7 +34,7 @@ public class FirstWindow extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 

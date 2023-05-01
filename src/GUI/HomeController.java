@@ -41,6 +41,9 @@ public class HomeController implements Initializable {
 	private Button ajoutercomm;
 	@FXML
 	private Button afficherproduit;
+	
+	@FXML
+    private Button statsForNerds;
 
 	@FXML
 	private Button afficherproduit1;
@@ -137,5 +140,14 @@ public class HomeController implements Initializable {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	@FXML
+    void goToStats(ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("StatsForNerds.fxml"));
+		Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+    }
 
 }

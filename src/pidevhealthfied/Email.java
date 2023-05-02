@@ -15,7 +15,7 @@ import org.quartz.SimpleScheduleBuilder;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
-import services.EmailReminderJob;
+import Services.EmailReminderJob;
 
 public class Email {
 

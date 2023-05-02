@@ -25,14 +25,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
-import services.RendezVousCrud;
+import Services.RendezVousCrud;
 import static Services.RendezVousCrud.cnx2;
 
 public class EmailReminderJob implements Job {
 
-   
     private final String username = "healthified.consultation.module@gmail.com";
-    private final String password ="cqdebkknidkqytzj";
+    private final String password = "cqdebkknidkqytzj";
 
     private final String mailSubject = "Appointment Reminder";
 
@@ -45,6 +44,7 @@ public class EmailReminderJob implements Job {
         Timestamp end = new Timestamp(System.currentTimeMillis() + 48 * 60 * 60 * 1000);
         // Get the list of rendezvous for tomorrow
         List<RendezVous> rdvList = new RendezVousCrud().getAllRendezVousForDate(tomorrow, end);
+        System.out.println(rdvList);
 
         // Send a reminder email to each patient with a rendezvous
         for (RendezVous rdv : rdvList) {
@@ -52,7 +52,8 @@ public class EmailReminderJob implements Job {
             String patientEmail = rdv.getPatient().getEmail();
             String patientName = rdv.getPatient().getNom();
             String medecinName = rdv.getMedecin().getNom();
-            Date   dateRdv = rdv.getDate() ;
+            Date dateRdv = rdv.getDate();
+            System.out.println(patientEmail);
 
             // Create a new session and message object
             Properties properties = new Properties();
@@ -73,7 +74,22 @@ public class EmailReminderJob implements Job {
                 message.setFrom(new InternetAddress(username));
                 message.setRecipient(Message.RecipientType.TO, new InternetAddress(patientEmail));
                 message.setSubject(mailSubject);
-                message.setText("Dear " + patientName + ",\n\n" + mailBody+"with doctor "+ medecinName + " at"+ dateRdv);
+                String htmlBody = "<html>"
+                        + "<head>"
+                        + "<style>"
+                        + "body { text-align: center; }"
+                        + "p { font-size: 14px; }"
+                        + "span.date { color: blue; }"
+                        + "</style>"
+                        + "</head>"
+                        + "<body>"
+                        + "<img src='https://i.ibb.co/BTt0Y50/LogoApp.png' alt='logo' width='100' height='100'>"
+                        + "<p>Dear " + patientName + ",</p>"
+                        + "<p>" + mailBody + " with doctor " + medecinName + " at <span class='date'>" + dateRdv + "</span></p>"
+                        + "</body>"
+                        + "</html>";
+                message.setContent(htmlBody, "text/html");
+
                 // Send the message
                 Transport.send(message);
             } catch (Exception e) {

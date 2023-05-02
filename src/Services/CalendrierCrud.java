@@ -15,8 +15,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import Utils.MyConnexion;
-
+import Utils.MyConnection;
 /**
  *
  * @author L390
@@ -26,7 +25,7 @@ public class CalendrierCrud {
     public static Connection cnx2;
 
     public CalendrierCrud() {
-        cnx2 = Connexion.getInstance().getCnx();
+        cnx2 = MyConnection.getInstance().getConnection();
     }
 
     public void ajouterDispo(Calendrier c) {

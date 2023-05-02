@@ -13,11 +13,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import Utils.MyConnexion;
+import Utils.MyConnection;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import static services.RendezVousCrud.cnx2;
+import static Services.RendezVousCrud.cnx2;
 
 /**
  *
@@ -28,7 +28,7 @@ public class UtilisateurCrud {
     public static Connection cnx2;
 
     public UtilisateurCrud() {
-        cnx2 = Connexion.getInstance().getCnx();
+        cnx2 = MyConnection.getInstance().getConnection();
     }
 
     public ObservableList<Utilisateur> getAllMedecins() throws SQLException {

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import Utils.MyConnexion;
+import Utils.MyConnection;
 
 /**
  *
@@ -30,7 +30,7 @@ public class RendezVousCrud {
      public static Connection cnx2;
 
     public RendezVousCrud() {
-        cnx2 = Connexion.getInstance().getCnx();
+        cnx2 = MyConnection.getInstance().getConnection();
     }
     
     public void ajouterRdv() {

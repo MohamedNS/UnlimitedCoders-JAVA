@@ -5,15 +5,36 @@
  */
 package Entity;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author L390
  */
 public class Utilisateur {
-    private int id ; 
-   private String nom ;
-   private String prenom ;
-   private String role;
+   
+    private int id;
+    private String nom;
+    private String prenom;
+    private String role;
+    private String email;
+
+    public Utilisateur() {
+    }
+
+    public Utilisateur(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getRole() {
         return role;
@@ -21,19 +42,6 @@ public class Utilisateur {
 
     public void setRole(String role) {
         this.role = role;
-    }
-
-    public Utilisateur(String nom, String prenom) {
-        this.nom = nom;
-        this.prenom = prenom;
-    }
-
-    public Utilisateur(int id, String nom, String prenom) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-    }
-    public Utilisateur() {
     }
 
     public int getId() {
@@ -59,28 +67,37 @@ public class Utilisateur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    
-public  Utilisateur(int id) {
-    // Retrieve user data from the database using the provided ID
-    try {
-        String query = "SELECT * FROM utilisateur WHERE id = ?";
-        PreparedStatement statement = services.RendezVousCrud.cnx2.prepareStatement(query);
-        statement.setInt(1, id);
-        ResultSet rs = statement.executeQuery();
-        if (rs.next()) {
-            this.id = rs.getInt("id");
-            this.nom = rs.getString("nom");
-            this.prenom = rs.getString("prenom");
-            
-        }
-    } catch (SQLException ex) {
-        System.out.println(ex.getMessage());
-    }
-}
 
+    public Utilisateur(int id, String nom, String prenom, String role, String email) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.role = role;
+        this.email = email;
+    }
+
+    public Utilisateur(String nom, String prenom, String role, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.role = role;
+        this.email = email;
+    }
+
+    public Utilisateur(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
+    public Utilisateur(String nom, String prenom, String email) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+    }
+
+    
     @Override
     public String toString() {
-        return   nom  + prenom ;
+        return nom + " " + prenom + " " + email;
     }
 
 }

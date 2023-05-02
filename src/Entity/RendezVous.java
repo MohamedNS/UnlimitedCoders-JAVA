@@ -5,17 +5,42 @@
  */
 package Entity;
 
+import java.sql.Timestamp;
+
 /**
  *
  * @author L390
  */
 public class RendezVous {
-     private int id ; 
-    private Timestamp date ; 
-    private Utilisateur medecin ; 
-    private Utilisateur patient ; 
-    private String description ; 
-    private String etat ; 
+   private int id;
+    private Timestamp date;
+    private Utilisateur medecin;
+    private Utilisateur patient;
+    private String description;
+    private String etat;
+
+    public RendezVous(int id) {
+        this.id = id;
+    }
+
+    public RendezVous() {
+    }
+
+    public RendezVous(Timestamp date, Utilisateur patient, String description, String etat) {
+        this.date = date;
+        this.patient = patient;
+        this.description = description;
+        this.etat = etat;
+    }
+
+    public RendezVous(int id, Timestamp date, Utilisateur medecin, Utilisateur patient, String description, String etat) {
+        this.id = id;
+        this.date = date;
+        this.medecin = medecin;
+        this.patient = patient;
+        this.description = description;
+        this.etat = etat;
+    }
 
     public int getId() {
         return id;
@@ -64,10 +89,6 @@ public class RendezVous {
     public void setEtat(String etat) {
         this.etat = etat;
     }
-      @Override
-    public String toString() {
-        return "RendezVous{" + "date=" + date + ", medecin=" + medecin + ", patient=" + patient + ", description=" + description + ", etat=" + etat + '}';
-    }
 
     public RendezVous(Timestamp date, Utilisateur medecin, Utilisateur patient, String description, String etat) {
         this.date = date;
@@ -81,7 +102,23 @@ public class RendezVous {
         this.date = date;
         this.description = description;
         this.etat = etat;
-    
+
     }
 
+    public RendezVous(int id, Timestamp date, Utilisateur medecin, Utilisateur patient) {
+        this.id = id;
+        this.date = date;
+        this.medecin = medecin;
+        this.patient = patient;
+    }
+
+    @Override
+public String toString() {
+    return "Patient: " + patient.getNom() + " " + patient.getPrenom() + ", " +
+           "Medecin: " + medecin.getNom() + " " + medecin.getPrenom() + ", " +
+           "Date: " + date.toString() + ", " +
+           "Etat: " + etat;
 }
+
+
+} 

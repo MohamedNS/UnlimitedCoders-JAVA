@@ -11,7 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import utils.MyConnection;
@@ -140,5 +142,27 @@ public class AssuranceCRUD implements IAssuranceService<Assurance> {
 
     return assurance;
 }
+ public Map<String, Number> getPatientsByAssurance() {
+    Map<String, Number> assurancePatients = new HashMap<>();
+    try {
+        String query = "SELECT assurance.nom_assurance, COUNT(DISTINCT depot.id_patient) AS nb_patients " +
+                       "FROM depot " +
+                       "INNER JOIN assurance ON assurance.id_assurance = depot.id_assurance " +
+                       "GROUP BY assurance.nom_assurance";
+        Statement stmt = cnx.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+
+        while (rs.next()) {
+            String assurance = rs.getString("nom_assurance");
+            int nbPatients = rs.getInt("nb_patients");
+            assurancePatients.put(assurance, nbPatients);
+        }
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+    return assurancePatients;
+}
+
 
 }

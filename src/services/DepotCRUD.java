@@ -7,12 +7,13 @@ package services;
 
 import entities.Depot;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import utils.MyConnection;
@@ -148,30 +149,90 @@ public class DepotCRUD implements IDepotService<Depot> {
     }
 
     public Depot getDepotById(int id) {
-    Depot depot = null;
-    String sql = "SELECT * FROM depot WHERE id_depot = " + id;
+        Depot depot = null;
+        String sql = "SELECT * FROM depot WHERE id_depot = " + id;
 
-    try {
-        stm = cnx.createStatement();
-        ResultSet result = stm.executeQuery(sql);
+        try {
+            stm = cnx.createStatement();
+            ResultSet result = stm.executeQuery(sql);
 
-        if (result.next()) {
-            depot = new Depot();
-            depot.setIdDepot(result.getInt("id_depot"));
-            depot.setDateDepot(result.getDate("date_depot").toLocalDate());
-            depot.setRegime(result.getString("regime"));
-            depot.setTotalDepense(result.getFloat("total_depense"));
-            depot.setEtat(result.getString("etat"));
-            depot.setIdAssurance(result.getInt("id_assurance"));
-            depot.setIdFiche(result.getInt("id_fiche"));
-            depot.setIdPatient(result.getInt("id_patient"));
+            if (result.next()) {
+                depot = new Depot();
+                depot.setIdDepot(result.getInt("id_depot"));
+                depot.setDateDepot(result.getDate("date_depot").toLocalDate());
+                depot.setRegime(result.getString("regime"));
+                depot.setTotalDepense(result.getFloat("total_depense"));
+                depot.setEtat(result.getString("etat"));
+                depot.setIdAssurance(result.getInt("id_assurance"));
+                depot.setIdFiche(result.getInt("id_fiche"));
+                depot.setIdPatient(result.getInt("id_patient"));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-    } catch (SQLException ex) {
-        System.out.println(ex.getMessage());
+
+        return depot;
     }
 
-    return depot;
-}
+    public void getInfoDepot(int idDepot) {
+        try {
+            Connection cnx = MyConnection.getInstance().getCnx();
+            Statement stm = cnx.createStatement();
 
+            // Récupération des informations du dépôt
+            String qryDepot = "SELECT * FROM depot WHERE id_depot = " + idDepot;
+            ResultSet rsDepot = stm.executeQuery(qryDepot);
+            if (rsDepot.next()) {
+                int idPatient = rsDepot.getInt("id_patient");
+                int idAssurance = rsDepot.getInt("id_assurance");
+
+                // Récupération du nom et du prénom du patient
+                String qryPatient = "SELECT nom_patient, prenom FROM patient WHERE id_patient = " + idPatient;
+                ResultSet rsPatient = stm.executeQuery(qryPatient);
+                if (rsPatient.next()) {
+                    String nomPatient = rsPatient.getString("nom_patient");
+                    String prenomPatient = rsPatient.getString("prenom");
+
+                    // Récupération du nom de l'assurance
+                    String qryAssurance = "SELECT nom_assurance FROM assurance WHERE id_assurance = " + idAssurance;
+                    ResultSet rsAssurance = stm.executeQuery(qryAssurance);
+                    if (rsAssurance.next()) {
+                        String nomAssurance = rsAssurance.getString("nom_assurance");
+
+                        // Affichage des informations
+                        System.out.println("Nom du patient : " + nomPatient);
+                        System.out.println("Prénom du patient : " + prenomPatient);
+                        System.out.println("Nom de l'assurance : " + nomAssurance);
+                    } else {
+                        System.out.println("Aucune assurance trouvée pour l'id " + idAssurance);
+                    }
+                } else {
+                    System.out.println("Aucun patient trouvé pour l'id " + idPatient);
+                }
+            } else {
+                System.out.println("Aucun dépôt trouvé pour l'id " + idDepot);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+  public Map<String, Integer> getDepositsByState() {
+    Map<String, Integer> depositsByState = new HashMap<>();
+    try {
+        String query = "SELECT etat, COUNT(*) AS nb_deposits FROM depot GROUP BY etat";
+        Statement stmt = cnx.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+
+        while (rs.next()) {
+            String state = rs.getString("etat");
+            int nbDeposits = rs.getInt("nb_deposits");
+            depositsByState.put(state, nbDeposits);
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+    return depositsByState;
+}
 
 }

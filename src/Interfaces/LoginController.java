@@ -149,6 +149,13 @@ public class LoginController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
+				else if ("[\"ROLE_RDV\"]".equals(user.getRoles())) {
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/FirstWindowRDV.fxml"));
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
 				
             }
         }

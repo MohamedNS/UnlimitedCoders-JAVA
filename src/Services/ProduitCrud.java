@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+ package Services;
+
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import entities.categorie;
+import Entity.categorie;
 import Entity.produit;
 import interfaces.InterfaceProduit;
 import java.awt.Color;
@@ -24,13 +26,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import Utils.MyConnection;
-import com.itextpdf.text.pdf.qrcode.BitMatrix;
-import com.itextpdf.text.pdf.qrcode.QRCodeWriter;
 
 public class ProduitCrud implements InterfaceProduit {
 
 	Statement ste;
-	Connection conn = MyConnection.getInstance().getConn();
+	Connection conn = MyConnection.getInstance().getConnection();
 
 	@Override
 	public void ajouterProduit(produit p) {
@@ -147,6 +147,7 @@ public class ProduitCrud implements InterfaceProduit {
 		}
 		return list;
 	}
+	/*
  public void Qr( Stage primaryStage,produit p) {
          //Stage primaryStage = null;
     QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -183,4 +184,5 @@ public class ProduitCrud implements InterfaceProduit {
         primaryStage.setScene(scene);
        primaryStage.show();
     }
+*/
 }

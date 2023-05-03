@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" fx:id="tabcommande" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.AffichercommandeController">
+   <children>
+      <Text fill="#371acd" layoutX="211.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes des commandes" textAlignment="CENTER" wrappingWidth="148.6640625">
+         <font>
+            <Font name="Tahoma Bold" size="13.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tabCommande" layoutX="193.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colprix" prefWidth="107.0" text="prix" />
+          <TableColumn fx:id="colquantite" prefWidth="92.0" text="quantite" />
+        </columns>
+      </TableView>
+      <Button layoutX="55.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#home" text="home" />
+      <Button layoutX="286.0" layoutY="313.0" mnemonicParsing="false" text="Actualiser" />
+   </children>
+</AnchorPane>

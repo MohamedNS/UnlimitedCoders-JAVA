@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="481.0" prefWidth="419.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterproduitController">
+   <stylesheets>
+      <URL value="@ola.css" />
+   </stylesheets>
+   <children>
+      <Button fx:id="home" layoutX="25.0" layoutY="14.0" mnemonicParsing="false" onAction="#home" prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: #0066ff;" text="Retour">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Label layoutX="61.0" layoutY="323.0" text="Catégorie">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="103.0" text="Nom:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="170.0" text="Matricule:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="61.0" layoutY="241.0" text="Prix:">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TextField fx:id="nom" layoutX="152.0" layoutY="87.0" prefHeight="53.0" prefWidth="178.0" promptText="Nom du Produit" />
+      <TextField fx:id="matricule_asseu" layoutX="152.0" layoutY="157.0" prefHeight="53.0" prefWidth="178.0" promptText="Matricule du Produit" />
+      <Button fx:id="ajouterprod" layoutX="170.0" layoutY="400.0" mnemonicParsing="false" onAction="#ajouterprod" prefHeight="42.0" prefWidth="80.0" style="-fx-background-color: #0066FF;" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <ChoiceBox fx:id="listCategories" layoutX="152.0" layoutY="307.0" prefHeight="53.0" prefWidth="178.0" />
+      <Spinner fx:id="prixSpinner" editable="true" layoutX="152.0" layoutY="229.0" prefHeight="53.0" prefWidth="178.0" />
+   </children>
+</AnchorPane>

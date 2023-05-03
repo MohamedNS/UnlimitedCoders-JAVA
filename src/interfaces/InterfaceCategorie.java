@@ -5,7 +5,7 @@
 
 package interfaces;
 
-import entities.categorie;
+import Entity.categorie;
 
 import java.util.List;
 

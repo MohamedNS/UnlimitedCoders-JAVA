@@ -1,0 +1,129 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+.button {
+  -fx-background-color: #0077C0;
+  -fx-text-fill: white;
+  -fx-padding: 8px 16px;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0.5, 0, 1);
+  -fx-background-radius: 5;
+}
+
+.button:hover {
+ -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+}
+
+#ReserverID {
+  -fx-border-radius: 10 0 0 10;
+}
+
+#AnnulerID {
+  -fx-border-radius: 0 10 10 0;
+}
+
+#AfficherID, #ModifierID {
+  -fx-border-radius: 10;
+}
+
+#ReserverID:hover, #AnnulerID:hover {
+  -fx-background-color: #00508C;
+}
+
+#AfficherID:hover, #ModifierID:hover {
+  -fx-background-color: #0092D1;
+}
+
+#button-container {
+  -fx-background-color: #FFFFFF;
+  -fx-border-color: #B8B8B8;
+  -fx-border-width: 0 0 1px 0;
+}
+
+#button-container .button {
+  -fx-background-color: #FFFFFF;
+  -fx-text-fill: #0077C0;
+  -fx-border-color: #B8B8B8;
+  -fx-border-width: 0 1px 0 0;
+}
+
+#button-container .button:hover {
+  -fx-background-color: #F8F8F8;
+}
+
+#button-container .button:first-child {
+  -fx-border-radius: 10 0 0 0;
+}
+
+#button-container .button:last-child {
+  -fx-border-radius: 0 10 0 0;
+}
+.title-label {
+    -fx-font-size: 20px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 0px 10px 0px;
+}
+.image {
+    filter: grayscale 80%;
+    opacity: 0.6;
+}
+.label.title-label {
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+}
+
+.button.custom-button {
+    -fx-font-size: 18px;
+    -fx-padding: 10px 20px;
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+    -fx-border-color: #2e7d32;
+    -fx-border-radius: 5px;
+}
+
+.button.custom-button:hover {
+    -fx-background-color: white;
+    -fx-text-fill: #2e7d32;
+}
+.main-container {
+    spacing: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+.title-container {
+    alignment: center;
+}
+
+.title-label {
+  -fx-font-size: 36px;
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-padding: 10px;
+}
+
+
+.button-container {
+    spacing: 10px;
+    alignment: center;
+}
+#container {
+    -fx-background-color: blue;
+}
+
+
+
+
+
+
+}
+

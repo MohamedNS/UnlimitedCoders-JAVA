@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="733.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ConsulterDispoController">
+    <stylesheets>
+        <URL value="@consulterdispo.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tableID" layoutX="226.0" layoutY="95.0" prefHeight="269.0" prefWidth="481.0">
+        <columns>
+            <TableColumn fx:id="dispoID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="startdadteID" prefWidth="148.0" text="Start Date" />
+          <TableColumn fx:id="endID" prefWidth="145.0" text="End Date" />
+            <TableColumn fx:id="deleteID" prefWidth="112.0" text="Supprimer" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutY="-6.0" prefHeight="422.0" prefWidth="200.0" style="-fx-background-color: blue;">
+         <children>
+            <Button fx:id="backID" layoutX="67.0" layoutY="362.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="25.0" prefWidth="54.0" text="&lt;--" />
+            <Button fx:id="toCalendar" layoutX="61.0" layoutY="310.0" mnemonicParsing="false" onAction="#toCalendar" style="-fx-background-color: red;" text="Calendar" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="44.0" layoutY="21.0">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+   </children>
+</AnchorPane>

@@ -17,6 +17,8 @@ import Utils.MyConnection;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static Services.RendezVousCrud.cnx2;
 
 /**
@@ -48,7 +50,7 @@ public class UtilisateurCrud {
         return medecins;
     }
 
-    public Utilisateur getPatientById(int id) throws SQLException {
+    public Utilisateur getPatientById(int id)  {
         String query = "SELECT * FROM Utilisateur WHERE id = ? AND role = 'patient'";
         try (PreparedStatement statement = cnx2.prepareStatement(query)) {
             statement.setInt(1, id);
@@ -61,11 +63,14 @@ public class UtilisateurCrud {
                 // set other patient properties here
                 return patient;
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
 
-    public Utilisateur getMedecinById(int id) throws SQLException {
+    public Utilisateur getMedecinById(int id) {
+        
         String query = "SELECT * FROM Utilisateur WHERE id = ? AND role = 'medecin'";
         try (PreparedStatement statement = cnx2.prepareStatement(query)) {
             statement.setInt(1, id);
@@ -77,6 +82,8 @@ public class UtilisateurCrud {
                 medecin.setPrenom(rs.getString("prenom"));           
                 return medecin;
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtilisateurCrud.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

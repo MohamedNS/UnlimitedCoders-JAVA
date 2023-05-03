@@ -1,0 +1,63 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #f8f8f8;
+    -fx-font-family: Arial, sans-serif;
+}
+
+/* Style the text fields */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Style the labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Style the buttons */
+.button {
+    -fx-background-color: #0077cc;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+}
+
+/* Style the date picker */
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #c9c9c9;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* Style the QR code button */
+#Btnqr {
+    -fx-background-color: #ff9900;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+}
+
+/* Style the send mail button */
+#mail {
+    -fx-background-color: #32cd32;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+}

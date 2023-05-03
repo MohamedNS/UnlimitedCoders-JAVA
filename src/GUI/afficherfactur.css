@@ -1,0 +1,41 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    background-color: #F0F0F0;
+}
+
+/* Style for labels */
+Label {
+    -fx-font-size: 14pt;
+    -fx-text-fill: #333;
+}
+
+/* Style for text fields */
+TextField {
+    -fx-background-color: #EEE;
+    -fx-font-size: 14pt;
+    -fx-prompt-text-fill: #AAA;
+}
+
+/* Style for buttons */
+Button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 16pt;
+    -fx-pref-height: 60px;
+    -fx-pref-width: 160px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+/* Style for table view */
+TableView {
+    -fx-font-size: 14pt;
+    -fx-background-color: #FFF;
+}
+
+/* Style for table columns */
+TableColumn {
+    -fx-alignment: CENTER;
+}

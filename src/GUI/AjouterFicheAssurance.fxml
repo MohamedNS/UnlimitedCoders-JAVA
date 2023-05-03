@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterFicheAssuranceController">
+    <stylesheets>
+        <URL value="@ajouterficheassurance.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="tfnommed" layoutX="3.0" layoutY="10.0" prefHeight="529.0" prefWidth="800.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../../../javaFXproject/src/GUI/facteur.css" />
+         </stylesheets>
+         <children>
+            <TextField fx:id="tfnom" layoutX="204.0" layoutY="53.0" />
+            <TextField fx:id="tfprenom" layoutX="204.0" layoutY="94.0" />
+            <TextField fx:id="tfadresse" layoutX="205.0" layoutY="135.0" />
+            <TextField fx:id="tfcin" layoutX="204.0" layoutY="13.0" />
+            <TextField fx:id="tftotal" layoutX="215.0" layoutY="390.0" />
+            <Label layoutX="68.0" layoutY="18.0" text="cin" />
+            <Label layoutX="68.0" layoutY="57.0" text="nom" />
+            <Label layoutX="68.0" layoutY="98.0" text="prenom" />
+            <Label layoutX="68.0" layoutY="139.0" text="addresse" />
+            <Label layoutX="66.0" layoutY="190.0" text="matricule_cnam" />
+            <Label layoutX="70.0" layoutY="234.0" text="matricule_fiscal" />
+            <Button fx:id="tfsave" layoutX="400.0" layoutY="462.0" mnemonicParsing="false" onAction="#save" text="save" />
+            <Button fx:id="next" layoutX="548.0" layoutY="462.0" mnemonicParsing="false" onAction="#btnnext" text="next" />
+            <Label layoutX="441.0" layoutY="43.0" text="addresse mail" />
+            <TextField fx:id="tfmail" layoutX="573.0" layoutY="38.0" prefHeight="41.0" prefWidth="200.0" />
+            <Button fx:id="mail" layoutX="453.0" layoutY="107.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="65.0" prefWidth="120.0" text="send mail" />
+            <Button fx:id="Btnqr" layoutX="453.0" layoutY="189.0" mnemonicParsing="false" onAction="#gereQRcode" prefHeight="55.0" prefWidth="120.0" text="QRcode" />
+            <Label layoutX="73.0" layoutY="272.0" text="honoraires" />
+            <Label layoutX="70.0" layoutY="306.0" text="designation" />
+            <Label layoutX="79.0" layoutY="345.0" prefHeight="21.0" prefWidth="59.0" text="date" />
+            <Label layoutX="70.0" layoutY="395.0" prefHeight="21.0" prefWidth="78.0" text="total" />
+            <TextField fx:id="tfdesignation" layoutX="205.0" layoutY="301.0" />
+            <TextField fx:id="tfhonoraires" layoutX="205.0" layoutY="267.0" />
+            <TextField fx:id="tfmatriculefiscal" layoutX="205.0" layoutY="229.0" />
+            <TextField fx:id="tfmatriculecnam" layoutX="205.0" layoutY="185.0" />
+            <DatePicker fx:id="tfdate" layoutX="215.0" layoutY="340.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

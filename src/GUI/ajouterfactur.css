@@ -1,0 +1,65 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #f7f7f7;
+}
+
+Label {
+    -fx-font-size: 14pt;
+    -fx-font-weight: bold;
+}
+
+TextField {
+    -fx-prompt-text-fill: #999;
+    -fx-background-color: #eee;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+}
+
+TextArea {
+    -fx-prompt-text-fill: #999;
+    -fx-background-color: #eee;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+}
+
+ComboBox {
+    -fx-background-color: #eee;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+}
+
+Button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-padding: 10px;
+    -fx-border-width: 0px;
+    -fx-border-radius: 3px;
+    -fx-cursor: hand;
+}
+
+Button:hover {
+    -fx-background-color: #3e8e41;
+}
+
+#tfsave {
+    -fx-background-color: #2196F3;
+}
+
+#next {
+    -fx-background-color: #FFC107;
+}
+
+#mail {
+    -fx-background-color: #673AB7;
+}

@@ -5,6 +5,10 @@
  */
 package Entity;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author L390
@@ -59,7 +63,7 @@ public class Utilisateur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-    
+  /*  
 public  Utilisateur(int id) {
     // Retrieve user data from the database using the provided ID
     try {
@@ -77,6 +81,7 @@ public  Utilisateur(int id) {
         System.out.println(ex.getMessage());
     }
 }
+*/
 
     @Override
     public String toString() {

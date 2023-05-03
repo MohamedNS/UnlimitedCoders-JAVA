@@ -1,5 +1,5 @@
 
-package entities;
+package Entity;
 
 import javafx.scene.control.TextField;
 

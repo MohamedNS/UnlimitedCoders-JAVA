@@ -1,4 +1,4 @@
-package Esprit.Entities;
+package Entity;
 
 import javafx.scene.control.DatePicker;
 

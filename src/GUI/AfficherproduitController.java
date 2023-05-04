@@ -267,7 +267,7 @@ public class AfficherproduitController implements Initializable {
         FileOutputStream fileOut = new FileOutputStream("Produit.xlsx");
         wb.write(fileOut);
         fileOut.close();
-        wb.close();
+        //wb.close();
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Export Excel");
         alert.setHeaderText("Exportation terminée");
@@ -303,7 +303,7 @@ private void importerEx(ActionEvent event) {
                 ac.ajouterProduit(produit);
             }
 
-            workbook.close();
+            //workbook.close();
             fis.close();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

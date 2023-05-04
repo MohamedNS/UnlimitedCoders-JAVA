@@ -1,0 +1,70 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    -fx-background-color: #F0F0F0;
+}
+
+/* Style for the labels */
+Label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Style for the text fields */
+TextField, TextArea {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Style for the combo boxes */
+ComboBox {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+/* Style for the buttons */
+Button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-radius: 5px;
+}
+
+/* Style for the save button */
+#tfsave {
+    -fx-background-color: #2196F3;
+}
+
+/* Style for the return button */
+#next {
+    -fx-background-color: #F44336;
+}
+
+/* Style for the send mail button */
+#mail {
+    -fx-background-color: #FFC107;
+}
+
+/* Style for the QR code button */
+#Btnqr {
+    -fx-background-color: #9C27B0;
+}
+
+/* Style for the text area */
+#tftext {
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+}
+
+

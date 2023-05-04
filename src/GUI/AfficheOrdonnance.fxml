@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="897.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficheOrdonnanceController">
+    <stylesheets>
+        <URL value="@afficheordonnance.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="code" layoutX="274.0" layoutY="48.0" prefHeight="31.0" prefWidth="101.0" promptText="code" />
+      <TableView fx:id="ordonnanceTable" layoutX="274.0" layoutY="100.0" prefHeight="374.0" prefWidth="588.0" style="-fx-background-color: #D5E0F2;">
+         <columns>
+            <TableColumn fx:id="idColonne" prefWidth="94.0" text="Identifiant" />
+            <TableColumn fx:id="consultationColonne" prefWidth="103.0" text="Consultation" />
+            <TableColumn fx:id="validiteColonne" prefWidth="118.0" text="Validite (Jours)" />
+            <TableColumn fx:id="medicamentColonne" minWidth="0.0" prefWidth="177.0" text="Medicament(s)" />
+            <TableColumn fx:id="codeColonne" prefWidth="98.0" text="code" />
+         </columns>
+      </TableView>
+      <AnchorPane prefHeight="545.0" prefWidth="251.0" style="-fx-background-color: #004F98;">
+         <children>
+            <Button fx:id="btnPdf" layoutX="82.0" layoutY="380.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #e51818;" text="PDF" />
+            <Button fx:id="next" layoutX="31.0" layoutY="485.0" mnemonicParsing="false" onAction="#btnnext" text="return" />
+            <ImageView fitHeight="103.0" fitWidth="125.0" layoutX="50.0" layoutY="40.0">
+                           <image>
+                              <Image url="@../images/LogoApp.png" />
+                           </image>
+                        </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

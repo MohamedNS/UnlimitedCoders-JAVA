@@ -1,6 +1,7 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package Entity;
 
@@ -8,82 +9,81 @@ import java.util.ArrayList;
 
 /**
  *
- * @author bytesudoer
+ * @author MSI
  */
 public class Ordonnance {
-    private int id;
+      private int id;
     private int consultation_id;
     private int validite;
     private String nomMedicaments;
+    private String code;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getConsultation_id() {
+		return consultation_id;
+	}
+
+	public void setConsultation_id(int consultation_id) {
+		this.consultation_id = consultation_id;
+	}
+
+	public int getValidite() {
+		return validite;
+	}
+
+	public void setValidite(int validite) {
+		this.validite = validite;
+	}
+
+	public String getNomMedicaments() {
+		return nomMedicaments;
+	}
+
+	public void setNomMedicaments(String nomMedicaments) {
+		this.nomMedicaments = nomMedicaments;
+	}
+
+	public ArrayList<Medicament> getMedicamentOrdonnance() {
+		return medicamentOrdonnance;
+	}
+
+	public void setMedicamentOrdonnance(ArrayList<Medicament> medicamentOrdonnance) {
+		this.medicamentOrdonnance = medicamentOrdonnance;
+	}
     private ArrayList<Medicament> medicamentOrdonnance;
 
     public Ordonnance()
     {
         this.medicamentOrdonnance = new ArrayList<>();
     }
-    public Ordonnance(int id,int consultation_id,int validite)
+    public Ordonnance(int id,int consultation_id,int validite,String code)
     {
         this.id = id;
         this.consultation_id = consultation_id;
         this.validite = validite;
+        this.code = code;
         this.medicamentOrdonnance = new ArrayList<>();
     }
-    public Ordonnance(int consultation_id,int validite)
+    public Ordonnance(int consultation_id,int validite,String code)
     {
         this.consultation_id = consultation_id;
         this.validite = validite;
+         this.code = code;
         this.medicamentOrdonnance = new ArrayList<>();
     }
 
-    public int getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
-
-    public int getConsultation_id() {
-        return consultation_id;
-    }
-
-    public void setConsultation_id(int consultation_id) {
-        this.consultation_id = consultation_id;
-    }
-
-    public int getValidite() {
-        return validite;
-    }
-
-    public void setValidite(int validite) {
-        this.validite = validite;
-    }
-    public void setNomMedicament()
-    {
-        this.nomMedicaments = this.createString();
-    }
-    public String getNomMedicaments()
-    {
-        return this.nomMedicaments;
-    }
-
-    public String createString()
-    {
-        String nomMedicaments = "";
-        for(Medicament m : medicamentOrdonnance)
-        {
-            nomMedicaments += m.getNom()+" ";
-        }
-        return nomMedicaments;
-    }
-    public void addMedicament(Medicament m)
-    {
-        this.medicamentOrdonnance.add(m);
-    }
-
-    @Override
-    public String toString() {
-        return "Ordonnance{" + "id=" + id + ", consultation_id=" + consultation_id + ", validite=" + validite +",nomMedicament"+nomMedicaments+ ", medicament"+medicamentOrdonnance+'}';
-    }
-    
 }

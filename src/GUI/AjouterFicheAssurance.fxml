@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="504.0" prefWidth="999.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterFicheAssuranceController">
+    <stylesheets>
+        <URL value="@ajouterficheassurance.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="tfnommed" layoutX="223.0" layoutY="46.0" prefHeight="426.0" prefWidth="763.0" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../../../javaFXproject/src/GUI/facteur.css" />
+         </stylesheets>
+         <children>
+            <TextField fx:id="tfnom" layoutX="204.0" layoutY="59.0" />
+            <TextField fx:id="tfprenom" layoutX="204.0" layoutY="107.0" />
+            <TextField fx:id="tfadresse" layoutX="204.0" layoutY="155.0" />
+            <TextField fx:id="tfcin" layoutX="204.0" layoutY="13.0" />
+            <TextField fx:id="tftotal" layoutX="388.0" layoutY="317.0" prefHeight="28.0" prefWidth="94.0" />
+            <Label layoutX="68.0" layoutY="18.0" text="cin" />
+            <Label layoutX="64.0" layoutY="65.0" text="nom" />
+            <Label layoutX="53.0" layoutY="113.0" text="prenom" />
+            <Label layoutX="58.0" layoutY="161.0" text="addresse" />
+            <Label layoutX="46.0" layoutY="222.0" text="matricule_cnam" />
+            <Label layoutX="433.0" layoutY="222.0" text="matricule_fiscal" />
+            <Button fx:id="tfsave" layoutX="396.0" layoutY="410.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="79.0" text="save" />
+            <Label layoutX="447.0" layoutY="18.0" text="addresse mail" />
+            <TextField fx:id="tfmail" layoutX="575.0" layoutY="13.0" prefHeight="28.0" prefWidth="144.0" />
+            <Label layoutX="449.0" layoutY="73.0" text="honoraires" />
+            <Label layoutX="446.0" layoutY="113.0" text="designation" />
+            <Label layoutX="456.0" layoutY="159.0" prefHeight="21.0" prefWidth="59.0" text="date" />
+            <Label layoutX="290.0" layoutY="321.0" prefHeight="21.0" prefWidth="78.0" text="total" />
+            <TextField fx:id="tfdesignation" layoutX="575.0" layoutY="107.0" prefHeight="28.0" prefWidth="144.0" />
+            <TextField fx:id="tfhonoraires" layoutX="575.0" layoutY="59.0" prefHeight="28.0" prefWidth="144.0" />
+            <TextField fx:id="tfmatriculefiscal" layoutX="574.0" layoutY="216.0" prefHeight="28.0" prefWidth="144.0" />
+            <TextField fx:id="tfmatriculecnam" layoutX="204.0" layoutY="216.0" />
+            <DatePicker fx:id="tfdate" layoutX="574.0" layoutY="149.0" prefHeight="40.0" prefWidth="144.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="-4.0" prefHeight="508.0" prefWidth="225.0" style="-fx-background-color: #004F98;">
+         <children>
+            <Button fx:id="mail" layoutX="53.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="26.0" prefWidth="120.0" text="send mail" />
+            <Button fx:id="Btnqr" layoutX="53.0" layoutY="290.0" mnemonicParsing="false" onAction="#gereQRcode" prefHeight="21.0" prefWidth="120.0" text="QRcode" />
+            <Button fx:id="next" layoutX="10.0" layoutY="452.0" mnemonicParsing="false" onAction="#btnnext" style="-fx-background-color: green;" text="return" />
+            <ImageView fitHeight="103.0" fitWidth="125.0" layoutX="50.0" layoutY="31.0">
+                                 <image>
+                                    <Image url="@../images/LogoApp.png" />
+                                 </image>
+                              </ImageView>
+         </children>
+         
+      </AnchorPane>
+   </children>
+</AnchorPane>

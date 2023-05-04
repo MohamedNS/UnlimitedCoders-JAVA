@@ -36,6 +36,9 @@ public class ChartsFXMLController implements Initializable {
     @FXML
     private BorderPane borderPane;
 
+    @FXML
+    private Button btnRetour;
+
     /**
      * Initializes the controller class.
      */
@@ -154,5 +157,15 @@ public class ChartsFXMLController implements Initializable {
     @FXML
     private void handleUpdateData(ActionEvent event) {
     }
+
+    @FXML
+    public void btnRetour(ActionEvent evt) {
+        System.out.println("Retour Click");
+        Stage stage = (Stage) btnRetour.getScene().getWindow();
+        stage.close();
+        MenuFXMLController mc = new MenuFXMLController();
+        mc.show();
+    }
+
 
 }

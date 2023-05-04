@@ -21,7 +21,7 @@
       <ComboBox fx:id="startID" layoutX="416.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" />
       <ComboBox fx:id="endID" layoutX="416.0" layoutY="256.0" prefWidth="150.0" />
       <Button fx:id="indiquerID" layoutX="464.0" layoutY="342.0" mnemonicParsing="false" onAction="#saveDispo" style="-fx-background-color: green;" text="Save" />
-      <AnchorPane prefHeight="415.0" prefWidth="182.0" style="-fx-background-color: blue;">
+      <AnchorPane prefHeight="415.0" prefWidth="182.0" style="-fx-background-color: #004F98;">
          <children>
             <Button fx:id="backID" layoutX="61.0" layoutY="346.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;-" />
             <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="37.0" layoutY="22.0">

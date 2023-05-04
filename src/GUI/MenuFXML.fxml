@@ -8,19 +8,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="783.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuFXMLController">
+<AnchorPane prefHeight="600.0" prefWidth="783.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuFXMLController">
    <children>
-      <Text fill="ROYALBLUE" layoutX="249.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Menu pour la gestion d'assurance" />
-      <ImageView fitHeight="121.0" fitWidth="109.0" layoutX="337.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../ressources/LogoApp.png" />
-         </image>
-      </ImageView> 
-      <Button fx:id="btnAssurance" layoutX="297.0" layoutY="239.0" mnemonicParsing="false" onAction="#btnAssurance" prefHeight="40.0" prefWidth="190.0" text="Assurance" />
-      <Button fx:id="btnDepot" layoutX="297.0" layoutY="306.0" mnemonicParsing="false" onAction="#btnDepot" prefHeight="40.0" prefWidth="190.0" text="Depot" />
-      <Button fx:id="btnRemboursement" layoutX="297.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnRemboursement" prefHeight="40.0" prefWidth="190.0" text="Remboursement" />
-      <Button fx:id="btnRetour" layoutX="702.0" layoutY="508.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
-      <RadioButton fx:id="btnStat" layoutX="344.0" layoutY="448.0" mnemonicParsing="false" onAction="#btnStat" text="Statistiques">
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fill="ROYALBLUE" layoutX="327.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Menu pour la gestion d'assurance" /> 
+      <Button fx:id="btnAssurance" layoutX="375.0" layoutY="241.0" mnemonicParsing="false" onAction="#btnAssurance" prefHeight="40.0" prefWidth="190.0" text="Assurance" />
+      <Button fx:id="btnDepot" layoutX="375.0" layoutY="308.0" mnemonicParsing="false" onAction="#btnDepot" prefHeight="40.0" prefWidth="190.0" text="Depot" />
+      <Button fx:id="btnRemboursement" layoutX="375.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnRemboursement" prefHeight="40.0" prefWidth="190.0" text="Remboursement" />
+      <Button fx:id="btnRetour" layoutX="11.0" layoutY="530.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
+      <RadioButton fx:id="btnStat" layoutX="422.0" layoutY="450.0" mnemonicParsing="false" onAction="#btnStat" text="Statistiques">
          <font>
             <Font size="14.0" />
          </font>

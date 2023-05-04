@@ -24,12 +24,16 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="481.0" prefWidth="735.0">
                      <children>
-                        <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="352.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../utils/LogoApp.png" />
-                           </image>
-                        </ImageView>
-                        <Text fill="ROYALBLUE" layoutX="273.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Ajouter un remboursement" textAlignment="CENTER">
+                        <AnchorPane prefHeight="561.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                           <children>
+                              <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/LogoApp.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Text fill="ROYALBLUE" layoutX="294.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Ajouter un remboursement" textAlignment="CENTER">
                            <font>
                               <Font name="Arial" size="20.0" />
                            </font>
@@ -57,8 +61,8 @@
                               </ComboBox>
                            </children>
                         </VBox>
-                        <Button layoutX="364.0" layoutY="297.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-                        <Button fx:id="btnRetour" layoutX="702.0" layoutY="508.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
+                        <Button layoutX="428.0" layoutY="298.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+                        <Button fx:id="btnRetour" layoutX="11.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                      </children>
                   </AnchorPane>
                </content>
@@ -67,37 +71,41 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text fill="ROYALBLUE" layoutX="274.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Liste des remboursements" textAlignment="CENTER" textOrigin="CENTER">
+                        <AnchorPane prefHeight="561.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                           <children>
+                              <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/LogoApp.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Text fill="ROYALBLUE" layoutX="364.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Liste des remboursements" textAlignment="CENTER" textOrigin="CENTER">
                            <font>
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="searchField" layoutX="507.0" layoutY="72.0" prefHeight="29.0" prefWidth="169.0" promptText="Rechercher" />
-                        <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="682.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="searchField" layoutX="533.0" layoutY="99.0" prefHeight="29.0" prefWidth="169.0" promptText="Rechercher" />
+                        <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="717.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../utils/recherche.png" />
+                              <Image url="@../ressources/recherche.png" />
                            </image>
                         </ImageView>
-                        <TableView fx:id="tabRemboursement" layoutX="80.0" layoutY="111.0" prefHeight="356.0" prefWidth="623.0">
+                        <TableView fx:id="tabRemboursement" layoutX="219.0" layoutY="136.0" prefHeight="356.0" prefWidth="519.0">
                            <columns>
-                              <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-                              <TableColumn fx:id="colDate" prefWidth="112.0" text="Date" />
-                              <TableColumn fx:id="colReponse" prefWidth="114.0" text="Reponse" />
-                              <TableColumn fx:id="colMontant" prefWidth="144.0" text="Montant Rembourse" />
-                              <TableColumn fx:id="colDepot" prefWidth="88.0" text="ID Depot" />
-                              <TableColumn fx:id="modifierCol" prefWidth="89.0" text="Actions" />
+                              <TableColumn fx:id="colId" prefWidth="47.0" text="ID" />
+                              <TableColumn fx:id="colDate" prefWidth="72.0" text="Date" />
+                              <TableColumn fx:id="colReponse" prefWidth="86.0" text="Reponse" />
+                              <TableColumn fx:id="colMontant" prefWidth="139.0" text="Montant Rembourse" />
+                              <TableColumn fx:id="colDepot" prefWidth="83.0" text="ID Depot" />
+                              <TableColumn fx:id="modifierCol" prefWidth="91.0" text="Actions" />
                            </columns>
                         </TableView>
-                        <Button layoutX="337.0" layoutY="475.0" mnemonicParsing="false" onAction="#afficher" prefHeight="7.0" prefWidth="102.0" text="Actualiser" />
-                        <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../utils/LogoApp.png" />
-                           </image>
-                        </ImageView>
-                        <Button layoutX="219.0" layoutY="475.0" mnemonicParsing="false" onAction="#verifier" prefHeight="7.0" prefWidth="102.0" text="Verifier" />
-                        <Button fx:id="btnRetour" layoutX="702.0" layoutY="508.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
-                        <Button layoutX="452.0" layoutY="475.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="7.0" prefWidth="102.0" text="Supprimer" />
-                        <Button fx:id="exportEx" layoutX="80.0" layoutY="475.0" mnemonicParsing="false" onAction="#exporterEx" styleClass="buttonEx" text="Exporter (Excel)" />
+                        <Button layoutX="49.0" layoutY="314.0" mnemonicParsing="false" onAction="#afficher" prefHeight="7.0" prefWidth="102.0" text="Actualiser" />
+                        <Button layoutX="49.0" layoutY="259.0" mnemonicParsing="false" onAction="#verifier" prefHeight="7.0" prefWidth="102.0" text="Verifier" />
+                        <Button fx:id="btnRetour" layoutX="11.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
+                        <Button layoutX="49.0" layoutY="373.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="7.0" prefWidth="102.0" text="Supprimer" />
+                        <Button fx:id="exportEx" layoutX="49.0" layoutY="430.0" mnemonicParsing="false" onAction="#exporterEx" styleClass="buttonEx" text="Exporter (Excel)" />
                      </children>
                   </AnchorPane>
                </content>

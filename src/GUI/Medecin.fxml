@@ -11,7 +11,7 @@
         <URL value="@medecin.css" />
     </stylesheets>
    <children>
-      <AnchorPane layoutX="-2.0" prefHeight="415.0" prefWidth="198.0" style="-fx-background-color: blue;">
+      <AnchorPane layoutX="-2.0" prefHeight="415.0" prefWidth="198.0" style="-fx-background-color: #004F98;">
          <children>
             <Button fx:id="backID" layoutX="65.0" layoutY="376.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
          </children></AnchorPane>

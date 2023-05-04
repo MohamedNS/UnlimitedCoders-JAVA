@@ -21,7 +21,7 @@
             <TableColumn fx:id="deleteID" prefWidth="112.0" text="Supprimer" />
         </columns>
       </TableView>
-      <AnchorPane layoutY="-6.0" prefHeight="422.0" prefWidth="200.0" style="-fx-background-color: blue;">
+      <AnchorPane layoutY="-6.0" prefHeight="422.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <Button fx:id="backID" layoutX="67.0" layoutY="362.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="25.0" prefWidth="54.0" text="&lt;--" />
             <Button fx:id="toCalendar" layoutX="61.0" layoutY="310.0" mnemonicParsing="false" onAction="#toCalendar" style="-fx-background-color: red;" text="Calendar" />

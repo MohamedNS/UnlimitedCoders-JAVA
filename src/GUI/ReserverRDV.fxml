@@ -5,9 +5,9 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ReserverRDVController">
     <stylesheets>
@@ -21,7 +21,7 @@
       <Label layoutX="245.0" layoutY="80.0" text="Medecin" />
       <Label layoutX="257.0" layoutY="131.0" text="Etat" />
       <Label layoutX="237.0" layoutY="219.0" text="Description" />
-      <AnchorPane fx:id="container" prefHeight="400.0" prefWidth="190.0" />
+      <AnchorPane fx:id="container" prefHeight="400.0" prefWidth="190.0" style="-fx-background-color: #004F98;" />
       <ImageView fitHeight="74.0" fitWidth="73.0" layoutX="52.0" layoutY="21.0">
                <image>
                   <Image url="@../ressources/LogoApp.png" />

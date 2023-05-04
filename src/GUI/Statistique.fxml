@@ -12,7 +12,7 @@
     </stylesheets>
     <children>
         <PieChart fx:id="piechartID" layoutX="228.0" layoutY="30.0" prefHeight="367.0" prefWidth="474.0" style="-fx-background-color: grey;" />
-        <AnchorPane fx:id="paneID" prefHeight="414.0" prefWidth="191.0" style="-fx-background-color: blue;">
+        <AnchorPane fx:id="paneID" prefHeight="414.0" prefWidth="191.0" style="-fx-background-color: #004F98;">
          <children>
             <Button fx:id="backID" layoutX="74.0" layoutY="359.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;--" />
             <ComboBox fx:id="timeRangeComboBox" layoutX="34.0" layoutY="195.0" prefHeight="25.0" prefWidth="114.0" promptText="SELECT" />

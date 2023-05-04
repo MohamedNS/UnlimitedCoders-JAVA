@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeConsultationController">
+   <children>
+      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="724.0" prefWidth="1253.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ajouter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="1253.0">
+                     <children>
+                        <Button fx:id="btnAjouter" layoutX="557.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="67.0" prefWidth="138.0" style="-fx-background-color: #0066FF;" text="Ajouter">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="matriculeMedecinText" layoutX="502.0" layoutY="109.0" prefHeight="60.0" prefWidth="250.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <Label layoutX="302.0" layoutY="108.0" prefHeight="50.0" prefWidth="190.0" text="Matricule Medecin">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idPatientText" layoutX="506.0" layoutY="185.0" prefHeight="60.0" prefWidth="240.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <Label layoutX="302.0" layoutY="196.0" prefHeight="50.0" prefWidth="179.0" text="Identifiant Patient">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="298.0" layoutY="273.0" prefHeight="50.0" prefWidth="186.0" text="Date Consultation">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <DatePicker fx:id="dateConsultationText" layoutX="508.0" layoutY="262.0" prefHeight="60.0" prefWidth="240.0" />
+                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0" promptText="en TND">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                        <Label layoutX="296.0" layoutY="349.0" prefHeight="50.0" prefWidth="164.0" text="Montant">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Afficher">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="consultationTable" layoutX="32.0" layoutY="107.0" prefHeight="527.0" prefWidth="1209.0" style="-fx-background-color: #E9E9E9;">
+                          <columns>
+                            <TableColumn fx:id="idColonne" prefWidth="150.0" text="Identifiant" />
+                            <TableColumn fx:id="matriculeColonne" prefWidth="187.0" text="Matricule Medecin" />
+                              <TableColumn fx:id="idPatientColonne" prefWidth="289.0" text="Identifant Patient" />
+                              <TableColumn fx:id="dateConsultationColonne" prefWidth="343.0" text="Date Consultation" />
+                              <TableColumn fx:id="montantColonne" prefWidth="238.0" text="Montant" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnSupprimer" layoutX="1006.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnSupprimer" style="-fx-background-color: #0066FF;" text="Supprimer">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Button>
+                        <Button fx:id="btnModifier" layoutX="1135.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnModifier" style="-fx-background-color: #0066FF;" text="Modifier">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Button>
+                        <Button fx:id="btnPdf" layoutX="20.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnPdf" style="-fx-background-color: #e51818;" text="PDF">
+                           <font>
+                              <Font size="20.0" />
+                           </font></Button>
+                        <Label layoutX="96.0" layoutY="22.0" prefHeight="29.0" prefWidth="91.0" text="Trier">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="critereChoice" layoutX="209.0" layoutY="23.0" prefWidth="150.0" />
+                        <Label layoutX="96.0" layoutY="51.0" prefHeight="29.0" prefWidth="91.0" text="Ordore">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="ordreChoice" layoutX="209.0" layoutY="53.0" prefWidth="150.0" />
+                        <Button fx:id="btnTrier" layoutX="388.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="36.0" prefWidth="97.0" style="-fx-background-color: #0066FF;" text="Trier">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnExcel" layoutX="96.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnExcel" style="-fx-background-color: #00ff55;" text="Excel">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="btnRetour" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #0066FF;" text="Retour">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="520.0" layoutY="14.0" prefHeight="36.0" prefWidth="228.0" text="     Consultation">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

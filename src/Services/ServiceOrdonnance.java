@@ -6,6 +6,7 @@
 package Services;
 
 import Entity.Medicament;
+import Entity.MedicamentN;
 import Entity.Ordonnance;
 
 import java.sql.Connection;
@@ -29,7 +30,7 @@ public class ServiceOrdonnance {
     
        public List<Ordonnance> afficherOrdonnance() {
         List<Ordonnance> ordonnances = new ArrayList<>();
-        ServiceMedicament sv = new ServiceMedicament();
+        ServicesMedicamentN sv = new ServicesMedicamentN();
 
         try {
             String req = "SELECT * from ordonnanceA";
@@ -47,7 +48,7 @@ public class ServiceOrdonnance {
                 ResultSet rsMedicament = stManytoMany.executeQuery(reqManytoMany);
                 while(rsMedicament.next())
                 {
-                    Medicament m = sv.trouverParId(rsMedicament.getInt("medicament_id"));
+                    MedicamentN m = sv.trouverParId(rsMedicament.getInt("medicament_id"));
                     System.out.println("Medicament Trouve : "+m);
                     //o.setNomMedicament();
                     //o.addMedicament(m);

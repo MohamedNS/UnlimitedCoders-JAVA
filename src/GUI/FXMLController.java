@@ -24,6 +24,8 @@ import javafx.stage.Stage;
  */
 public class FXMLController implements Initializable {
 
+	@FXML
+	private Button btnLogout;
     @FXML
     private Button tfAjouterFicheAssurance;
     @FXML
@@ -34,6 +36,7 @@ public class FXMLController implements Initializable {
     private Button tfAfficherfactur;
     @FXML
     private Button tfstats;
+	
 
     /**
      * Initializes the controller class.
@@ -92,6 +95,18 @@ public class FXMLController implements Initializable {
         tfstats.setOnAction((event) -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("stats.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        });
+		btnLogout.setOnAction((event) -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Interfaces/login.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

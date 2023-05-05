@@ -177,23 +177,26 @@ public class LoginController implements Initializable {
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Medecin\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Medecin\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/MenuBienvenu.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Patient\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Patient\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/BienvenuePatient.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_PharmacienAdmin\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_PharmacienAdmin\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML.fxml"));
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } else if ("[\"ROLE_ADMIN1\"]".equals(user.getRoles())) {
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/BienvenueAdmin.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);

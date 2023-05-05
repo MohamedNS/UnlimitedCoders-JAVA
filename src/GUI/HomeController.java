@@ -45,6 +45,9 @@ public class HomeController implements Initializable {
 	private Button ajoutercomm;
 	@FXML
 	private Button afficherproduit;
+
+	@FXML
+	private Button bntRetour;
 	
 	@FXML
     private Button statsForNerds;
@@ -153,5 +156,24 @@ public class HomeController implements Initializable {
 		stage.setScene(scene);
 		stage.show();
     }
+	@FXML
+	public void btnRetour(ActionEvent evt)
+	{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("../GUI/MenuBienvenu.fxml"));
+		try{
+			loader.load();
+			Parent root = loader.getRoot();
+			Stage stage = (Stage) ajouterproduit.getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			}
+		catch(IOException ex)
+		{
+			System.err.println(ex.getMessage());
+		}
+
+	}
 
 }

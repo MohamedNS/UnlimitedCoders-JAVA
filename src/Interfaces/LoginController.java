@@ -178,6 +178,13 @@ public class LoginController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 }
+				else if ("[\"ROLE_Medecin\"]".equals(user.getRoles())) {
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/MenuBienvenu.fxml"));
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                }
             }
         }
     }

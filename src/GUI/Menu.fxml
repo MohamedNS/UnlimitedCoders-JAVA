@@ -27,5 +27,10 @@
             <Font size="19.0" />
          </font>
       </Button>
+      <Button fx:id="btnLogout" layoutX="37.0" layoutY="31.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="57.0" prefWidth="149.0" style="-fx-background-color: #0066FF;" text="Retour">
+         <font>
+            <Font name="Arial" size="19.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

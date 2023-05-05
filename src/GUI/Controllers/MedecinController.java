@@ -5,6 +5,7 @@
  */
 package GUI.Controllers;
 
+import com.sun.mail.util.LogOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +28,8 @@ import javafx.stage.Stage;
  */
 public class MedecinController implements Initializable {
 
+	@FXML
+	private Button Logout;
     @FXML
     private Button indiquerID;
     @FXML
@@ -79,10 +82,23 @@ public class MedecinController implements Initializable {
         });
     }
 
+	@FXML
+    private void Logout(ActionEvent event) {
+        try {
+            Parent mainPageParent = FXMLLoader.load(getClass().getResource("/Interfaces/login.fxml"));
+            Scene mainPageScene = new Scene(mainPageParent);
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(mainPageScene);
+            window.show();
+        } catch (IOException ex) {
+            Logger.getLogger(MedecinController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     @FXML
     private void BackToMainPage(ActionEvent event) {
         try {
-            Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/FirstWindowRDV.fxml"));
+            Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/MenuBienvenu.fxml"));
             Scene mainPageScene = new Scene(mainPageParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(mainPageScene);

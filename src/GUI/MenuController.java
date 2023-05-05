@@ -28,6 +28,8 @@ public class MenuController implements Initializable {
 
     @FXML
     private Button btnConsultation;
+	@FXML
+	private Button btnLogout;
 
     @FXML
     private Button btnMedicament;
@@ -98,6 +100,24 @@ public class MenuController implements Initializable {
         stage.close();
         
     }
+	@FXML
+	public void btnLogout(ActionEvent evt)
+	{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("../GUI/MenuBienvenu.fxml"));
+		try{
+			loader.load();
+			Parent root = loader.getRoot();
+			Stage stage = (Stage) btnConsultation.getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			}
+		catch(IOException ex)
+		{
+			System.err.println(ex.getMessage());
+		}
+	}
     
     public void show()
     {

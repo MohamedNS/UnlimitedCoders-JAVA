@@ -55,7 +55,7 @@ public class AdminMainController implements Initializable {
         });
         modifierID.setOnAction((event) -> {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Admin/midifier.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Admin/modifier.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

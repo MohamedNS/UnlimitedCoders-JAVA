@@ -39,6 +39,8 @@ public class Modifier implements Initializable {
 
     @FXML
     public void modifier(javafx.event.ActionEvent actionEvent) {
+        Article a = new Article();
+
         String nom = titre.getText();
         String description = descP.getText();
         LocalDate numTel = date.getValue();
@@ -68,8 +70,8 @@ public class Modifier implements Initializable {
         alert.setContentText("L'ONG a été Modifie avec succès.");
         alert.showAndWait();
     }
-    Article a;
     int idart;
+    Article a;
 
     public void setId(Article g) {
         System.out.println(g);
@@ -82,7 +84,7 @@ public class Modifier implements Initializable {
 
     @FXML
     private void BackToMainPage(ActionEvent event) throws IOException {
-         Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/Admin/AdminMain.fxml"));
+        Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/Admin/AdminMain.fxml"));
         Scene mainPageScene = new Scene(mainPageParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(mainPageScene);

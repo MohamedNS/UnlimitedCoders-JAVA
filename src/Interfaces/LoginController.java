@@ -172,7 +172,7 @@ public class LoginController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                 } else if ("[\"ROLE_Article\"]".equals(user.getRoles())) {
-                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/Client/ClientMain.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/Admin/AdminMain.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);

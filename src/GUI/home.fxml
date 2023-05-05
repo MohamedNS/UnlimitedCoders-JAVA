@@ -30,7 +30,7 @@
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="statsForNerds" layoutX="405.0" layoutY="317.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="62.0" prefWidth="197.0" style="-fx-background-color: #0066FF;" text="Stats for Nerds">
+      <Button fx:id="statsForNerds" layoutX="405.0" layoutY="317.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="62.0" prefWidth="197.0" style="-fx-background-color: #0066FF;" text="Statistiques">
          <font>
             <Font size="17.0" />
          </font>

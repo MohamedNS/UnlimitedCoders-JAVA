@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -137,11 +138,16 @@ public class MenuFXMLController implements Initializable {
     }
 
     @FXML
-    public void btnRetour(ActionEvent evt)
+    public void btnRetour(ActionEvent evt) throws IOException
     {
-        System.out.println("Home Assurance fermee");
-        Stage stage = (Stage) btnRetour.getScene().getWindow();
-        stage.close();
+         Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/BienvenueAdmin.fxml"));
+        Scene mainPageScene = new Scene(mainPageParent);
+
+        //Get the current window and set the scene to the main page scene
+        Stage window = (Stage) ((Node) evt.getSource()).getScene().getWindow();
+        window.setScene(mainPageScene);
+        window.show();
+        
         
     }
     

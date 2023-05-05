@@ -8,6 +8,7 @@ package GUI.Admin;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,9 +32,9 @@ public class AdminMainController implements Initializable {
     @FXML
     private Button listeID;
     @FXML
-    private Button testID;
-    @FXML
     private Button statID;
+    @FXML
+    private Button backID;
 
     /**
      * Initializes the controller class.
@@ -90,7 +91,18 @@ public class AdminMainController implements Initializable {
             }
 
         });
-       
+
+    }
+
+    @FXML
+    private void BackToMainPage(ActionEvent event) throws IOException {
+        Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/BienvenueAdmin.fxml"));
+        Scene mainPageScene = new Scene(mainPageParent);
+
+        //Get the current window and set the scene to the main page scene
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(mainPageScene);
+        window.show();
     }
 
 }

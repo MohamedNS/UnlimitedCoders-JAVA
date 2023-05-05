@@ -44,8 +44,6 @@ public class AdminHomeController implements Initializable {
     @FXML
     private Button salary_btn;
     @FXML
-    private FontAwesomeIcon logout;
-    @FXML
     private AnchorPane home_form;
     @FXML
     private Label home_totalagent;
@@ -63,6 +61,8 @@ public class AdminHomeController implements Initializable {
     private ResultSet result1;
     private ResultSet result2;
     private ResultSet result3;
+    @FXML
+    private Button backID;
 
     /**
      * Initializes the controller class.
@@ -214,6 +214,17 @@ public class AdminHomeController implements Initializable {
      Scene scene = new Scene(root);
      stage.setScene(scene);
      stage.show();
+    }
+
+    @FXML
+    private void BackToMainPage(ActionEvent event) throws IOException {
+         Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/BienvenueAdmin.fxml"));
+        Scene mainPageScene = new Scene(mainPageParent);
+
+        //Get the current window and set the scene to the main page scene
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(mainPageScene);
+        window.show();
     }
     
 }

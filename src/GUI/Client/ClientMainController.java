@@ -28,6 +28,8 @@ public class ClientMainController implements Initializable {
     private Button ajoutID;
     @FXML
     private Button listeID;
+	@FXML
+	private Button btnRetour;
 
     /**
      * Initializes the controller class.
@@ -49,6 +51,18 @@ public class ClientMainController implements Initializable {
         listeID.setOnAction((event) -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Client/ListClient.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        });
+		 btnRetour.setOnAction((event) -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/BienvenuePatient.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

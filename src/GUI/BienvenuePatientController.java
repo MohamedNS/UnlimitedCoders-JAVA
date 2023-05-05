@@ -30,6 +30,8 @@ public class BienvenuePatientController implements Initializable {
     private Button consultationID;
     @FXML
     private Button logoutID;
+	@FXML
+	private Button btnBlog;
 
     /**
      * Initializes the controller class.
@@ -51,6 +53,30 @@ public class BienvenuePatientController implements Initializable {
         consultationID.setOnAction((event) -> {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Menu.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        });
+		btnBlog.setOnAction((event) -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/Client/ClientMain.fxml"));
+                Parent root = loader.load();
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                System.out.println(ex.getMessage());
+            }
+        });
+		logoutID.setOnAction((event) -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Interfaces/login.fxml"));
                 Parent root = loader.load();
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

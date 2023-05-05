@@ -99,7 +99,7 @@ public class MainPageController implements Initializable {
     @FXML
     private void BackToMainPage(ActionEvent event) {
         try {
-            Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/FirstWindowRDV.fxml"));
+            Parent mainPageParent = FXMLLoader.load(getClass().getResource("/GUI/BienvenuePatient.fxml"));
             Scene mainPageScene = new Scene(mainPageParent);
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(mainPageScene);

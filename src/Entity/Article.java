@@ -5,7 +5,7 @@ import javafx.scene.control.DatePicker;
 import java.sql.Date;
 
 public class Article {
-    private int id ;
+  private int id ;
     private String titre ;
     private Date  article_date;
     private String article_desc ;
@@ -92,16 +92,17 @@ public class Article {
 
     }
 
-    public Article(int id, String titre, Date article_date, String article_desc, String file, int nblike, int nbdislike, int nbcomment) {
-        this.id = id;
+    public Article(String titre,  String article_desc,Date article_date) {
         this.titre = titre;
         this.article_date = article_date;
         this.article_desc = article_desc;
-        this.file = file;
-        this.nblike = nblike;
-        this.nbdislike = nbdislike;
-        this.nbcomment = nbcomment;
     }
+    public Article(int id,String titre,  String article_desc,Date article_date) {
+        this.titre = titre;
+        this.article_date = article_date;
+        this.article_desc = article_desc;
+    }
+
 
     public Article(String titre, Date article_date, String article_desc, String file, int nblike, int nbdislike, int nbcomment) {
         this.titre = titre;
@@ -112,6 +113,7 @@ public class Article {
         this.nbdislike = nbdislike;
         this.nbcomment = nbcomment;
     }
+
 
     @Override
     public String toString() {

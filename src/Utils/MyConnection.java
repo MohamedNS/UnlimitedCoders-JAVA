@@ -12,7 +12,7 @@ import java.sql.*;
  */
 public class MyConnection {
 
-    public String url = "jdbc:mysql://localhost:3306/healthifiedPiDev";
+    public String url = "jdbc:mysql://localhost:3306/healthifiedPiDevv";
     public String login = "root";
     public String password = "";
 

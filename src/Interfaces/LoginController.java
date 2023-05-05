@@ -141,37 +141,38 @@ public class LoginController implements Initializable {
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Produit\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Produit\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/home.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_RDV\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_RDV\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/FirstWindowRDV.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Assurance\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Assurance\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/MenuFXML.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Pharmacien\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Pharmacien\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXML.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
-                }
-				else if ("[\"ROLE_Consultation\"]".equals(user.getRoles())) {
+                } else if ("[\"ROLE_Consultation\"]".equals(user.getRoles())) {
                     Parent root = FXMLLoader.load(getClass().getResource("../GUI/Menu.fxml"));
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                } else if ("[\"ROLE_Article\"]".equals(user.getRoles())) {
+                    Parent root = FXMLLoader.load(getClass().getResource("../GUI/Client/ClientMain.fxml"));
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root);
                     stage.setScene(scene);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Admin.AdminMainController">
+    <stylesheets>
+        <URL value="@adminmain.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="400.0" prefWidth="176.0" style="-fx-background-color: #004F98;" />
+      <Button fx:id="ajouterID" layoutX="226.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Ajouter " />
+      <Button fx:id="modifierID" layoutX="313.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Modifier" />
+      <Button fx:id="listeID" layoutX="395.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="49.0" text="Liste" />
+      <Button fx:id="statID" layoutX="468.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="49.0" text="Stat" />
+   </children>
+</AnchorPane>

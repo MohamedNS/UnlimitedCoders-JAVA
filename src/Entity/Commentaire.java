@@ -1,4 +1,4 @@
-package Esprit.Entities;
+package Entity;
 
 import java.sql.Date;
 
@@ -12,6 +12,11 @@ public class Commentaire {
         this.commentairecontenu = commentairecontenu;
         this.commentairedate = commentairedate;
         this.article_id = article_id;
+    }
+
+    public Commentaire(String commentairecontenu, Date commentairedate) {
+        this.commentairecontenu = commentairecontenu;
+        this.commentairedate = commentairedate;
     }
 
     public Commentaire(int id, String commentairecontenu, Date commentairedate, int article_id) {

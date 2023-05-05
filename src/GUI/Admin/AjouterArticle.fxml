@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="716.0" prefWidth="426.0" styleClass="window-background" stylesheets="@/resources/styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Admin.AjouterArticle">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="706.0" prefWidth="630.0" spacing="20.0" styleClass="content-background" stylesheets="@/resources/styles.css" VBox.vgrow="ALWAYS">
+         <children>
+            <Label styleClass="title-text-dialog-2" text="Ajouter Un Article " />
+            <Separator prefHeight="5.0" prefWidth="845.0" />
+            <TabPane fx:id="tabPane" prefHeight="656.0" prefWidth="943.0" VBox.vgrow="ALWAYS">
+               <tabs>
+                  <Tab fx:id="healthCondTab" text="Article">
+                     <content>
+                        <VBox prefHeight="523.0" prefWidth="312.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="464.0" prefWidth="316.0" spacing="20.0" styleClass="content-background" stylesheets="@/resources/styles.css">
+                                 <children>
+                                    <VBox prefWidth="100.0" spacing="10.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label styleClass="text-box-header" text="Titre" />
+
+                                          <TextArea fx:id="titre" prefHeight="60.0" promptText="Taper Le titre " styleClass="text-field-no-edit" stylesheets="@/resources/listview_styles_2.css" wrapText="true" />
+
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <Label styleClass="text-box-header" text="Contenu :" />
+                                          <TextArea fx:id="descP" prefHeight="60.0" promptText="Taper le Contenu " styleClass="text-field-no-edit" stylesheets="@/resources/listview_styles_2.css" wrapText="true" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefWidth="100.0" spacing="10.0">
+                                       <children>
+                                          <Label styleClass="text-box-header" text="Date" />
+                                          <DatePicker fx:id="date" styleClass="text-box-header" />
+                                       </children>
+                                    </VBox>
+
+
+
+
+
+
+
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="186.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button maxWidth="1920.0" onAction="#Ajouter" prefHeight="50.0" prefWidth="843.0" styleClass="button-primary-small" text="Ajouter " />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="20.0" left="50.0" right="50.0" top="30.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+
+
+
+
+               </tabs>
+            </TabPane>
+            <Button fx:id="backID" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

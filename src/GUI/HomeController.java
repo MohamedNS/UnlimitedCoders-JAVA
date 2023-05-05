@@ -29,6 +29,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import Services.ProduitCrud;
+import static com.itextpdf.kernel.pdf.PdfName.Parent;
 
 /**
  * FXML Controller class

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="414.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MainPageController">
+<AnchorPane id="AnchorPane" prefHeight="414.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MainPageController">
     <stylesheets>
         <URL value="@mainpage.css" />
     </stylesheets>
@@ -15,14 +15,14 @@
       
         <HBox alignment="CENTER" layoutX="0.0" layoutY="20.0" prefWidth="600.0" />
         <HBox alignment="CENTER" layoutX="156.0" layoutY="221.0" prefWidth="600.0" spacing="15.0">
-            <Button fx:id="ReserverID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Réserver" />
-            <Button fx:id="ModifierID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Modifier" />
-            <Button fx:id="AnnulerID" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Annuler" />
-            <Button fx:id="AfficherID" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: green; -fx-text-fill: white;" text="Consulter" />
+            <Button fx:id="ReserverID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Réserver" />
+            <Button fx:id="ModifierID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Modifier" />
+            <Button fx:id="AnnulerID" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Annuler" />
+            <Button fx:id="AfficherID" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Consulter" />
         </HBox>
         <AnchorPane fx:id="container" layoutY="-3.0" prefHeight="417.0" prefWidth="197.0">
          <children>
-            <Button fx:id="backID" layoutX="66.0" layoutY="354.0" mnemonicParsing="false" onAction="#BackToMainPage" text="Retour" />
+            <Button fx:id="backID" layoutX="66.0" layoutY="354.0" mnemonicParsing="false" onAction="#BackToMainPage" style="-fx-background-color: #DC143C;" text="Retour" />
          </children></AnchorPane>
           <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="392.0" layoutY="20.0">
               <image>

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="753.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="753.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
    <children>
       <Label layoutX="340.0" layoutY="14.0" prefHeight="18.0" prefWidth="282.0" text="        Menu" textAlignment="CENTER">
          <font>
@@ -28,15 +28,15 @@
             <Font size="19.0" />
          </font>
       </Button>
-      <AnchorPane prefHeight="454.0" prefWidth="200.0" style="-fx-background-color: blue;">
+      <AnchorPane prefHeight="437.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="btnLogout" layoutX="36.0" layoutY="384.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #B22222;" text="Retour">
+            <Button fx:id="btnLogout" layoutX="48.0" layoutY="365.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="25.0" prefWidth="105.0" style="-fx-background-color: #B22222;" text="Retour">
                <font>
                   <Font name="Arial" size="19.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="backID" layoutX="439.0" layoutY="404.0" mnemonicParsing="false" onAction="#BackToMainPage" prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: #228B22;" text="&lt;--" />
+      <Button fx:id="backID" layoutX="436.0" layoutY="394.0" mnemonicParsing="false" onAction="#BackToMainPage" prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: #228B22;" text="&lt;--" />
    </children>
 </Pane>

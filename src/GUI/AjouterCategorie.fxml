@@ -12,7 +12,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCategorieController">
    <children>
-      <Pane prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;">
+      <Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css">
          <children>
             <Text layoutX="309.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter une Catégorie">
                <font>
@@ -39,19 +39,19 @@
                   <Font size="15.0" />
                </font>
             </TextArea>
-            <AnchorPane prefHeight="595.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;" stylesheets="@stylefxml.css">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="addButton" layoutX="51.0" layoutY="358.0" mnemonicParsing="false" onAction="#confirmAdd" prefHeight="58.0" prefWidth="98.0" style="-fx-background-color: #0066CC;" text="Ajouter">
+                  <Button fx:id="addButton" layoutX="41.0" layoutY="317.0" mnemonicParsing="false" onAction="#confirmAdd" prefHeight="58.0" prefWidth="98.0" style="-fx-background-color: #0066CC;" text="Ajouter">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="cancelButton" layoutX="51.0" layoutY="447.0" mnemonicParsing="false" onAction="#cancel" prefHeight="58.0" prefWidth="98.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
+                  <Button fx:id="cancelButton" layoutX="42.0" layoutY="416.0" mnemonicParsing="false" onAction="#cancel" prefHeight="58.0" prefWidth="98.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

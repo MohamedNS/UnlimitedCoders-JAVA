@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -8,10 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="733.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ConsulterDispoController">
-    <stylesheets>
-        <URL value="@consulterdispo.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ConsulterDispoController">
    <children>
       <TableView fx:id="tableID" layoutX="226.0" layoutY="95.0" prefHeight="269.0" prefWidth="481.0">
         <columns>
@@ -21,16 +17,16 @@
             <TableColumn fx:id="deleteID" prefWidth="112.0" text="Supprimer" />
         </columns>
       </TableView>
-      <AnchorPane layoutY="-6.0" prefHeight="422.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;" stylesheets="@stylefxml.css">
          <children>
-            <Button fx:id="backID" layoutX="67.0" layoutY="362.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="25.0" prefWidth="54.0" text="&lt;--" />
-            <Button fx:id="toCalendar" layoutX="61.0" layoutY="310.0" mnemonicParsing="false" onAction="#toCalendar" style="-fx-background-color: red;" text="Calendar" />
-         </children>
-      </AnchorPane>
-      <ImageView fitHeight="74.0" fitWidth="92.0" layoutX="44.0" layoutY="21.0">
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
+            <Button fx:id="toCalendar" layoutX="57.0" layoutY="532.0" mnemonicParsing="false" onAction="#toCalendar" style="-fx-background-color: red;" text="Calendar" />
+            <Button fx:id="backID" layoutX="36.0" layoutY="619.0" mnemonicParsing="false" onAction="#backToMainPage" prefHeight="36.0" prefWidth="101.0" text="Retour" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

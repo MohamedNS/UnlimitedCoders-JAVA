@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherproduitController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherproduitController">
    <children>
       <Text fill="#2241f2" layoutX="397.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des produits">
          <font>
@@ -54,26 +54,26 @@
             <Image url="@../ressources/recherche.png" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="608.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;" stylesheets="@stylefxml.css">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnqr" layoutX="28.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#qr" prefHeight="44.0" prefWidth="145.0" text="QrCode" textFill="#1167a1">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Button fx:id="updateButton" layoutX="28.0" layoutY="434.0" mnemonicParsing="false" onAction="#updateScreen" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #2AA00F;" text="✏ Modifier" textFill="WHITE">
+            <Button fx:id="updateButton" layoutX="14.0" layoutY="569.0" mnemonicParsing="false" onAction="#updateScreen" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #2AA00F;" text="✏ Modifier" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Button>
-            <Button fx:id="deleteButton" layoutX="28.0" layoutY="373.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #0066CC;" text="🗑 Supprimer" textFill="WHITE">
+            <Button fx:id="deleteButton" layoutX="14.0" layoutY="500.0" mnemonicParsing="false" onAction="#delete" prefHeight="43.0" prefWidth="145.0" style="-fx-background-color: #0066CC;" text="🗑 Supprimer" textFill="WHITE">
                <font>
                   <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnqr" layoutX="-19.0" layoutY="425.0" mnemonicParsing="false" onMouseClicked="#qr" prefHeight="44.0" prefWidth="145.0" text="QrCode" textFill="#1167a1">
+               <font>
+                  <Font size="15.0" />
                </font>
             </Button>
          </children>

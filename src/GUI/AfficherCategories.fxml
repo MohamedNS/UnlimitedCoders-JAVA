@@ -13,7 +13,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherCategoriesController">
    <children>
-      <Pane layoutX="-21.0" prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;">
+      <Pane layoutX="-21.0" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css">
          <children>
             <TableView fx:id="categoriesTable" layoutX="258.0" layoutY="136.0" prefHeight="392.0" prefWidth="524.0">
               <columns>
@@ -43,19 +43,19 @@
                   <Image url="@../ressources/recherche.png" />
                </image>
             </ImageView>
-            <AnchorPane layoutX="21.0" layoutY="-2.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <AnchorPane layoutX="21.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;" stylesheets="@stylefxml.css">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="updateButton" layoutX="61.0" layoutY="333.0" mnemonicParsing="false" onAction="#updateScreen" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #2AA00F;" text="Modifier">
+                  <Button fx:id="updateButton" layoutX="49.0" layoutY="382.0" mnemonicParsing="false" onAction="#updateScreen" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #2AA00F;" text="Modifier">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="deleteButton" layoutX="61.0" layoutY="412.0" mnemonicParsing="false" onAction="#delete" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #0066CC;" text="Supprimer" textFill="WHITE">
+                  <Button fx:id="deleteButton" layoutX="60.0" layoutY="476.0" mnemonicParsing="false" onAction="#delete" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #0066CC;" text="Supprimer" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

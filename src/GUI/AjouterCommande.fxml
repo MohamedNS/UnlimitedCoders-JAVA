@@ -12,7 +12,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCommandeController">
    <children>
-      <Pane prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;">
+      <Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css">
          <children>
             <Text layoutX="374.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez Choisir Vos Produits">
                <font>
@@ -41,19 +41,19 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <AnchorPane prefHeight="595.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;" stylesheets="@stylefxml.css">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="confirmerButton" layoutX="42.0" layoutY="374.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #0066CC;" text="Confirmer">
+                  <Button fx:id="confirmerButton" layoutX="24.0" layoutY="349.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #0066CC;" text="Confirmer">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="annulerButton" layoutX="42.0" layoutY="441.0" mnemonicParsing="false" onAction="#annuler" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
+                  <Button fx:id="annulerButton" layoutX="31.0" layoutY="409.0" mnemonicParsing="false" onAction="#annuler" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>

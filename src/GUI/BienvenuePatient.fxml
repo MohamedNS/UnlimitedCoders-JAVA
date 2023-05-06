@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="407.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="logoutID" layoutX="14.0" layoutY="358.0" mnemonicParsing="false" style="-fx-background-color: red;" text="LOG OUT" />
+            <Button fx:id="logoutID" layoutX="43.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: red;" text="LOG OUT" />
          </children></AnchorPane>
       <Button fx:id="rdvID" layoutX="341.0" layoutY="90.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #66cc33;" text="Rendez-Vous" />
       <Button fx:id="consultationID" layoutX="341.0" layoutY="157.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="118.0" style="-fx-background-color: #66cc33;" text="Consultation" />

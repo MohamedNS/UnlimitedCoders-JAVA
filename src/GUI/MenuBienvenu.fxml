@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="734.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuBienVenueMedecinController">
+<AnchorPane id="AnchorPane" prefHeight="378.0" prefWidth="695.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuBienVenueMedecinController">
     <stylesheets>
         <URL value="@annulerrdv.css" />
     </stylesheets>
@@ -18,10 +18,10 @@
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-            <Button fx:id="btnRetour" layoutX="63.0" layoutY="354.0" mnemonicParsing="false" onAction="#btnRetour" text="Retour" />
+            <Button fx:id="btnRetour" layoutX="59.0" layoutY="359.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="25.0" prefWidth="73.0" text="LOG OUT" />
                   </children></AnchorPane>
-      <Button fx:id="btnRdv" layoutX="381.0" layoutY="67.0" mnemonicParsing="false" onAction="#btnRdv" prefHeight="36.0" prefWidth="101.0" text="Rendez-Vous" />
-      <Button fx:id="btnConsultation" layoutX="381.0" layoutY="116.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="36.0" prefWidth="101.0" text="Consultation" />
-      <Button fx:id="btnProduit" layoutX="381.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnProduit" prefHeight="36.0" prefWidth="101.0" text="Produit" />
+      <Button fx:id="btnRdv" layoutX="381.0" layoutY="90.0" mnemonicParsing="false" onAction="#btnRdv" prefHeight="36.0" prefWidth="101.0" text="Rendez-Vous" />
+      <Button fx:id="btnConsultation" layoutX="381.0" layoutY="172.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="36.0" prefWidth="101.0" text="Consultation" />
+      <Button fx:id="btnProduit" layoutX="381.0" layoutY="267.0" mnemonicParsing="false" onAction="#btnProduit" prefHeight="36.0" prefWidth="101.0" text="Produit" />
    </children>
 </AnchorPane>

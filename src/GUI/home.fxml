@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="776.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
    <children>
       <Button fx:id="ajouterproduit" layoutX="65.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#ajouterproduit" style="-fx-background-color: #0066FF;" text="ajouter produit" visible="false" />
       <Button fx:id="ajoutercat" layoutX="425.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercat" style="-fx-background-color: #0066FF;" text="ajouter categorie" visible="false" />
       <Button fx:id="ajoutercomm" layoutX="234.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercomm" style="-fx-background-color: #0066FF;" text="ajouter commande" visible="false" />
-      <Button fx:id="afficherproduit" layoutX="445.0" layoutY="207.0" mnemonicParsing="false" onAction="#afficherproduit" prefHeight="69.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Produits">
+      <Button fx:id="afficherproduit" layoutX="445.0" layoutY="207.0" mnemonicParsing="false" onAction="#afficherproduit" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: #228B22;" text="Produits">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Button fx:id="affichercommande" layoutX="592.0" layoutY="207.0" mnemonicParsing="false" onAction="#affichercommande" onMouseClicked="#affichercommande" prefHeight="70.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Commandes">
+      <Button fx:id="affichercommande" layoutX="445.0" layoutY="288.0" mnemonicParsing="false" onAction="#affichercommande" onMouseClicked="#affichercommande" prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #228B22;" text="Commandes">
          <font>
             <Font size="16.0" />
          </font></Button>
@@ -25,24 +25,24 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="afficherproduit1" layoutX="292.0" layoutY="207.0" mnemonicParsing="false" onAction="#afficherCategories" prefHeight="69.0" prefWidth="118.0" style="-fx-background-color: #0066FF;" text="Catégories">
+      <Button fx:id="afficherproduit1" layoutX="445.0" layoutY="125.0" mnemonicParsing="false" onAction="#afficherCategories" prefHeight="37.0" prefWidth="118.0" style="-fx-background-color: #228B22;" text="Catégories">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="statsForNerds" layoutX="405.0" layoutY="317.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="62.0" prefWidth="197.0" style="-fx-background-color: #0066FF;" text="Statistiques">
+      <Button fx:id="statsForNerds" layoutX="442.0" layoutY="364.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="38.0" prefWidth="118.0" style="-fx-background-color: #228B22;" text="Statistiques">
          <font>
             <Font size="17.0" />
          </font>
       </Button>
-      <AnchorPane prefHeight="618.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+      <AnchorPane prefHeight="444.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnRetour" layoutX="28.0" layoutY="563.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="43.0" prefWidth="95.0" text="Retour" />
+            <Button fx:id="btnRetour" layoutX="53.0" layoutY="393.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #B22222;" text="Retour" />
          </children>
       </AnchorPane>
    </children>

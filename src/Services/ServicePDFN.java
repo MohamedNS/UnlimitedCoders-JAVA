@@ -11,6 +11,7 @@ import Entity.OrdonnanceN;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
@@ -35,20 +36,20 @@ public class ServicePDFN {
     public void genererPdfConsultation(String filename,List<Consultation> listeConsultations) throws FileNotFoundException, DocumentException, BadElementException, IOException
     {
 		Image image = Image.getInstance("src/images/LogoApp.png");
+		image.setAlignment(Element.ALIGN_CENTER);
 		float pageWidth = PageSize.A4.getWidth();
 		float pageHeight = PageSize.A4.getHeight();
 		float imageWidth = image.getScaledWidth();
 		float x = (pageWidth - imageWidth)/2;
 		float y = pageHeight - image.getScaledHeight();
-		image.setAbsolutePosition(x,y);
-		image.scaleAbsolute(imageWidth,image.getScaledHeight());
 		PdfPTable table = new PdfPTable(5);
         System.out.println("Generation Consultation PDF");
         Document document = new Document(){
         };
         PdfWriter.getInstance(document, new FileOutputStream(filename+".pdf"));
         document.open();	
-		document.add(new Paragraph("                              Liste des Consultations                                     "));
+		Paragraph titre = new Paragraph("Liste des Consultations");
+		titre.setAlignment(Element.ALIGN_CENTER);
 		document.add(new Paragraph(""));
 		document.add(new Paragraph(""));
 		document.add(new Paragraph(""));
@@ -74,6 +75,7 @@ public class ServicePDFN {
     public void genererPdfOrdonnance(String filename,List<OrdonnanceN> listeOrdonnances) throws FileNotFoundException, DocumentException, IOException, BadElementException
     {
 			Image image = Image.getInstance("src/images/LogoApp.png");
+			image.setAlignment(Element.ALIGN_CENTER);
 			float pageWidth = PageSize.A4.getWidth();
 			float pageHeight = PageSize.A4.getHeight();
 			float imageWidth = image.getScaledWidth();
@@ -87,7 +89,11 @@ public class ServicePDFN {
 			};
 			PdfWriter.getInstance(document, new FileOutputStream(filename+".pdf"));
 			document.open();
-			document.add(new Paragraph("                              Liste des Ordonnances                                     "));
+			Paragraph titre = new Paragraph("Liste des Ordonnances");
+			titre.setAlignment(Element.ALIGN_CENTER);
+			document.add(new Paragraph(""));
+			document.add(new Paragraph(""));
+			document.add(new Paragraph(""));
 			document.add(image);
 			table.addCell("Identifiant");
 			table.addCell("Identifiant Consultation");

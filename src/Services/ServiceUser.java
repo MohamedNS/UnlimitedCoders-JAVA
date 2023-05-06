@@ -157,7 +157,7 @@ public class ServiceUser {
         ObservableList<User> mylist = FXCollections.observableArrayList();
         try {
 
-            String rq = "SELECT * FROM user WHERE `roles` = '[\"ROLE_AGENT\"]' ";
+            String rq = "SELECT * FROM user WHERE `roles` = '[\"ROLE_MEDECIN\"]' ";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(rq);
             while (rs.next()) {

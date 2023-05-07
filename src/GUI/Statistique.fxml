@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.StatistiqueController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.StatistiqueController">
     <stylesheets>
         <URL value="@statistique.css" />
       <URL value="@stylefxml.css" />
@@ -23,7 +23,7 @@
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <ComboBox fx:id="timeRangeComboBox" layoutX="36.0" layoutY="350.0" prefHeight="25.0" prefWidth="114.0" promptText="SELECT" />
+            <ComboBox fx:id="timeRangeComboBox" layoutX="36.0" layoutY="350.0" prefHeight="25.0" prefWidth="114.0" promptText="SELECT" style="-fx-background-color: #D5E0F2;" />
          </children>
       </AnchorPane>
     </children>

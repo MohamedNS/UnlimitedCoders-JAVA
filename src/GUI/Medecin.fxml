@@ -14,9 +14,9 @@
       <URL value="@../../../../pidev/UnlimitedCoders-JAVA/src/GUI/stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="indiquerID" layoutX="436.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Indiquer Disponibilité" textFill="WHITE" />
-      <Button fx:id="consulterID" layoutX="438.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Consulter " textFill="WHITE" />
-      <Button fx:id="statID" layoutX="434.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Statistiques" textFill="WHITE" />
+      <Button fx:id="indiquerID" layoutX="436.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Indiquer Disponibilité" textFill="WHITE" />
+      <Button fx:id="consulterID" layoutX="438.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Consulter " textFill="WHITE" />
+      <Button fx:id="statID" layoutX="434.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Statistiques" textFill="WHITE" />
       <Text fill="ROYALBLUE" layoutX="301.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
          <font>
             <Font size="28.0" />

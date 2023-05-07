@@ -14,9 +14,9 @@
       <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnRdv" layoutX="441.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnRdv" prefHeight="40.0" prefWidth="220.0" text="Rendez-Vous" />
-      <Button fx:id="btnConsultation" layoutX="442.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="40.0" prefWidth="220.0" text="Consultation" />
-      <Button fx:id="btnProduit" layoutX="438.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnProduit" prefHeight="40.0" prefWidth="220.0" text="Produit" />
+      <Button fx:id="btnRdv" layoutX="441.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnRdv" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Rendez-Vous" />
+      <Button fx:id="btnConsultation" layoutX="442.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Consultation" />
+      <Button fx:id="btnProduit" layoutX="438.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnProduit" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Produit" />
       <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">

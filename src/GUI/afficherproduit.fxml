@@ -25,15 +25,10 @@
             <TableColumn fx:id="colPrix" minWidth="0.0" prefWidth="214.0" text="Prix" />
         </columns>
       </TableView>
-      <Button fx:id="homeButton" layoutX="221.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#home" prefHeight="46.0" prefWidth="97.0" text="Acceuil">
+      <Button fx:id="homeButton" layoutX="221.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#home" prefHeight="32.0" prefWidth="97.0" style="-fx-background-color: #307D7E;" text="Acceuil">
          <font>
             <Font name="System Bold" size="20.0" />
          </font></Button>
-      <Button fx:id="addButton" layoutX="784.0" layoutY="24.0" mnemonicParsing="false" onAction="#addScreen" prefHeight="46.0" prefWidth="97.0" text="Ajouter">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Button>
       <TextField fx:id="searchBar" layoutX="221.0" layoutY="93.0" onKeyPressed="#search" prefHeight="29.0" prefWidth="314.0" promptText="Taper pour faire une Recherche" />
       <Button fx:id="exportEx" layoutX="612.0" layoutY="610.0" mnemonicParsing="false" onAction="#exporterEx" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: #ffc107;" text="Exporter(Excel)" textFill="#145f75">
          <font>
@@ -75,6 +70,11 @@
             <Button fx:id="refreshButton" layoutX="55.0" layoutY="319.0" mnemonicParsing="false" onAction="#Actualiser" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #28a745;" text="Actualiser">
                <font>
                   <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="addButton" layoutX="52.0" layoutY="251.0" mnemonicParsing="false" onAction="#addScreen" prefHeight="32.0" prefWidth="97.0" style="-fx-background-color: #307D7E;" text="Ajouter">
+               <font>
+                  <Font size="20.0" />
                </font>
             </Button>
          </children>

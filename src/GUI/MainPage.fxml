@@ -15,10 +15,10 @@
       <URL value="@stylefxml.css" />
     </stylesheets>
     <children>
-         <Button fx:id="ReserverID" layoutX="427.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Réserver" />
-         <Button fx:id="ModifierID" layoutX="429.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Modifier" />
-         <Button fx:id="AnnulerID" layoutX="429.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Annuler" />
-         <Button fx:id="AfficherID" layoutX="432.0" layoutY="497.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Consulter" />
+         <Button fx:id="ReserverID" layoutX="427.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Réserver" />
+         <Button fx:id="ModifierID" layoutX="429.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Modifier" />
+         <Button fx:id="AnnulerID" layoutX="429.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Annuler" />
+         <Button fx:id="AfficherID" layoutX="432.0" layoutY="497.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Consulter" />
       
         <HBox alignment="CENTER" layoutX="0.0" layoutY="20.0" prefWidth="600.0" />
         <HBox alignment="CENTER" layoutX="156.0" layoutY="221.0" prefWidth="600.0" spacing="15.0" />

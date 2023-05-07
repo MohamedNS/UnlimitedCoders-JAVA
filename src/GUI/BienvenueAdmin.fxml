@@ -9,9 +9,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BienvenueAdminController">
    <children>
-      <Button fx:id="assuranceID" layoutX="438.0" layoutY="239.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Assurance" />
-      <Button fx:id="utilisateurID" layoutX="438.0" layoutY="331.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Admin dashboard" />
-      <Button fx:id="blogsID" layoutX="438.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Blogs" />
+      <Button fx:id="assuranceID" layoutX="438.0" layoutY="239.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Assurance" />
+      <Button fx:id="utilisateurID" layoutX="438.0" layoutY="331.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Admin dashboard" />
+      <Button fx:id="blogsID" layoutX="438.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Blogs" />
       <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">

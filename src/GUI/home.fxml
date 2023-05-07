@@ -12,20 +12,20 @@
       <Button fx:id="ajouterproduit" layoutX="65.0" layoutY="175.0" mnemonicParsing="false" onMouseClicked="#ajouterproduit" style="-fx-background-color: #0066FF;" text="ajouter produit" visible="false" />
       <Button fx:id="ajoutercat" layoutX="425.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercat" style="-fx-background-color: #0066FF;" text="ajouter categorie" visible="false" />
       <Button fx:id="ajoutercomm" layoutX="234.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#ajoutercomm" style="-fx-background-color: #0066FF;" text="ajouter commande" visible="false" />
-      <Button fx:id="afficherproduit" layoutX="448.0" layoutY="318.0" mnemonicParsing="false" onAction="#afficherproduit" prefHeight="40.0" prefWidth="220.0" text="Produits">
+      <Button fx:id="afficherproduit" layoutX="448.0" layoutY="318.0" mnemonicParsing="false" onAction="#afficherproduit" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Produits">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Button fx:id="affichercommande" layoutX="445.0" layoutY="404.0" mnemonicParsing="false" onAction="#affichercommande" onMouseClicked="#affichercommande" prefHeight="40.0" prefWidth="220.0" text="Commandes">
+      <Button fx:id="affichercommande" layoutX="445.0" layoutY="404.0" mnemonicParsing="false" onAction="#affichercommande" onMouseClicked="#affichercommande" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Commandes">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Button fx:id="afficherproduit1" layoutX="447.0" layoutY="226.0" mnemonicParsing="false" onAction="#afficherCategories" prefHeight="40.0" prefWidth="220.0" text="Catégories">
+      <Button fx:id="afficherproduit1" layoutX="447.0" layoutY="226.0" mnemonicParsing="false" onAction="#afficherCategories" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Catégories">
          <font>
             <Font name="System Bold Italic" size="17.0" />
          </font>
       </Button>
-      <Button fx:id="statsForNerds" layoutX="445.0" layoutY="492.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="40.0" prefWidth="220.0" text="Statistiques">
+      <Button fx:id="statsForNerds" layoutX="445.0" layoutY="492.0" mnemonicParsing="false" onAction="#goToStats" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Statistiques">
          <font>
             <Font size="17.0" />
          </font>
@@ -37,12 +37,12 @@
       </Text>
       <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="73.0" fitWidth="91.0" layoutX="48.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnRetour" layoutX="11.0" layoutY="662.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: grey;" text="Retour" />
+            <Button fx:id="btnRetour" layoutX="61.0" layoutY="628.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: grey;" text="Retour" />
          </children>
       </AnchorPane>
    </children>

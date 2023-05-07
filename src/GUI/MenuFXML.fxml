@@ -20,9 +20,9 @@
             <Button fx:id="btnRetour" layoutX="14.0" layoutY="658.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
          </children>
       </AnchorPane> 
-      <Button fx:id="btnAssurance" layoutX="452.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnAssurance" prefHeight="40.0" prefWidth="220.0" text="Assurance" />
-      <Button fx:id="btnDepot" layoutX="449.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnDepot" prefHeight="40.0" prefWidth="220.0" text="Depot" />
-      <Button fx:id="btnRemboursement" layoutX="451.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnRemboursement" prefHeight="40.0" prefWidth="220.0" text="Remboursement" />
+      <Button fx:id="btnAssurance" layoutX="452.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnAssurance" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Assurance" />
+      <Button fx:id="btnDepot" layoutX="449.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnDepot" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Depot" />
+      <Button fx:id="btnRemboursement" layoutX="451.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnRemboursement" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Remboursement" />
       <RadioButton fx:id="btnStat" layoutX="514.0" layoutY="489.0" mnemonicParsing="false" onAction="#btnStat" text="Statistiques">
          <font>
             <Font size="14.0" />

@@ -11,17 +11,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterproduitController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterproduitController">
    <stylesheets>
       <URL value="@ola.css" />
       <URL value="@stylefxml.css" />
    </stylesheets>
    <children>
-      <Button fx:id="home" layoutX="234.0" layoutY="24.0" mnemonicParsing="false" onAction="#home" prefHeight="46.0" prefWidth="97.0" text="Acceuil">
+      <Button fx:id="home" layoutX="234.0" layoutY="24.0" mnemonicParsing="false" onAction="#home" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #307D7E;" text="Acceuil">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Label layoutX="235.0" layoutY="365.0" text="Catégorie">
+      <Label layoutX="230.0" layoutY="412.0" text="Catégorie">
          <font>
             <Font size="15.0" />
          </font></Label>
@@ -29,19 +29,19 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="234.0" layoutY="212.0" text="Matricule:">
+      <Label layoutX="230.0" layoutY="228.0" text="Matricule:">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="234.0" layoutY="283.0" text="Prix:">
+      <Label layoutX="230.0" layoutY="310.0" text="Prix:">
          <font>
             <Font size="15.0" />
          </font></Label>
       <TextField fx:id="nom" layoutX="324.0" layoutY="129.0" prefHeight="53.0" prefWidth="225.0" promptText="Nom du Produit" />
-      <TextField fx:id="matricule_asseu" layoutX="324.0" layoutY="196.0" prefHeight="53.0" prefWidth="225.0" promptText="Matricule du Produit" />
-      <ChoiceBox fx:id="listCategories" layoutX="324.0" layoutY="349.0" prefHeight="53.0" prefWidth="225.0" />
-      <Spinner fx:id="prixSpinner" editable="true" layoutX="324.0" layoutY="267.0" prefHeight="53.0" prefWidth="225.0" />
-      <AnchorPane prefHeight="618.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+      <TextField fx:id="matricule_asseu" layoutX="324.0" layoutY="212.0" prefHeight="53.0" prefWidth="225.0" promptText="Matricule du Produit" />
+      <ChoiceBox fx:id="listCategories" layoutX="324.0" layoutY="396.0" prefHeight="53.0" prefWidth="225.0" />
+      <Spinner fx:id="prixSpinner" editable="true" layoutX="324.0" layoutY="294.0" prefHeight="53.0" prefWidth="225.0" style="-fx-background-color: #307D7E;" />
+      <AnchorPane layoutY="11.0" prefHeight="689.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -50,7 +50,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="ajouterprod" layoutX="691.0" layoutY="24.0" mnemonicParsing="false" onAction="#ajouterprod" prefHeight="46.0" prefWidth="97.0" text="Ajouter">
+      <Button fx:id="ajouterprod" layoutX="691.0" layoutY="24.0" mnemonicParsing="false" onAction="#ajouterprod" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #307D7E;" text="Ajouter">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

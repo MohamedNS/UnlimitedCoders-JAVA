@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="783.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierAssuranceFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="704.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierAssuranceFXMLController">
    <children>
       <Text fill="ROYALBLUE" layoutX="256.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Modifier une assurance" textAlignment="CENTER">
          <font>
@@ -51,8 +51,8 @@
             </TextField>
          </children>
       </VBox>
-      <Button fx:id="enregistrer" layoutX="450.0" layoutY="381.0" mnemonicParsing="false" onAction="#validerButton" text="Enregistrer" />
-      <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+      <Button fx:id="enregistrer" layoutX="317.0" layoutY="423.0" mnemonicParsing="false" onAction="#validerButton" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #307D7E;" text="Enregistrer" />
+      <AnchorPane prefHeight="704.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -62,4 +62,7 @@
          </children>
       </AnchorPane>
    </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </AnchorPane>

@@ -53,7 +53,7 @@
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="confirmButton" layoutX="55.0" layoutY="422.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #28a745;" text="Confirmer" textFill="#e4e4e4">
+                  <Button fx:id="confirmButton" layoutX="55.0" layoutY="422.0" mnemonicParsing="false" onAction="#update" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #307D7E;" text="Confirmer" textFill="#e4e4e4">
                      <font>
                         <Font size="20.0" />
                      </font>

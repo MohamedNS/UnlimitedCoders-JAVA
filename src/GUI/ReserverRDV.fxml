@@ -15,7 +15,7 @@
       <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnID" layoutX="250.0" layoutY="24.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="46.0" prefWidth="97.0" text="Acceuil" />
+      <Button fx:id="btnID" layoutX="250.0" layoutY="24.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="33.0" prefWidth="97.0" style="-fx-background-color: grey;" text="Acceuil" />
       <ComboBox fx:id="etatID" layoutX="324.0" layoutY="169.0" prefWidth="150.0" />
       <TextArea fx:id="DescriptionID" layoutX="324.0" layoutY="225.0" prefHeight="289.0" prefWidth="402.0" />
       <ComboBox fx:id="medecinID" layoutX="324.0" layoutY="118.0" prefWidth="150.0" />

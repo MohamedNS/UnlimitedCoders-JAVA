@@ -10,22 +10,22 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MenuController">
    <children>
-      <Button fx:id="btnConsultation" layoutX="426.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="40.0" prefWidth="220.0" text="Consultation">
+      <Button fx:id="btnConsultation" layoutX="426.0" layoutY="226.0" mnemonicParsing="false" onAction="#btnConsultation" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Consultation">
          <font>
             <Font name="Arial" size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btnOrdonnance" layoutX="422.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnOrdonnance" prefHeight="40.0" prefWidth="220.0" text="Ordonnance">
+      <Button fx:id="btnOrdonnance" layoutX="422.0" layoutY="318.0" mnemonicParsing="false" onAction="#btnOrdonnance" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Ordonnance">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="btnMedicament" layoutX="422.0" layoutY="408.0" mnemonicParsing="false" onAction="#btnMedicament" prefHeight="40.0" prefWidth="220.0" text="Medicament">
+      <Button fx:id="btnMedicament" layoutX="422.0" layoutY="408.0" mnemonicParsing="false" onAction="#btnMedicament" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Medicament">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button fx:id="backID" layoutX="511.0" layoutY="498.0" mnemonicParsing="false" onAction="#BackToMainPage" prefHeight="40.0" prefWidth="45.0" text="&lt;--" />
+      <Button fx:id="backID" layoutX="511.0" layoutY="498.0" mnemonicParsing="false" onAction="#BackToMainPage" prefHeight="40.0" prefWidth="45.0" style="-fx-background-color: #307D7E;" text="&lt;--" />
       <Text fill="ROYALBLUE" layoutX="319.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de médecins">
          <font>
             <Font size="28.0" />
@@ -38,7 +38,7 @@
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnLogout" layoutX="9.0" layoutY="653.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: grey;" text="Retour">
+            <Button fx:id="btnLogout" layoutX="42.0" layoutY="638.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: grey;" text="Retour">
                <font>
                   <Font name="Arial" size="19.0" />
                </font>

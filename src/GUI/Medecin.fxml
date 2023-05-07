@@ -11,27 +11,27 @@
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MedecinController">
     <stylesheets>
         <URL value="@medecin.css" />
-      <URL value="@stylefxml.css" />
+      <URL value="@../../../../pidev/UnlimitedCoders-JAVA/src/GUI/stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="indiquerID" layoutX="251.0" layoutY="195.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Indiquer Disponibilité" textFill="WHITE" />
-      <Button fx:id="consulterID" layoutX="393.0" layoutY="258.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Consulter " textFill="WHITE" />
-      <Button fx:id="statID" layoutX="543.0" layoutY="195.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Statistiques" textFill="WHITE" />
-      <Button fx:id="btnLogout" layoutX="472.0" layoutY="420.0" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="77.0" text="Logout" />
-      <Button fx:id="backID" layoutX="292.0" layoutY="405.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
-      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
-         <children>
-            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../ressources/LogoApp.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Text fill="ROYALBLUE" layoutX="327.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
+      <Button fx:id="indiquerID" layoutX="436.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Indiquer Disponibilité" textFill="WHITE" />
+      <Button fx:id="consulterID" layoutX="438.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Consulter " textFill="WHITE" />
+      <Button fx:id="statID" layoutX="434.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Statistiques" textFill="WHITE" />
+      <Text fill="ROYALBLUE" layoutX="301.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
          <font>
             <Font size="28.0" />
          </font>
       </Text>
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../pidev/UnlimitedCoders-JAVA/src/ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnLogout" layoutX="19.0" layoutY="662.0" mnemonicParsing="false" onAction="#Logout" prefHeight="30.0" prefWidth="114.0" style="-fx-background-color: #dc3545;" text="Se déconnecter" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="backID" layoutX="523.0" layoutY="489.0" mnemonicParsing="false" onAction="#BackToMainPage" prefHeight="40.0" text="&lt;--" />
    </children>
 </AnchorPane>

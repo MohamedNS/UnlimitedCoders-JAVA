@@ -57,7 +57,7 @@
 
                                                 <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
                                                     <children>
-                                                        <JFXButton maxWidth="1920.0" onAction="#modifier" prefHeight="50.0" prefWidth="843.0" styleClass="button-primary-small" text="Ajouter " />
+                                                        <JFXButton maxWidth="1920.0" onAction="#modifier" prefHeight="50.0" prefWidth="730.0" style="-fx-background-color: #307D7E;" styleClass="button-primary-small" text="Ajouter " />
                                                     </children>
                                                 </VBox>
                                             </children>

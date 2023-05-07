@@ -10,53 +10,53 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherCommandesController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherCommandesController">
    <children>
-      <Pane prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;">
+      <Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css">
          <children>
-            <AnchorPane layoutY="-2.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <Text layoutX="265.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Commandes">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="596.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Détails du Commande">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <TableView fx:id="commandesTab" layoutX="227.0" layoutY="133.0" onMouseClicked="#getDetails" prefHeight="530.0" prefWidth="269.0">
+              <columns>
+                <TableColumn fx:id="dateAjoutCol" prefWidth="132.0" text="Date Ajout" />
+                <TableColumn fx:id="commandePrixTotalCol" prefWidth="136.0" text="Prix Total" />
+              </columns>
+            </TableView>
+            <TableView fx:id="detailsTab" layoutX="515.0" layoutY="133.0" prefHeight="530.0" prefWidth="358.0">
+              <columns>
+                <TableColumn fx:id="detailsProduitCol" prefWidth="81.0" text="Produit" />
+                <TableColumn fx:id="detailsProduitUnitaireCol" prefWidth="98.0" text="Prix Unitaire" />
+                  <TableColumn fx:id="detailsQuantiteCol" prefWidth="84.0" text="Quantité" />
+                  <TableColumn fx:id="detailsPrixTotalCol" prefWidth="94.0" text="Prix Total" />
+              </columns>
+            </TableView>
+            <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="37.0" layoutY="282.0" mnemonicParsing="false" onAction="#addScreen" prefHeight="105.0" prefWidth="126.0" style="-fx-background-color: #2AA00F;" text="Ajouter Une Commande" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="37.0" layoutY="410.0" mnemonicParsing="false" onAction="#home" prefHeight="46.0" prefWidth="126.0" style="-fx-background-color: #0066CC;" text="Retour" textFill="WHITE">
-                     <font>
-                        <Font size="19.0" />
-                     </font>
-                  </Button>
                </children>
             </AnchorPane>
-            <Text layoutX="239.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Commandes">
+            <Button layoutX="227.0" layoutY="24.0" mnemonicParsing="false" onAction="#home" prefHeight="46.0" prefWidth="97.0" text="Acceuil" textFill="WHITE">
                <font>
-                  <Font size="20.0" />
+                  <Font size="19.0" />
                </font>
-            </Text>
-            <Text layoutX="532.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Détails du Commande">
+            </Button>
+            <Button layoutX="776.0" layoutY="24.0" mnemonicParsing="false" onAction="#addScreen" prefHeight="46.0" prefWidth="97.0" text="Ajouter" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
-                  <Font size="20.0" />
+                  <Font size="19.0" />
                </font>
-            </Text>
-            <TableView fx:id="commandesTab" layoutX="221.0" layoutY="77.0" onMouseClicked="#getDetails" prefHeight="497.0" prefWidth="228.0">
-              <columns>
-                <TableColumn fx:id="dateAjoutCol" prefWidth="119.19995880126953" text="Date Ajout" />
-                <TableColumn fx:id="commandePrixTotalCol" prefWidth="108.800048828125" text="Prix Total" />
-              </columns>
-            </TableView>
-            <TableView fx:id="detailsTab" layoutX="465.0" layoutY="77.0" prefHeight="497.0" prefWidth="330.0">
-              <columns>
-                <TableColumn fx:id="detailsProduitCol" prefWidth="75.0" text="Produit" />
-                <TableColumn fx:id="detailsProduitUnitaireCol" prefWidth="92.7999267578125" text="Prix Unitaire" />
-                  <TableColumn fx:id="detailsQuantiteCol" prefWidth="75.0" text="Quantité" />
-                  <TableColumn fx:id="detailsPrixTotalCol" prefWidth="86.0" text="Prix Total" />
-              </columns>
-            </TableView>
+            </Button>
          </children>
       </Pane>
    </children>

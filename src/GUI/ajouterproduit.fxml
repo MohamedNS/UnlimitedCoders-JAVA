@@ -14,32 +14,33 @@
 <AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterproduitController">
    <stylesheets>
       <URL value="@ola.css" />
+      <URL value="@stylefxml.css" />
    </stylesheets>
    <children>
-      <Button fx:id="home" layoutX="234.0" layoutY="14.0" mnemonicParsing="false" onAction="#home" prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: #0066ff;" text="Retour">
+      <Button fx:id="home" layoutX="234.0" layoutY="24.0" mnemonicParsing="false" onAction="#home" prefHeight="46.0" prefWidth="97.0" text="Acceuil">
          <font>
             <Font size="16.0" />
          </font></Button>
-      <Label layoutX="234.0" layoutY="323.0" text="Catégorie">
+      <Label layoutX="235.0" layoutY="365.0" text="Catégorie">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="233.0" layoutY="103.0" text="Nom:">
+      <Label layoutX="234.0" layoutY="145.0" text="Nom:">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="233.0" layoutY="170.0" text="Matricule:">
+      <Label layoutX="234.0" layoutY="212.0" text="Matricule:">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label layoutX="233.0" layoutY="241.0" text="Prix:">
+      <Label layoutX="234.0" layoutY="283.0" text="Prix:">
          <font>
             <Font size="15.0" />
          </font></Label>
-      <TextField fx:id="nom" layoutX="323.0" layoutY="87.0" prefHeight="53.0" prefWidth="178.0" promptText="Nom du Produit" />
-      <TextField fx:id="matricule_asseu" layoutX="323.0" layoutY="154.0" prefHeight="53.0" prefWidth="178.0" promptText="Matricule du Produit" />
-      <ChoiceBox fx:id="listCategories" layoutX="323.0" layoutY="307.0" prefHeight="53.0" prefWidth="178.0" />
-      <Spinner fx:id="prixSpinner" editable="true" layoutX="323.0" layoutY="225.0" prefHeight="53.0" prefWidth="178.0" />
+      <TextField fx:id="nom" layoutX="324.0" layoutY="129.0" prefHeight="53.0" prefWidth="225.0" promptText="Nom du Produit" />
+      <TextField fx:id="matricule_asseu" layoutX="324.0" layoutY="196.0" prefHeight="53.0" prefWidth="225.0" promptText="Matricule du Produit" />
+      <ChoiceBox fx:id="listCategories" layoutX="324.0" layoutY="349.0" prefHeight="53.0" prefWidth="225.0" />
+      <Spinner fx:id="prixSpinner" editable="true" layoutX="324.0" layoutY="267.0" prefHeight="53.0" prefWidth="225.0" />
       <AnchorPane prefHeight="618.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
@@ -47,12 +48,12 @@
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="ajouterprod" layoutX="57.0" layoutY="457.0" mnemonicParsing="false" onAction="#ajouterprod" prefHeight="42.0" prefWidth="80.0" style="-fx-background-color: #0066CC;" text="Ajouter">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
          </children>
       </AnchorPane>
+      <Button fx:id="ajouterprod" layoutX="691.0" layoutY="24.0" mnemonicParsing="false" onAction="#ajouterprod" prefHeight="46.0" prefWidth="97.0" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

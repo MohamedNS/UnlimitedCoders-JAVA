@@ -10,16 +10,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UpdateCategorieController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.UpdateCategorieController">
    <children>
-      <Pane layoutY="-3.0" prefHeight="595.0" prefWidth="830.0">
+      <Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: D5E0F2;" stylesheets="@stylefxml.css">
          <children>
-            <Text layoutX="231.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier la Catégorie">
+            <Text layoutX="231.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier la Catégorie">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="231.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+            <Text layoutX="273.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
                <font>
                   <Font size="15.0" />
                </font>
@@ -30,20 +30,20 @@
                </font>
             </Text>
             <TextField fx:id="nomText" layoutX="315.0" layoutY="103.0" prefHeight="57.0" prefWidth="227.0" />
-            <TextArea fx:id="descText" layoutX="315.0" layoutY="184.0" prefHeight="199.0" prefWidth="418.0" wrapText="true" />
-            <AnchorPane prefHeight="595.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <TextArea fx:id="descText" layoutX="315.0" layoutY="184.0" prefHeight="377.0" prefWidth="519.0" wrapText="true" />
+            <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="modifierButton" layoutX="41.0" layoutY="349.0" mnemonicParsing="false" onAction="#modifier" prefHeight="49.0" prefWidth="98.0" style="-fx-background-color: #0066CC;" text="Modifier">
+                  <Button fx:id="modifierButton" layoutX="55.0" layoutY="370.0" mnemonicParsing="false" onAction="#modifier" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #007bff;" text="Modifier">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="annulerButton" layoutX="41.0" layoutY="426.0" mnemonicParsing="false" onAction="#annuler" prefHeight="49.0" prefWidth="98.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
+                  <Button fx:id="annulerButton" layoutX="55.0" layoutY="421.0" mnemonicParsing="false" onAction="#annuler" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #dc3545;" text="Annuler" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

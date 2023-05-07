@@ -9,23 +9,27 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ReserverRDVController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: d5e0f2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ReserverRDVController">
     <stylesheets>
         <URL value="@reserverrdv.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="btnID" layoutX="398.0" layoutY="337.0" mnemonicParsing="false" onAction="#toCalendar" text="--&gt;" />
-      <ComboBox fx:id="etatID" layoutX="323.0" layoutY="127.0" prefWidth="150.0" />
-      <TextArea fx:id="DescriptionID" layoutX="323.0" layoutY="183.0" prefHeight="88.0" prefWidth="150.0" />
-      <ComboBox fx:id="medecinID" layoutX="323.0" layoutY="76.0" prefWidth="150.0" />
-      <Label layoutX="245.0" layoutY="80.0" text="Medecin" />
-      <Label layoutX="257.0" layoutY="131.0" text="Etat" />
-      <Label layoutX="237.0" layoutY="219.0" text="Description" />
-      <AnchorPane fx:id="container" prefHeight="400.0" prefWidth="190.0" style="-fx-background-color: #004F98;" />
-      <ImageView fitHeight="74.0" fitWidth="73.0" layoutX="52.0" layoutY="21.0">
+      <Button fx:id="btnID" layoutX="250.0" layoutY="24.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="46.0" prefWidth="97.0" text="Acceuil" />
+      <ComboBox fx:id="etatID" layoutX="324.0" layoutY="169.0" prefWidth="150.0" />
+      <TextArea fx:id="DescriptionID" layoutX="324.0" layoutY="225.0" prefHeight="289.0" prefWidth="402.0" />
+      <ComboBox fx:id="medecinID" layoutX="324.0" layoutY="118.0" prefWidth="150.0" />
+      <Label layoutX="246.0" layoutY="122.0" text="Medecin" />
+      <Label layoutX="258.0" layoutY="173.0" text="Etat" />
+      <Label layoutX="238.0" layoutY="261.0" text="Description" />
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BienvenueAdminController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BienvenueAdminController">
    <children>
-      <Button fx:id="assuranceID" layoutX="327.0" layoutY="64.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #66cc33;" text="Assurance" />
-      <Button fx:id="utilisateurID" layoutX="327.0" layoutY="155.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #66cc33;" text="Admin dashboard" />
-      <Button fx:id="blogsID" layoutX="327.0" layoutY="233.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: #66cc33;" text="Blogs" />
-      <AnchorPane prefHeight="401.0" prefWidth="200.0" style="-fx-background-color: blue;">
+      <Button fx:id="assuranceID" layoutX="438.0" layoutY="239.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Assurance" />
+      <Button fx:id="utilisateurID" layoutX="438.0" layoutY="331.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Admin dashboard" />
+      <Button fx:id="blogsID" layoutX="438.0" layoutY="417.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Blogs" />
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="logoutID" layoutX="34.0" layoutY="346.0" mnemonicParsing="false" style="-fx-background-color: #A52A2A;" text="LOG OUT" />
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutID" layoutX="23.0" layoutY="652.0" mnemonicParsing="false" style="-fx-background-color: #dc3545;" text="Se déconnecter" />
          </children>
       </AnchorPane>
+      <Text fill="ROYALBLUE" layoutX="400.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à Healthified !">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

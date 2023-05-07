@@ -6,28 +6,36 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="414.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MainPageController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MainPageController">
     <stylesheets>
         <URL value="@mainpage.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
     <children>
+         <Button fx:id="ReserverID" layoutX="427.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Réserver" />
+         <Button fx:id="ModifierID" layoutX="429.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Modifier" />
+         <Button fx:id="AnnulerID" layoutX="429.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Annuler" />
+         <Button fx:id="AfficherID" layoutX="432.0" layoutY="497.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-text-fill: white;" text="Consulter" />
       
         <HBox alignment="CENTER" layoutX="0.0" layoutY="20.0" prefWidth="600.0" />
-        <HBox alignment="CENTER" layoutX="156.0" layoutY="221.0" prefWidth="600.0" spacing="15.0">
-            <Button fx:id="ReserverID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Réserver" />
-            <Button fx:id="ModifierID" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Modifier" />
-            <Button fx:id="AnnulerID" mnemonicParsing="false" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Annuler" />
-            <Button fx:id="AfficherID" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #66cc33; -fx-text-fill: white;" text="Consulter" />
-        </HBox>
-        <AnchorPane fx:id="container" layoutY="-3.0" prefHeight="417.0" prefWidth="197.0">
+        <HBox alignment="CENTER" layoutX="156.0" layoutY="221.0" prefWidth="600.0" spacing="15.0" />
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="backID" layoutX="66.0" layoutY="354.0" mnemonicParsing="false" onAction="#BackToMainPage" style="-fx-background-color: #DC143C;" text="Retour" />
-         </children></AnchorPane>
-          <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="392.0" layoutY="20.0">
-              <image>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
                   <Image url="@../ressources/LogoApp.png" />
-              </image>
-          </ImageView>
+               </image>
+            </ImageView>
+            <Button fx:id="backID" layoutX="9.0" layoutY="664.0" mnemonicParsing="false" onAction="#BackToMainPage" style="-fx-background-color: grey;" text="Retour" />
+         </children>
+      </AnchorPane>
+      <Text fill="ROYALBLUE" layoutX="300.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

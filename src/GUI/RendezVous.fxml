@@ -10,36 +10,37 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="413.0" prefWidth="732.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.RendezVousController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.RendezVousController">
     <stylesheets>
         <URL value="@rendezvous.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
       
     <children>
-        <ImageView fitHeight="414.0" fitWidth="535.0" layoutX="197.0" layoutY="-1.0">
+        <ImageView fitHeight="701.0" fitWidth="702.0" layoutX="197.0" layoutY="-1.0">
             <image>
                 <Image url="./ressources/background2.jpg" />
             </image>
         </ImageView>
-        <Label fx:id="medecinLabel" layoutX="276.0" layoutY="67.0" text="Medecin" />
-        <Label fx:id="etatLabel" layoutX="293.0" layoutY="110.0" text="Etat" />
-        <Label fx:id="descriptionLabel" layoutX="260.0" layoutY="166.0" text="Description" />
-        <Label fx:id="dateLabel" layoutX="277.0" layoutY="202.0" prefHeight="25.0" prefWidth="61.0" text="Date" />
-        <ComboBox fx:id="medecinID" layoutX="374.0" layoutY="64.0" prefHeight="32.0" prefWidth="150.0" />
-        <TextField fx:id="DescriptionID" layoutX="374.0" layoutY="148.0" prefHeight="36.0" prefWidth="150.0" />
-        <DatePicker fx:id="DateID" layoutX="374.0" layoutY="199.0" prefHeight="30.0" prefWidth="150.0" />
-        <Button fx:id="btnID" layoutX="429.0" layoutY="369.0" mnemonicParsing="false" onAction="#save" text="Reserver" />
-        <Label fx:id="timeLabel" layoutX="289.0" layoutY="246.0" text="Time" />
-        <ComboBox fx:id="timeID" layoutX="374.0" layoutY="243.0" prefWidth="150.0" />
-        <ComboBox fx:id="suggestID" layoutX="374.0" layoutY="293.0" prefWidth="150.0" />
-        <Label layoutX="234.0" layoutY="296.0" text="Suggested date" />
-        <ComboBox fx:id="etatID" layoutX="374.0" layoutY="107.0" prefWidth="150.0" />
-        <Button fx:id="calendarButton" layoutX="524.0" layoutY="369.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="30.0" prefWidth="61.0" style="-fx-background-color: white; -fx-background-image: url('./ressources/calendar.png'); -fx-background-size: 100% 100%; -fx-background-repeat: no-repeat;">
+        <Label fx:id="medecinLabel" layoutX="324.0" layoutY="218.0" text="Medecin" />
+        <Label fx:id="etatLabel" layoutX="341.0" layoutY="261.0" text="Etat" />
+        <Label fx:id="descriptionLabel" layoutX="308.0" layoutY="317.0" text="Description" />
+        <Label fx:id="dateLabel" layoutX="325.0" layoutY="353.0" prefHeight="25.0" prefWidth="61.0" text="Date" />
+        <ComboBox fx:id="medecinID" layoutX="422.0" layoutY="215.0" prefHeight="32.0" prefWidth="275.0" />
+        <TextField fx:id="DescriptionID" layoutX="422.0" layoutY="299.0" prefHeight="36.0" prefWidth="275.0" />
+        <DatePicker fx:id="DateID" layoutX="422.0" layoutY="350.0" prefHeight="32.0" prefWidth="275.0" />
+        <Button fx:id="btnID" layoutX="477.0" layoutY="520.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="90.0" text="Reserver" />
+        <Label fx:id="timeLabel" layoutX="337.0" layoutY="397.0" text="Time" />
+        <ComboBox fx:id="timeID" layoutX="422.0" layoutY="394.0" prefHeight="32.0" prefWidth="275.0" />
+        <ComboBox fx:id="suggestID" layoutX="422.0" layoutY="444.0" prefHeight="32.0" prefWidth="275.0" />
+        <Label layoutX="282.0" layoutY="447.0" text="Suggested date" />
+        <ComboBox fx:id="etatID" layoutX="422.0" layoutY="258.0" prefHeight="32.0" prefWidth="275.0" />
+        <Button fx:id="calendarButton" layoutX="572.0" layoutY="520.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: white; -fx-background-image: url('./ressources/calendar.png'); -fx-background-size: 100% 100%; -fx-background-repeat: no-repeat;">
         </Button>
-      <AnchorPane fx:id="container" layoutY="-1.0" prefHeight="414.0" prefWidth="197.0" style="-fx-background-color: #004F98;">
+        <Button fx:id="backID" layoutX="232.0" layoutY="38.0" mnemonicParsing="false" onAction="#backToMainPage" stylesheets="@stylefxml.css" text="Acceuil" />
+      <AnchorPane layoutY="-1.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-              <Button fx:id="backID" layoutX="73.0" layoutY="354.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;--" />
-            <ImageView fitHeight="74.0" fitWidth="73.0" layoutX="52.0" layoutY="21.0">
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>

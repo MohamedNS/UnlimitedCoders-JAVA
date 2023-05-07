@@ -9,26 +9,27 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="733.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.IndiquerDispoController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: d5e0f2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.IndiquerDispoController">
     <stylesheets>
         <URL value="@indiquerdispo.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Label layoutX="302.0" layoutY="96.0" prefHeight="25.0" prefWidth="39.0" text="Date" />
-      <Label layoutX="285.0" layoutY="173.0" prefHeight="25.0" prefWidth="72.0" styleClass="mac-theme" text="Start Time" />
-      <Label layoutX="285.0" layoutY="262.0" prefHeight="25.0" prefWidth="72.0" text="End Time" />
-      <DatePicker fx:id="dateID" layoutX="416.0" layoutY="84.0" prefHeight="37.0" prefWidth="150.0" />
-      <ComboBox fx:id="startID" layoutX="416.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" />
-      <ComboBox fx:id="endID" layoutX="416.0" layoutY="256.0" prefWidth="150.0" />
-      <Button fx:id="indiquerID" layoutX="464.0" layoutY="342.0" mnemonicParsing="false" onAction="#saveDispo" style="-fx-background-color: green;" text="Save" />
-      <AnchorPane prefHeight="415.0" prefWidth="182.0" style="-fx-background-color: #004F98;">
+      <Label layoutX="321.0" layoutY="222.0" prefHeight="25.0" prefWidth="39.0" text="Date" />
+      <Label layoutX="304.0" layoutY="299.0" prefHeight="25.0" prefWidth="72.0" styleClass="mac-theme" text="Start Time" />
+      <Label layoutX="304.0" layoutY="388.0" prefHeight="25.0" prefWidth="72.0" text="End Time" />
+      <DatePicker fx:id="dateID" layoutX="435.0" layoutY="210.0" prefHeight="37.0" prefWidth="296.0" />
+      <ComboBox fx:id="startID" layoutX="435.0" layoutY="293.0" prefHeight="37.0" prefWidth="296.0" />
+      <ComboBox fx:id="endID" layoutX="435.0" layoutY="382.0" prefWidth="296.0" />
+      <Button fx:id="backID" layoutX="237.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToMainPage" text="Acceuil" />
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="backID" layoutX="61.0" layoutY="346.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;-" />
-            <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="37.0" layoutY="22.0">
-                     <image>
-                        <Image url="@../ressources/LogoApp.png" />
-                     </image>
-                  </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="indiquerID" layoutX="55.0" layoutY="381.0" mnemonicParsing="false" onAction="#saveDispo" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #17a2b8;" text="Enregistrer" />
          </children>
       </AnchorPane>
    </children>

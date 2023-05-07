@@ -11,12 +11,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="409.0" prefWidth="704.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ModifierRdvController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ModifierRdvController">
     <stylesheets>
         <URL value="@modifierrdv.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="modifierID" layoutX="377.0" layoutY="308.0" mnemonicParsing="false" onAction="#ModifierRdvSave" text="Modifier" AnchorPane.rightAnchor="150.0">
+      <Button fx:id="modifierID" layoutX="618.0" layoutY="490.0" mnemonicParsing="false" onAction="#ModifierRdvSave" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #007bff;" text="Modifier" AnchorPane.rightAnchor="192.0">
          <effect>
             <Blend mode="RED" />
          </effect>
@@ -25,25 +26,26 @@
       <Label fx:id="etatLabel" layoutX="94.0" layoutY="109.0" text="Etat" />
       <Label fx:id="descriptionLabel" layoutX="85.0" layoutY="150.0" text="Description" />
       <Label fx:id="dateLabel" layoutX="96.0" layoutY="201.0" text="Date" />
-      <TextField fx:id="descriptionID" layoutX="333.0" layoutY="163.0" prefHeight="36.0" prefWidth="158.0" />
-      <ComboBox fx:id="rdvID" layoutX="332.0" layoutY="61.0" prefHeight="32.0" prefWidth="158.0" promptText="Select a rendezvous" />
-      <DatePicker fx:id="dateID" layoutX="332.0" layoutY="211.0" prefHeight="30.0" prefWidth="158.0" />
+      <TextField fx:id="descriptionID" layoutX="388.0" layoutY="295.0" prefHeight="36.0" prefWidth="320.0" />
+      <ComboBox fx:id="rdvID" layoutX="387.0" layoutY="193.0" prefHeight="32.0" prefWidth="320.0" promptText="Select a rendezvous" />
+      <DatePicker fx:id="dateID" layoutX="387.0" layoutY="343.0" prefHeight="32.0" prefWidth="320.0" />
       <Label fx:id="timeLabel" layoutX="101.0" layoutY="259.0" text="Time" />
-      <ComboBox fx:id="timeID" layoutX="333.0" layoutY="256.0" onAction="#ModifierRdvSave" prefHeight="32.0" prefWidth="158.0" />
-       <AnchorPane fx:id="container" layoutX="-1.0" layoutY="-2.0" prefHeight="426.0" prefWidth="190.0" style="-fx-background-color: #004F98;">
+      <ComboBox fx:id="timeID" layoutX="388.0" layoutY="388.0" onAction="#ModifierRdvSave" prefHeight="32.0" prefWidth="320.0" />
+      <Label layoutX="281.0" layoutY="196.0" text="Rendez-vous" />
+      <Label layoutX="296.0" layoutY="258.0" prefHeight="17.0" prefWidth="38.0" text="Etat" />
+      <Label layoutX="287.0" layoutY="305.0" text="Description" />
+      <Label layoutX="300.0" layoutY="350.0" text="Date" />
+      <Label layoutX="300.0" layoutY="400.0" text="Time" />
+      <ComboBox fx:id="etatID" layoutX="389.0" layoutY="251.0" prefHeight="32.0" prefWidth="320.0" />
+      <Button fx:id="BackTomainID" layoutX="232.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToMainPage" text="Acceuil" />
+      <AnchorPane layoutX="1.0" layoutY="1.0" prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <ImageView fitHeight="74.0" fitWidth="73.0" layoutX="53.0" layoutY="20.0">
-                     <image>
-                        <Image url="@../ressources/LogoApp.png" />
-                     </image>
-                  </ImageView>
-            <Button fx:id="BackTomainID" layoutX="60.0" layoutY="333.0" mnemonicParsing="false" onAction="#backToMainPage" text="&lt;--" />
-         </children></AnchorPane>
-      <Label layoutX="226.0" layoutY="64.0" text="Rendez-vous" />
-      <Label layoutX="241.0" layoutY="126.0" prefHeight="17.0" prefWidth="38.0" text="Etat" />
-      <Label layoutX="232.0" layoutY="173.0" text="Description" />
-      <Label layoutX="245.0" layoutY="218.0" text="Date" />
-      <Label layoutX="245.0" layoutY="268.0" text="Time" />
-      <ComboBox fx:id="etatID" layoutX="336.0" layoutY="114.0" prefWidth="150.0" />
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

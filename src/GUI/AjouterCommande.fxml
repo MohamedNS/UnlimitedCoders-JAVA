@@ -10,50 +10,50 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCommandeController">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCommandeController">
    <children>
-      <Pane prefHeight="595.0" prefWidth="830.0" style="-fx-background-color: #D5E0F2;">
+      <Pane prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css">
          <children>
-            <Text layoutX="374.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez Choisir Vos Produits">
+            <Text layoutX="374.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez Choisir Vos Produits">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <TableView fx:id="produitsTab" layoutX="213.0" layoutY="81.0" prefHeight="499.0" prefWidth="323.0">
+            <TableView fx:id="produitsTab" layoutX="234.0" layoutY="141.0" prefHeight="499.0" prefWidth="344.0">
               <columns>
                 <TableColumn fx:id="matriculeCol" prefWidth="111.0" text="Matricule Produit" />
                 <TableColumn fx:id="nomCol" prefWidth="126.0" text="Nom Produit" />
-                  <TableColumn fx:id="prixCol" prefWidth="94.0" text="Prix Unitaire" />
+                  <TableColumn fx:id="prixCol" prefWidth="106.0" text="Prix Unitaire" />
               </columns>
             </TableView>
-            <Button fx:id="switchBtn" layoutX="561.0" layoutY="331.0" mnemonicParsing="false" onAction="#add" prefHeight="31.0" prefWidth="33.0" text="&gt;">
+            <Button fx:id="switchBtn" layoutX="598.0" layoutY="384.0" mnemonicParsing="false" onAction="#add" prefHeight="38.0" prefWidth="33.0" text="&gt;">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <TableView fx:id="outTable" layoutX="616.0" layoutY="81.0" prefHeight="499.0" prefWidth="190.0">
+            <TableView fx:id="outTable" layoutX="653.0" layoutY="134.0" prefHeight="499.0" prefWidth="199.0">
               <columns>
                 <TableColumn fx:id="outName" prefWidth="199.0" text="Nom Produit à Commander" />
               </columns>
             </TableView>
-            <Button fx:id="removeButton" layoutX="561.0" layoutY="271.0" mnemonicParsing="false" onAction="#remove" prefHeight="38.0" prefWidth="33.0" text="&lt;">
+            <Button fx:id="removeButton" layoutX="598.0" layoutY="324.0" mnemonicParsing="false" onAction="#remove" prefHeight="38.0" prefWidth="33.0" text="&lt;">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <AnchorPane prefHeight="595.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+            <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
                <children>
                   <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../ressources/LogoApp.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="confirmerButton" layoutX="42.0" layoutY="374.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #0066CC;" text="Confirmer">
+                  <Button fx:id="confirmerButton" layoutX="55.0" layoutY="344.0" mnemonicParsing="false" onAction="#confirmer" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #28a745;" text="Confirmer">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button fx:id="annulerButton" layoutX="42.0" layoutY="441.0" mnemonicParsing="false" onAction="#annuler" prefHeight="46.0" prefWidth="117.0" style="-fx-background-color: #2AA00F;" text="Annuler" textFill="WHITE">
+                  <Button fx:id="annulerButton" layoutX="55.0" layoutY="403.0" mnemonicParsing="false" onAction="#annuler" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #dc3545;" text="Annuler" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>

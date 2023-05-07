@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -8,32 +7,40 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="897.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficheOrdonnanceController">
-    <stylesheets>
-        <URL value="@afficheordonnance.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficheOrdonnanceController">
    <children>
-      <TextField fx:id="code" layoutX="274.0" layoutY="48.0" prefHeight="31.0" prefWidth="101.0" promptText="code" />
-      <TableView fx:id="ordonnanceTable" layoutX="274.0" layoutY="100.0" prefHeight="374.0" prefWidth="588.0" style="-fx-background-color: #D5E0F2;">
+      <TextField fx:id="code" layoutX="223.0" layoutY="94.0" prefHeight="31.0" prefWidth="101.0" promptText="code" />
+      <TableView fx:id="ordonnanceTable" layoutX="223.0" layoutY="133.0" prefHeight="660.0" prefWidth="660.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="133.0">
          <columns>
             <TableColumn fx:id="idColonne" prefWidth="94.0" text="Identifiant" />
-            <TableColumn fx:id="consultationColonne" prefWidth="103.0" text="Consultation" />
-            <TableColumn fx:id="validiteColonne" prefWidth="118.0" text="Validite (Jours)" />
-            <TableColumn fx:id="medicamentColonne" minWidth="0.0" prefWidth="177.0" text="Medicament(s)" />
-            <TableColumn fx:id="codeColonne" prefWidth="98.0" text="code" />
+            <TableColumn fx:id="consultationColonne" prefWidth="126.0" text="Consultation" />
+            <TableColumn fx:id="validiteColonne" prefWidth="140.0" text="Validite (Jours)" />
+            <TableColumn fx:id="medicamentColonne" minWidth="0.0" prefWidth="167.0" text="Medicament(s)" />
+            <TableColumn fx:id="codeColonne" prefWidth="122.0" text="code" />
          </columns>
       </TableView>
-      <AnchorPane prefHeight="545.0" prefWidth="251.0" style="-fx-background-color: #004F98;">
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="btnPdf" layoutX="82.0" layoutY="380.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #e51818;" text="PDF" />
-            <Button fx:id="next" layoutX="31.0" layoutY="485.0" mnemonicParsing="false" onAction="#btnnext" text="return" />
-            <ImageView fitHeight="103.0" fitWidth="125.0" layoutX="50.0" layoutY="40.0">
-                           <image>
-                              <Image url="@../images/LogoApp.png" />
-                           </image>
-                        </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnPdf" layoutX="55.0" layoutY="418.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #d32f2f;" text="PDF" />
          </children>
       </AnchorPane>
+      <Button fx:id="next" layoutX="225.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnnext" prefHeight="46.0" prefWidth="97.0" text="Accueil">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="489.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ordonnances">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

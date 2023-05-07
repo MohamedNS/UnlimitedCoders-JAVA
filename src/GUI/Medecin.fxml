@@ -5,24 +5,33 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="415.0" prefWidth="733.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MedecinController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MedecinController">
     <stylesheets>
         <URL value="@medecin.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <AnchorPane layoutX="-2.0" prefHeight="415.0" prefWidth="198.0" style="-fx-background-color: #004F98;">
+      <Button fx:id="indiquerID" layoutX="251.0" layoutY="195.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Indiquer Disponibilité" textFill="WHITE" />
+      <Button fx:id="consulterID" layoutX="393.0" layoutY="258.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Consulter " textFill="WHITE" />
+      <Button fx:id="statID" layoutX="543.0" layoutY="195.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: green;" text="Statistiques" textFill="WHITE" />
+      <Button fx:id="btnLogout" layoutX="472.0" layoutY="420.0" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="77.0" text="Logout" />
+      <Button fx:id="backID" layoutX="292.0" layoutY="405.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="backID" layoutX="65.0" layoutY="376.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
-            <Button fx:id="btnLogout" layoutX="21.0" layoutY="29.0" mnemonicParsing="false" onAction="#Logout" prefHeight="26.0" prefWidth="77.0" text="Logout" />
-         </children></AnchorPane>
-      <Button fx:id="indiquerID" layoutX="251.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: green;" text="Indiquer Disponibilité" textFill="WHITE" />
-      <Button fx:id="consulterID" layoutX="396.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="106.0" style="-fx-background-color: green;" text="Consulter " textFill="WHITE" />
-      <Button fx:id="statID" layoutX="543.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" style="-fx-background-color: green;" text="Statistiques" textFill="WHITE" />
-      <ImageView fitHeight="100.0" fitWidth="120.0" layoutX="376.0" layoutY="14.0">
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
+         </children>
+      </AnchorPane>
+      <Text fill="ROYALBLUE" layoutX="327.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

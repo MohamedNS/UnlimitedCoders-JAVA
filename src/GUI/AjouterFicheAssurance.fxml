@@ -9,14 +9,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="504.0" prefWidth="999.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterFicheAssuranceController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterFicheAssuranceController">
     <stylesheets>
         <URL value="@ajouterficheassurance.css" />
+      <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <AnchorPane id="AnchorPane" fx:id="tfnommed" layoutX="223.0" layoutY="46.0" prefHeight="426.0" prefWidth="763.0" styleClass="mainFxmlClass">
+      <AnchorPane id="AnchorPane" fx:id="tfnommed" layoutX="209.0" layoutY="120.0" prefHeight="426.0" prefWidth="722.0" styleClass="mainFxmlClass">
          <stylesheets>
             <URL value="@../../../javaFXproject/src/GUI/facteur.css" />
+            <URL value="@stylefxml.css" />
          </stylesheets>
          <children>
             <TextField fx:id="tfnom" layoutX="204.0" layoutY="59.0" />
@@ -30,7 +32,6 @@
             <Label layoutX="58.0" layoutY="161.0" text="addresse" />
             <Label layoutX="46.0" layoutY="222.0" text="matricule_cnam" />
             <Label layoutX="433.0" layoutY="222.0" text="matricule_fiscal" />
-            <Button fx:id="tfsave" layoutX="396.0" layoutY="410.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="79.0" text="save" />
             <Label layoutX="447.0" layoutY="18.0" text="addresse mail" />
             <TextField fx:id="tfmail" layoutX="575.0" layoutY="13.0" prefHeight="28.0" prefWidth="144.0" />
             <Label layoutX="449.0" layoutY="73.0" text="honoraires" />
@@ -44,18 +45,18 @@
             <DatePicker fx:id="tfdate" layoutX="574.0" layoutY="149.0" prefHeight="40.0" prefWidth="144.0" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="-4.0" prefHeight="508.0" prefWidth="225.0" style="-fx-background-color: #004F98;">
+      <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
-            <Button fx:id="mail" layoutX="53.0" layoutY="254.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="26.0" prefWidth="120.0" text="send mail" />
-            <Button fx:id="Btnqr" layoutX="53.0" layoutY="290.0" mnemonicParsing="false" onAction="#gereQRcode" prefHeight="21.0" prefWidth="120.0" text="QRcode" />
-            <Button fx:id="next" layoutX="10.0" layoutY="452.0" mnemonicParsing="false" onAction="#btnnext" style="-fx-background-color: green;" text="return" />
-            <ImageView fitHeight="103.0" fitWidth="125.0" layoutX="50.0" layoutY="31.0">
-                                 <image>
-                                    <Image url="@../images/LogoApp.png" />
-                                 </image>
-                              </ImageView>
+            <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="Btnqr" layoutX="55.0" layoutY="405.0" mnemonicParsing="false" onAction="#gereQRcode" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #17a2b8;" text="QR code" />
+            <Button fx:id="mail" layoutX="55.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #007bff;" text="E-mail" />
+            <Button fx:id="tfsave" layoutX="55.0" layoutY="460.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="90.0" text="Enregistrer" />
          </children>
-         
       </AnchorPane>
+      <Button fx:id="next" layoutX="235.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnnext" prefHeight="46.0" prefWidth="97.0" text="Acceuil" />
    </children>
 </AnchorPane>

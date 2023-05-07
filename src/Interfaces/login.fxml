@@ -12,37 +12,32 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.LoginController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="left-form" stylesheets="@loginfxml.css">
+            <AnchorPane prefHeight="700.0" prefWidth="300.0" styleClass="left-form" stylesheets="@loginfxml.css">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="67.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/LogoMakr-4eIXLt.png" />
-                     </image>
-                  </ImageView>
+                  <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="95.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/LogoApp.png" />
+               </image>
+            </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="right-form" stylesheets="@loginfxml.css">
+            <AnchorPane layoutX="300.0" prefHeight="700.0" prefWidth="600.0" styleClass="right-form" stylesheets="@loginfxml.css">
                <children>
                   <Label layoutX="83.0" layoutY="90.0" text="" textFill="#368981">
                      <font>
                         <Font name="Tahoma Bold" size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="email" layoutX="40.0" layoutY="144.0" prefHeight="30.0" prefWidth="220.0" promptText="Email" styleClass="textfield" stylesheets="@loginfxml.css" />
-                  <PasswordField fx:id="password" layoutX="40.0" layoutY="185.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginfxml.css" />
-                  <Button fx:id="loginBtn" layoutX="40.0" layoutY="238.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="40.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginfxml.css" text="Login" />
-                  <Button fx:id="register" layoutX="186.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#register" text="register" />
-                  <Label layoutX="22.0" layoutY="301.0" prefHeight="18.0" prefWidth="161.0" text="don't have an account?" underline="true" />
-                  <Label fx:id="frgpass" layoutX="78.0" layoutY="334.0" onMouseClicked="#frgpass" text="forget password?" />
-                  <ImageView fitHeight="88.0" fitWidth="103.0" layoutX="103.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/LogoMakr-4eIXLt.png" />
-                     </image>
-                  </ImageView>
+                  <TextField fx:id="email" layoutX="229.0" layoutY="155.0" prefHeight="30.0" prefWidth="220.0" promptText="Email" styleClass="textfield" stylesheets="@loginfxml.css" />
+                  <PasswordField fx:id="password" layoutX="229.0" layoutY="199.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginfxml.css" />
+                  <Button fx:id="loginBtn" layoutX="229.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="40.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginfxml.css" text="Login" />
+                  <Button fx:id="register" layoutX="392.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#register" text="register" />
+                  <Label layoutX="241.0" layoutY="365.0" prefHeight="18.0" prefWidth="161.0" text="don't have an account?" underline="true" />
+                  <Label fx:id="frgpass" layoutX="254.0" layoutY="403.0" onMouseClicked="#frgpass" text="forget password?" />
                </children>
             </AnchorPane>
          </children>

@@ -8,15 +8,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MedecinController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.MedecinController">
     <stylesheets>
         <URL value="@medecin.css" />
       <URL value="@../../../../pidev/UnlimitedCoders-JAVA/src/GUI/stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="indiquerID" layoutX="436.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Indiquer Disponibilité" textFill="WHITE" />
-      <Button fx:id="consulterID" layoutX="438.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Consulter " textFill="WHITE" />
-      <Button fx:id="statID" layoutX="434.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Statistiques" textFill="WHITE" />
+      <Button fx:id="indiquerID" layoutX="436.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Indiquer Disponibilité" textFill="WHITE" />
+      <Button fx:id="consulterID" layoutX="438.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Consulter " textFill="WHITE" />
+      <Button fx:id="statID" layoutX="434.0" layoutY="404.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #004F98;" text="Statistiques" textFill="WHITE" />
       <Text fill="ROYALBLUE" layoutX="301.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue à la gestion de rendez-vous">
          <font>
             <Font size="28.0" />

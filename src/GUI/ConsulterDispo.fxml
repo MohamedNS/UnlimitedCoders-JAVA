@@ -8,7 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ConsulterDispoController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.ConsulterDispoController">
     <stylesheets>
         <URL value="@consulterdispo.css" />
       <URL value="@stylefxml.css" />
@@ -30,7 +30,7 @@
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="toCalendar" layoutX="60.0" layoutY="408.0" mnemonicParsing="false" onAction="#toCalendar" style="-fx-background-color: #28a745;" text="Calendrier" />
+            <Button fx:id="toCalendar" layoutX="46.0" layoutY="314.0" mnemonicParsing="false" onAction="#toCalendar" prefHeight="36.0" prefWidth="108.0" style="-fx-background-color: #28a745;" text="Calendar View " />
          </children>
       </AnchorPane>
    </children>

@@ -214,7 +214,12 @@ private  String diretorio;
 
     @FXML
     private void save(ActionEvent event) {
-       System.out.println("all med after"+allmed+"\n");
+      
+        if(tfcin.getText().isEmpty() ||tfnom.getText().isEmpty() || tfprenom.getText().isEmpty()  ||tfprix.getText().isEmpty() ||allmed.isEmpty() ||alldosage.isEmpty())
+        {
+            this.notifierError("Operation Ajout refusee.Remplissez tous les champs");
+        }
+    System.out.println("all med after"+allmed+"\n");
       System.out.println("dosage after"+alldosage+"\n");
       String cin =tfcin.getText();
         String nom =tfnom.getText();
@@ -223,11 +228,6 @@ private  String diretorio;
         String nom_med =allmed;
         String dosage =alldosage;
         int prix  =Integer.parseInt (tfprix.getText());
-        if(tfcin.getText().isEmpty() ||tfnom.getText().isEmpty() || tfprenom.getText().isEmpty()  ||tfprix.getText().isEmpty() ||allmed.isEmpty() ||alldosage.isEmpty())
-        {
-            this.notifierError("Operation Ajout refusee.Remplissez tous les champs");
-        }
-   
         Facteur c =new Facteur(cin,nom,prenom,0,0,nom_med,dosage,prix);
         FacteurGrud pc = new FacteurGrud();
         pc.ajouterfacteur(c);

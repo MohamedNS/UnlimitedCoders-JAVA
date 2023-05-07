@@ -110,7 +110,12 @@ public class AjouterFicheAssuranceController implements Initializable {
     @FXML
     private void save(ActionEvent event) {
         FicheAssuranceGrud sc =new FicheAssuranceGrud();
-        String cin =tfcin.getText();
+        
+        if(tfcin.getText().isEmpty() ||tfnom.getText().isEmpty() || tfprenom.getText().isEmpty() ||tfadresse.getText().isEmpty() ||tfmatriculecnam.getText().isEmpty() ||tfmatriculefiscal.getText().isEmpty() ||tfhonoraires.getText().isEmpty())
+        {
+            this.notifierError("Operation Ajout refusee.Remplissez tous les champs");
+        }
+   String cin =tfcin.getText();
         String nom =tfnom.getText();
         String prenom =tfprenom.getText();
         String addresse =tfadresse.getText();
@@ -121,11 +126,8 @@ public class AjouterFicheAssuranceController implements Initializable {
         LocalDate date = tfdate.getValue();
         int total  =Integer.parseInt (tftotal.getText());
         System.out.println("FicheAssurance est "+""+"\n");
-        if(tfcin.getText().isEmpty() ||tfnom.getText().isEmpty() || tfprenom.getText().isEmpty() ||tfadresse.getText().isEmpty() ||tfmatriculecnam.getText().isEmpty() ||tfmatriculefiscal.getText().isEmpty() ||tfhonoraires.getText().isEmpty())
-        {
-            this.notifierError("Operation Ajout refusee.Remplissez tous les champs");
-        }
-   
+         if(this.validerNom(nom) && this.validerprenom(prenom) && this.validercin(cin) && this.valideraddresse(addresse) && this.validermatricule_cnam(matricule_cnam)&& this.validerhonoraires(honoraires)&& this.validerhonoraires(matricule_fiscal))
+            {
         FicheAssurance c =new FicheAssurance();
         c.setCin(cin);
           c.setNom(nom);
@@ -139,9 +141,22 @@ public class AjouterFicheAssuranceController implements Initializable {
                 sc.ajouterFicheAssurance(c);
         FicheAssuranceGrud pc = new FicheAssuranceGrud();
         pc.ajouterFicheAssurance(c);
-        System.out.println("FicheAssurance est "+c+"\n");
+         this.notifier("Ajout");
+                this.viderChamps();
+        System.out.println("FicheAssurance est "+c+"\n");}
     }
-
+ public void viderChamps()
+    {
+        tfcin.setText("");
+        tfnom.setText("");
+        tfprenom.setText("");
+        tfadresse.setText("");
+         tfmatriculecnam.setText("");
+        tfmatriculefiscal.setText("");
+        tfhonoraires.setText("");
+        tfdesignation.setText("");
+        tftotal.setText("");
+    }
     @FXML
     private void btnnext(ActionEvent event) throws IOException {
        Parent mainPageParent = FXMLLoader.load(getClass().getResource("FXML.fxml"));
@@ -194,4 +209,79 @@ public class AjouterFicheAssuranceController implements Initializable {
     private void gereQRcode(ActionEvent event) {
     }
     
+     public boolean validerNom(String nom)
+    {
+        if (nom.isEmpty())
+        {
+            this.notifierError("'Nom ' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+      public boolean validercin(String cin)
+    {
+        if (cin.isEmpty())
+        {
+            this.notifierError("'cin ' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+       public boolean validerprenom(String prenom)
+    {
+        if (prenom.isEmpty())
+        {
+            this.notifierError("'Prenom' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+         public boolean valideraddresse(String addresse)
+    {
+        if (addresse.isEmpty())
+        {
+            this.notifierError("'Addresse' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+           public boolean validermatricule_cnam(String matricule_cnam)
+    {
+        if (matricule_cnam.isEmpty())
+        {
+            this.notifierError("'Matricule_Cnam' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+             public boolean validerdesignation(String designation)
+    {
+        if (designation.isEmpty())
+        {
+            this.notifierError("'Designation' est un champ obligatoire");
+            return false;
+        }
+        return true;
+    }
+    public boolean validermatricule_fiscal(int matricule_fiscal)
+    {
+        if(matricule_fiscal < 0)
+        {
+            this.notifierError("Le champ 'matricule_fiscal' doit etre un entier positif");
+            return false;
+        }
+        return true;
+    
+}  
+     public boolean validerhonoraires(int honoraires)
+    {
+        if(honoraires < 0)
+        {
+            this.notifierError("Le champ 'honoraires' doit etre un entier positif");
+            return false;
+        }
+        return true;
+    
+}
+     
 }

@@ -248,49 +248,14 @@ public class AfficherfacturController implements Initializable {
     }
 
     @FXML
-    private void btnxlsxx(ActionEvent event)  {
-        FacteurGrud ac = new FacteurGrud();
-    ObservableList<Facteur> assurances = FXCollections.observableArrayList(ac.afficherfacteurs());
-    XSSFWorkbook wb = new XSSFWorkbook();
-    XSSFSheet sheet = wb.createSheet("Details Assurance");
-    XSSFRow header = sheet.createRow(0);
-    header.createCell(0).setCellValue("Identifiant");
-		header.createCell(1).setCellValue("cin");
-		header.createCell(2).setCellValue("nom");
-		header.createCell(3).setCellValue("prenom");
-		header.createCell(4).setCellValue("id_patient");
-                header.createCell(5).setCellValue("id_medicament");
-                header.createCell(6).setCellValue("nom_med");
-                header.createCell(7).setCellValue("dosage");
-                header.createCell(8).setCellValue("prix");
-    
-    int rowNum = 1;
-    for (Facteur consultation : assurances) {
-        XSSFRow row = sheet.createRow(rowNum++);
-        row.createCell(0).setCellValue(String.valueOf(consultation.getId()));
-			row.createCell(1).setCellValue(consultation.getCin());
-			row.createCell(2).setCellValue(consultation.getNom());
-			row.createCell(3).setCellValue(consultation.getPrenom());
-			row.createCell(4).setCellValue(String.valueOf(consultation.getId_patient()));
-                        row.createCell(5).setCellValue(String.valueOf(consultation.getId_medicament()));
-                        row.createCell(6).setCellValue(consultation.getNom_med());
-                        row.createCell(7).setCellValue(consultation.getDosage());
-                        row.createCell(8).setCellValue(String.valueOf(consultation.getPrix()));
-    }
-
-    try {
-        FileOutputStream fileOut = new FileOutputStream("fichefacteur.xlsx");
-        wb.write(fileOut);
-        fileOut.close();
-        //wb.close();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Export Excel");
-        alert.setHeaderText("Exportation terminée");
-        alert.setContentText("La table assurance a été exportée avec succès en une table Excel.");
-        alert.showAndWait();
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
+    private void btnxlsxx(ActionEvent event) throws DocumentException, IOException  {
+          System.out.println("Boutton Excel Click");
+		FacteurGrud sv = new FacteurGrud();
+		ServiceExcel svExcel = new ServiceExcel();
+		List<Facteur> listeConsultation = sv.afficherfacteurs();
+		svExcel.genererxlsxFacteur("facteur", listeConsultation);
+		
+			System.out.println("Operation Excel Export");
     }
 
     @FXML

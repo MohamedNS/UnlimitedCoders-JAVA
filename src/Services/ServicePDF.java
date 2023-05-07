@@ -21,6 +21,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import Entity.Facteur;
+import com.itextpdf.text.Element;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -40,13 +41,12 @@ public class ServicePDF {
     public void genererPdfFacteur(String filename,List<Facteur> listeFacteur) throws FileNotFoundException, DocumentException, BadElementException, IOException
     {
 		Image image = Image.getInstance("src/images/LogoApp.png");
+		image.setAlignment(Element.ALIGN_CENTER);
 		float pageWidth = PageSize.A4.getWidth();
 		float pageHeight = PageSize.A4.getHeight();
 		float imageWidth = image.getScaledWidth();
 		float x = (pageWidth - imageWidth)/2;
 		float y = pageHeight - image.getScaledHeight();
-		image.setAbsolutePosition(x,y);
-		image.scaleAbsolute(imageWidth,image.getScaledHeight());
 		PdfPTable table = new PdfPTable(5);
         System.out.println("Generation facteur PDF");
         Document document = new Document(){
@@ -90,8 +90,8 @@ public class ServicePDF {
         document.close();
     }
     public void genererPdfOrdonnance(String filename,List<Ordonnance> listeOrdonnances) throws FileNotFoundException, DocumentException, IOException, BadElementException
-    {
-			Image image = Image.getInstance("src/images/LogoApp.png");
+    {Image image = Image.getInstance("src/images/LogoApp.png");
+			image.setAlignment(Element.ALIGN_CENTER);
 			float pageWidth = PageSize.A4.getWidth();
 			float pageHeight = PageSize.A4.getHeight();
 			float imageWidth = image.getScaledWidth();

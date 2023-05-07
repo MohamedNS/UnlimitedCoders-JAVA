@@ -16,21 +16,22 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="783.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DepotFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DepotFXMLController">
    <children>
-      <TabPane prefHeight="600.0" prefWidth="783.0" stylesheets="@stylefxml.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Ajouter Depot">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane prefHeight="561.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                        <AnchorPane prefHeight="662.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
                            <children>
                               <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../ressources/LogoApp.png" />
                                  </image>
                               </ImageView>
+                              <Button fx:id="btnRetour" layoutX="10.0" layoutY="625.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                            </children>
                         </AnchorPane>
                         <Text fill="ROYALBLUE" layoutX="297.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Ajouter un depot" textAlignment="CENTER">
@@ -81,7 +82,6 @@
                            </children>
                         </VBox>
                         <Button layoutX="431.0" layoutY="437.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
-                        <Button fx:id="btnRetour" layoutX="11.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                      </children>
                   </AnchorPane>
             </content>
@@ -90,7 +90,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane prefHeight="561.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                        <AnchorPane prefHeight="662.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
                            <children>
                               <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -98,6 +98,7 @@
                                  </image>
                               </ImageView>
                               <Button layoutX="49.0" layoutY="259.0" mnemonicParsing="false" onAction="#verifier" prefHeight="7.0" prefWidth="102.0" text="Verifier" />
+                              <Button fx:id="btnRetour" layoutX="14.0" layoutY="620.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                            </children>
                         </AnchorPane>
                         <Text fill="ROYALBLUE" layoutX="414.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Liste des depots" textAlignment="CENTER" textOrigin="CENTER">
@@ -105,28 +106,27 @@
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Text>
-                        <TextField fx:id="searchField" layoutX="563.0" layoutY="99.0" prefHeight="29.0" prefWidth="169.0" promptText="Rechercher" />
-                        <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="740.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+                        <TextField fx:id="searchField" layoutX="210.0" layoutY="99.0" prefHeight="29.0" prefWidth="169.0" promptText="Rechercher" />
+                        <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="351.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../ressources/recherche.png" />
                            </image>
                         </ImageView>
-                        <TableView fx:id="tabDepot" layoutX="210.0" layoutY="136.0" prefHeight="356.0" prefWidth="551.0">
+                        <TableView fx:id="tabDepot" layoutX="210.0" layoutY="136.0" prefHeight="478.0" prefWidth="663.0">
                            <columns>
-                              <TableColumn fx:id="colId" prefWidth="30.0" text="ID" />
-                              <TableColumn fx:id="colDate" prefWidth="43.0" text="Date" />
-                              <TableColumn fx:id="colRegime" prefWidth="55.0" text="Regime" />
-                              <TableColumn fx:id="colDepense" prefWidth="91.0" text="Total Depense" />
-                              <TableColumn fx:id="colEtat" prefWidth="41.0" text="Etat" />
-                              <TableColumn fx:id="colAssurance" prefWidth="86.0" text="ID Assurance" />
-                              <TableColumn fx:id="colFiche" prefWidth="61.0" text="ID Fiche" />
-                              <TableColumn fx:id="colPatient" minWidth="0.0" prefWidth="66.0" text="ID Patient" />
-                              <TableColumn fx:id="modifierCol" prefWidth="78.0" text="Actions" />
+                              <TableColumn fx:id="colId" prefWidth="39.0" text="ID" />
+                              <TableColumn fx:id="colDate" prefWidth="46.0" text="Date" />
+                              <TableColumn fx:id="colRegime" prefWidth="62.0" text="Regime" />
+                              <TableColumn fx:id="colDepense" prefWidth="93.0" text="Total Depense" />
+                              <TableColumn fx:id="colEtat" prefWidth="38.0" text="Etat" />
+                              <TableColumn fx:id="colAssurance" prefWidth="99.0" text="ID Assurance" />
+                              <TableColumn fx:id="colFiche" prefWidth="83.0" text="ID Fiche" />
+                              <TableColumn fx:id="colPatient" minWidth="0.0" text="ID Patient" />
+                              <TableColumn fx:id="modifierCol" prefWidth="122.0" text="Actions" />
                            </columns>
                         </TableView>
                         <Button layoutX="49.0" layoutY="373.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="7.0" prefWidth="102.0" text="Supprimer" />
                         <Button layoutX="49.0" layoutY="314.0" mnemonicParsing="false" onAction="#afficher" prefHeight="7.0" prefWidth="102.0" text="Actualiser" />
-                        <Button fx:id="btnRetour" layoutX="11.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                         <Button fx:id="exportEx" layoutX="49.0" layoutY="430.0" mnemonicParsing="false" onAction="#exporterEx" styleClass="buttonEx" text="Exporter (Excel)" />
                      </children></AnchorPane>
             </content>

@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AdminDashbordController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AdminDashbordController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -20,7 +20,7 @@
                <top>
                   <AnchorPane prefHeight="61.0" prefWidth="1106.0" styleClass="semi-top-form" stylesheets="@dashbord.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="182.0" layoutY="-60.0" prefHeight="55.0" prefWidth="1099.0" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="182.0" layoutY="-60.0" prefHeight="54.0" prefWidth="981.0" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Label layoutX="51.0" layoutY="18.0" text="Home">
                                  <font>
@@ -37,9 +37,9 @@
                   </AnchorPane>
                </top>
                <left>
-                  <AnchorPane prefHeight="538.0" prefWidth="249.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="639.0" prefWidth="496.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="538.4" prefWidth="249.6" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="172.0" layoutY="-3.0" prefHeight="642.0" prefWidth="249.0" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="172.0" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="-3.0">
                            <children>
                               <Label layoutX="88.0" layoutY="111.0" text="Welcome," textFill="WHITE">
                                  <font>
@@ -85,26 +85,26 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="addagent_form" layoutX="45.0" layoutY="45.0" prefHeight="538.4" prefWidth="850.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="addagent_form" layoutX="45.0" layoutY="45.0" prefHeight="539.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="7.0" layoutY="8.0" prefHeight="521.0" prefWidth="834.0" stylesheets="@dashbord.css">
+                              <AnchorPane layoutX="-132.0" layoutY="14.0" prefHeight="521.0" prefWidth="724.0" stylesheets="@dashbord.css">
                                  <children>
-                                    <AnchorPane layoutY="1.0" prefHeight="299.0" prefWidth="834.0" stylesheets="@dashbord.css">
+                                    <AnchorPane layoutY="1.0" prefHeight="299.0" prefWidth="728.0" stylesheets="@dashbord.css">
                                        <styleClass>
                                           <String fx:value="shadow" />
                                           <String fx:value="white-bg" />
                                        </styleClass>
                                        <children>
-                                          <TableView fx:id="table_view" layoutX="5.0" layoutY="46.0" onMouseClicked="#UserSelect" onTouchMoved="#UserSelect" prefHeight="250.0" prefWidth="824.0" stylesheets="@dashbord.css">
+                                          <TextField fx:id="search" layoutX="9.0" layoutY="7.0" prefHeight="32.0" prefWidth="254.0" promptText="Search" styleClass="search" stylesheets="@dashbord.css" />
+                                          <TableView fx:id="table_view" layoutX="14.0" layoutY="56.0" onMouseClicked="#UserSelect" onTouchMoved="#UserSelect" prefHeight="250.0" prefWidth="695.0" stylesheets="@dashbord.css">
                                             <columns>
                                               <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
                                               <TableColumn fx:id="nom" prefWidth="180.79998016357422" text="Nom" />
                                                 <TableColumn fx:id="prenom" prefWidth="160.00006103515625" text="prenom" />
-                                                <TableColumn fx:id="telephone" prefWidth="164.80001831054688" text="Telephone" />
-                                                <TableColumn fx:id="mail" minWidth="0.0" prefWidth="243.2000732421875" text="email" />
+                                                <TableColumn fx:id="telephone" prefWidth="119.0" text="Telephone" />
+                                                <TableColumn fx:id="mail" minWidth="0.0" prefWidth="176.0" text="email" />
                                             </columns>
                                           </TableView>
-                                          <TextField fx:id="search" layoutX="9.0" layoutY="7.0" prefHeight="32.0" prefWidth="254.0" promptText="Search" styleClass="search" stylesheets="@dashbord.css" />
                                        </children>
                                     </AnchorPane>
                                     <Label layoutX="29.0" layoutY="329.0" text="Nom :" />
@@ -115,9 +115,9 @@
                                     <TextField fx:id="temail" layoutX="91.0" layoutY="390.0" styleClass="textfield" stylesheets="@dashbord.css" />
                                     <Label layoutX="29.0" layoutY="427.0" text="Phone :" />
                                     <TextField fx:id="ttelephone" layoutX="91.0" layoutY="423.0" styleClass="textfield" stylesheets="@dashbord.css" />
-                                    <Button fx:id="update_btn" layoutX="725.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#agentUpdate" prefHeight="37.0" prefWidth="76.0" styleClass="update-btn" stylesheets="@dashbord.css" text="Update" />
-                                    <Button fx:id="delete_btn" layoutX="641.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="37.0" prefWidth="76.0" styleClass="delete-btn" stylesheets="@dashbord.css" text="Delete" />
-                                    <Button fx:id="clear_btn" layoutX="554.0" layoutY="459.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="76.0" styleClass="clear-btn" stylesheets="@dashbord.css" text="Clear" />
+                                    <Button fx:id="update_btn" layoutX="621.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#agentUpdate" prefHeight="37.0" prefWidth="76.0" styleClass="update-btn" stylesheets="@dashbord.css" text="Update" />
+                                    <Button fx:id="delete_btn" layoutX="511.0" layoutY="459.0" mnemonicParsing="false" onMouseClicked="#DeleteUser" prefHeight="37.0" prefWidth="76.0" styleClass="delete-btn" stylesheets="@dashbord.css" text="Delete" />
+                                    <Button fx:id="clear_btn" layoutX="410.0" layoutY="459.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="76.0" styleClass="clear-btn" stylesheets="@dashbord.css" text="Clear" />
                                  </children>
                                  <styleClass>
                                     <String fx:value="white-bg" />

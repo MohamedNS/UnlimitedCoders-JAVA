@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AddAgentController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AddAgentController">
    <children>
       <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -38,7 +38,7 @@
                <left>
                   <AnchorPane prefHeight="538.0" prefWidth="249.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="538.4" prefWidth="249.6" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane layoutX="14.0" layoutY="100.0" prefHeight="639.0" prefWidth="295.0" styleClass="nav-form" stylesheets="@dashbord.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-46.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Label layoutX="88.0" layoutY="111.0" text="Welcome," textFill="WHITE">
                                  <font>
@@ -84,20 +84,22 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane fx:id="salary_form" layoutX="179.0" layoutY="85.0" prefHeight="538.4" prefWidth="850.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="salary_form" layoutX="39.0" prefHeight="538.4" prefWidth="850.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="-39.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="54.0" layoutY="38.0" prefHeight="451.0" prefWidth="742.0" stylesheets="@dashbord.css">
+                              <AnchorPane layoutX="105.0" layoutY="53.0" prefHeight="451.0" prefWidth="433.0" stylesheets="@dashbord.css">
                                  <styleClass>
                                     <String fx:value="white-bg" />
                                     <String fx:value="shadow" />
                                  </styleClass>
+                                 <children>
+                                    <Button fx:id="register" layoutX="140.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="40.0" prefWidth="199.0" styleClass="login-btn" stylesheets="@loginfxml.css" text="Add User" />
+                                    <TextField fx:id="telephone" layoutX="131.0" layoutY="273.0" prefHeight="30.0" prefWidth="220.0" promptText="telephone" styleClass="textfield" stylesheets="@loginfxml.css" />
+                                    <PasswordField fx:id="password" layoutX="131.0" layoutY="211.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginfxml.css" />
+                                    <TextField fx:id="email" layoutX="132.0" layoutY="155.0" prefHeight="30.0" prefWidth="220.0" promptText="email" styleClass="textfield" stylesheets="@loginfxml.css" />
+                                    <TextField fx:id="prenom" layoutX="132.0" layoutY="97.0" prefHeight="30.0" prefWidth="220.0" promptText="prenom" styleClass="textfield" stylesheets="@loginfxml.css" />
+                                    <TextField fx:id="nom" layoutX="132.0" layoutY="41.0" prefHeight="30.0" prefWidth="220.0" promptText="nom" styleClass="textfield" stylesheets="@loginfxml.css" />
+                                 </children>
                               </AnchorPane>
-                              <TextField fx:id="email" layoutX="321.0" layoutY="183.0" prefHeight="30.0" prefWidth="220.0" promptText="email" styleClass="textfield" stylesheets="@loginfxml.css" />
-                              <PasswordField fx:id="password" layoutX="321.0" layoutY="223.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginfxml.css" />
-                              <Button fx:id="register" layoutX="321.0" layoutY="324.0" mnemonicParsing="false" onMouseClicked="#register" prefHeight="40.0" prefWidth="220.0" styleClass="login-btn" stylesheets="@loginfxml.css" text="Add User" />
-                              <TextField fx:id="prenom" layoutX="321.0" layoutY="142.0" prefHeight="30.0" prefWidth="220.0" promptText="prenom" styleClass="textfield" stylesheets="@loginfxml.css" />
-                              <TextField fx:id="nom" layoutX="321.0" layoutY="103.0" prefHeight="30.0" prefWidth="220.0" promptText="nom" styleClass="textfield" stylesheets="@loginfxml.css" />
-                              <TextField fx:id="telephone" layoutX="321.0" layoutY="263.0" prefHeight="30.0" prefWidth="220.0" promptText="telephone" styleClass="textfield" stylesheets="@loginfxml.css" />
                            </children></AnchorPane>
                      </children>
                   </AnchorPane>

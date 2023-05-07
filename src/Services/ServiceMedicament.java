@@ -30,7 +30,7 @@ public class ServiceMedicament {
         List<Medicament> medicaments = new ArrayList<>();
 
         try {
-            String req = "select * from medicamentN";
+            String req = "select * from medicamentn";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
 
@@ -55,7 +55,7 @@ public class ServiceMedicament {
     {
         Medicament m = new Medicament();
         try{
-            String req = "SELECT * from medicamentN where id="+id;
+            String req = "SELECT * from medicamentn where id="+id;
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while(rs.next())

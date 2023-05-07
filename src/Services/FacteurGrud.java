@@ -138,7 +138,7 @@ public class FacteurGrud {
     public int getprix(String s) {
     int price = 0;
     try {
-        String req = "SELECT prix FROM medicament WHERE nom ='" + s + "'";
+        String req = "SELECT prix FROM medicamentn WHERE nom ='" + s + "'";
 
         Statement st = cnx2.createStatement(); 
         ResultSet rs = st.executeQuery(req);

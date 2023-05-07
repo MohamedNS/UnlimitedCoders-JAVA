@@ -9,19 +9,21 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeConsultationController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: #D5E0F2;" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeConsultationController">
    <children>
-      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="724.0" prefWidth="1253.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="700.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Ajouter">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="1253.0">
                      <children>
-                        <Button fx:id="btnAjouter" layoutX="557.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="67.0" prefWidth="138.0" style="-fx-background-color: #0066FF;" text="Ajouter">
+                        <Button fx:id="btnAjouter" layoutX="760.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="46.0" prefWidth="97.0" text="Ajouter">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -59,6 +61,20 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
+                        <Button fx:id="btnRetour" layoutX="250.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="46.0" prefWidth="97.0" text="Acceuil">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane prefHeight="606.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                           <children>
+                              <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/LogoApp.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -66,13 +82,13 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="consultationTable" layoutX="32.0" layoutY="107.0" prefHeight="527.0" prefWidth="1209.0" style="-fx-background-color: #E9E9E9;">
+                        <TableView fx:id="consultationTable" layoutX="233.0" layoutY="89.0" prefHeight="483.0" prefWidth="643.0" style="-fx-background-color: #E9E9E9;">
                           <columns>
-                            <TableColumn fx:id="idColonne" prefWidth="150.0" text="Identifiant" />
-                            <TableColumn fx:id="matriculeColonne" prefWidth="187.0" text="Matricule Medecin" />
-                              <TableColumn fx:id="idPatientColonne" prefWidth="289.0" text="Identifant Patient" />
-                              <TableColumn fx:id="dateConsultationColonne" prefWidth="343.0" text="Date Consultation" />
-                              <TableColumn fx:id="montantColonne" prefWidth="238.0" text="Montant" />
+                            <TableColumn fx:id="idColonne" prefWidth="68.0" text="Identifiant" />
+                            <TableColumn fx:id="matriculeColonne" prefWidth="121.0" text="Matricule Medecin" />
+                              <TableColumn fx:id="idPatientColonne" prefWidth="146.0" text="Identifant Patient" />
+                              <TableColumn fx:id="dateConsultationColonne" prefWidth="151.0" text="Date Consultation" />
+                              <TableColumn fx:id="montantColonne" prefWidth="157.0" text="Montant" />
                           </columns>
                         </TableView>
                         <Button fx:id="btnSupprimer" layoutX="1006.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnSupprimer" style="-fx-background-color: #0066FF;" text="Supprimer">
@@ -83,41 +99,47 @@
                            <font>
                               <Font size="20.0" />
                            </font></Button>
-                        <Button fx:id="btnPdf" layoutX="20.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnPdf" style="-fx-background-color: #e51818;" text="PDF">
-                           <font>
-                              <Font size="20.0" />
-                           </font></Button>
-                        <Label layoutX="96.0" layoutY="22.0" prefHeight="29.0" prefWidth="91.0" text="Trier">
+                        <Label layoutX="261.0" layoutY="23.0" prefHeight="30.0" prefWidth="48.0" text="Trier">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="critereChoice" layoutX="209.0" layoutY="23.0" prefWidth="150.0" />
-                        <Label layoutX="96.0" layoutY="51.0" prefHeight="29.0" prefWidth="91.0" text="Ordore">
+                        <ChoiceBox fx:id="critereChoice" layoutX="331.0" layoutY="25.0" prefWidth="150.0" />
+                        <Label layoutX="233.0" layoutY="52.0" prefHeight="30.0" prefWidth="68.0" text="Ordore">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="ordreChoice" layoutX="209.0" layoutY="53.0" prefWidth="150.0" />
-                        <Button fx:id="btnTrier" layoutX="388.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="36.0" prefWidth="97.0" style="-fx-background-color: #0066FF;" text="Trier">
+                        <ChoiceBox fx:id="ordreChoice" layoutX="331.0" layoutY="54.0" prefWidth="150.0" />
+                        <Button fx:id="btnTrier" layoutX="538.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="30.0" prefWidth="90.0" text="Trier">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnExcel" layoutX="96.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnExcel" style="-fx-background-color: #00ff55;" text="Excel">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Button>
+                        <AnchorPane prefHeight="606.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
+                           <children>
+                              <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/LogoApp.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btnExcel" layoutX="55.0" layoutY="370.0" mnemonicParsing="false" onAction="#btnExcel" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #00ff55;" text="Excel">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnPdf" layoutX="55.0" layoutY="319.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #e51818;" text="PDF">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
                      </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="btnRetour" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnRetour" prefHeight="46.0" prefWidth="96.0" style="-fx-background-color: #0066FF;" text="Retour">
-         <font>
-            <Font size="20.0" />
-         </font></Button>
       <Label layoutX="520.0" layoutY="14.0" prefHeight="36.0" prefWidth="228.0" text="     Consultation">
          <font>
             <Font size="25.0" />

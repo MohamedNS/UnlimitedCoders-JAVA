@@ -147,11 +147,11 @@ public class ProduitCrud implements InterfaceProduit {
         }
         return list;
     }
-    
- public void Qr( Stage primaryStage,produit p) {
-         //Stage primaryStage = null;
-    QRCodeWriter qrCodeWriter = new QRCodeWriter();
-        String myWeb = p.toString() ;
+
+    public void Qr(Stage primaryStage, produit p) {
+        //Stage primaryStage = null;
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        String myWeb = p.toString();
         int width = 300;
         int height = 300;
         String fileType = "png";
@@ -182,7 +182,7 @@ public class ProduitCrud implements InterfaceProduit {
         Scene scene = new Scene(root, 350, 350);
         primaryStage.setTitle("QR CODE!");
         primaryStage.setScene(scene);
-       primaryStage.show();
+        primaryStage.show();
     }
-     
+
 }

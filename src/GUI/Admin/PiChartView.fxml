@@ -4,14 +4,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Admin.PieChartViewController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Admin.PieChartViewController">
     <children>
 
 
-        <PieChart fx:id="pieChart" layoutX="50.0" />
-        <PieChart fx:id="pieChartLikes" layoutX="50.0" />
-        <PieChart fx:id="pieChartDislikes" layoutX="50.0" />
-      <Button fx:id="backID" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
+        <PieChart fx:id="pieChart" layoutX="50.0" prefHeight="400.0" prefWidth="667.0" />
+        <PieChart fx:id="pieChartLikes" layoutX="50.0" prefHeight="400.0" prefWidth="684.0" />
+        <PieChart fx:id="pieChartDislikes" layoutX="79.0" layoutY="101.0" prefHeight="400.0" prefWidth="638.0" />
+      <Button fx:id="backID" layoutX="97.0" layoutY="545.0" mnemonicParsing="false" onAction="#BackToMainPage" text="&lt;--" />
 
 
     </children>

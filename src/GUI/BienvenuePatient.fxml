@@ -14,9 +14,9 @@
       <URL value="@stylefxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="rdvID" layoutX="422.0" layoutY="227.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Rendez-Vous" />
-      <Button fx:id="consultationID" layoutX="422.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Consultation" />
-      <Button fx:id="btnBlog" layoutX="421.0" layoutY="406.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Blogs" />
+      <Button fx:id="rdvID" layoutX="422.0" layoutY="227.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Rendez-Vous" />
+      <Button fx:id="consultationID" layoutX="422.0" layoutY="319.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Consultation" />
+      <Button fx:id="btnBlog" layoutX="421.0" layoutY="406.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Blogs" />
       <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">

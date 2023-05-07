@@ -52,9 +52,8 @@
                   <Image url="@../ressources/LogoApp.png" />
                </image>
             </ImageView>
-            <Button fx:id="Btnqr" layoutX="55.0" layoutY="405.0" mnemonicParsing="false" onAction="#gereQRcode" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #17a2b8;" text="QR code" />
-            <Button fx:id="mail" layoutX="55.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #007bff;" text="E-mail" />
-            <Button fx:id="tfsave" layoutX="55.0" layoutY="460.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="90.0" text="Enregistrer" />
+            <Button fx:id="mail" layoutX="55.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnEnvoyer" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #307D7E;" text="E-mail" />
+            <Button fx:id="tfsave" layoutX="55.0" layoutY="435.0" mnemonicParsing="false" onAction="#save" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #307D7E;" text="Enregistrer" />
          </children>
       </AnchorPane>
       <Button fx:id="next" layoutX="235.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnnext" prefHeight="46.0" prefWidth="97.0" text="Acceuil" />

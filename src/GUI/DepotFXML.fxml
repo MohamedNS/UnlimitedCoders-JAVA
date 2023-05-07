@@ -34,19 +34,19 @@
                               <Button fx:id="btnRetour" layoutX="10.0" layoutY="625.0" mnemonicParsing="false" onAction="#btnRetour" styleClass="buttonRt" text="Retour" />
                            </children>
                         </AnchorPane>
-                        <Text fill="ROYALBLUE" layoutX="297.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Ajouter un depot" textAlignment="CENTER">
+                        <Text fill="ROYALBLUE" layoutX="284.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title-label" text="Ajouter un depot" textAlignment="CENTER" wrappingWidth="194.982421875">
                            <font>
                               <Font name="Arial" size="20.0" />
                            </font>
                         </Text>
-                        <VBox layoutX="297.0" layoutY="146.0" prefHeight="285.0" prefWidth="190.0">
+                        <VBox layoutX="297.0" layoutY="157.0" prefHeight="274.0" prefWidth="350.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date du depot">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <DatePicker fx:id="dpDate" prefHeight="30.0" prefWidth="190.0" promptText="Choisir une date">
+                              <DatePicker fx:id="dpDate" prefHeight="32.0" prefWidth="244.0" promptText="Choisir une date">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
@@ -56,7 +56,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ComboBox fx:id="cbRegime" prefHeight="30.0" prefWidth="190.0" promptText="Ajouter un regime">
+                              <ComboBox fx:id="cbRegime" prefHeight="29.0" prefWidth="296.0" promptText="Ajouter un regime">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
@@ -66,7 +66,7 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ComboBox fx:id="cbAssurance" prefHeight="30.0" prefWidth="190.0" promptText="Ajouter une assurance">
+                              <ComboBox fx:id="cbAssurance" prefHeight="29.0" prefWidth="293.0" promptText="Ajouter une assurance">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin></ComboBox>
@@ -75,13 +75,13 @@
                                     <Font size="14.0" />
                                  </font>
                               </Text>
-                              <ComboBox fx:id="cbFiche" prefHeight="30.0" prefWidth="190.0" promptText="Ajouter une fiche">
+                              <ComboBox fx:id="cbFiche" prefHeight="30.0" prefWidth="293.0" promptText="Ajouter une fiche">
                                  <VBox.margin>
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin></ComboBox>
                            </children>
                         </VBox>
-                        <Button layoutX="431.0" layoutY="437.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+                        <Button layoutX="396.0" layoutY="487.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #307D7E;" text="Ajouter" />
                      </children>
                   </AnchorPane>
             </content>

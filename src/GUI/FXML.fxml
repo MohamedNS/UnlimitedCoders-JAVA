@@ -9,11 +9,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="900.0" stylesheets="@stylefxml.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLController">
    <children>
-      <Button fx:id="tfAjouterFicheAssurance" layoutX="455.0" layoutY="403.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Ajouter fiche" />
-      <Button fx:id="tfordonnance" layoutX="455.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Ordonnance" />
-      <Button fx:id="tfAjouterfactur" layoutX="455.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Ajouter facture" />
-      <Button fx:id="tfAfficherfactur" layoutX="455.0" layoutY="493.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Afficher facture" />
-      <Button fx:id="tfstats" layoutX="458.0" layoutY="589.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" text="Statistique" />
+      <Button fx:id="tfAjouterFicheAssurance" layoutX="455.0" layoutY="403.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Ajouter fiche" />
+      <Button fx:id="tfordonnance" layoutX="455.0" layoutY="318.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Ordonnance" />
+      <Button fx:id="tfAjouterfactur" layoutX="455.0" layoutY="226.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Ajouter facture" />
+      <Button fx:id="tfAfficherfactur" layoutX="455.0" layoutY="493.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Afficher facture" />
+      <Button fx:id="tfstats" layoutX="458.0" layoutY="589.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: #307D7E;" text="Statistique" />
       <AnchorPane prefHeight="700.0" prefWidth="200.0" style="-fx-background-color: #004F98;">
          <children>
             <ImageView fitHeight="78.0" fitWidth="78.0" layoutX="61.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">

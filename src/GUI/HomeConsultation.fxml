@@ -13,20 +13,20 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeConsultationController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="848.0" style="-fx-background-color: #D5E0F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeConsultationController">
    <children>
-      <TabPane layoutX="7.0" layoutY="57.0" prefHeight="724.0" prefWidth="1253.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="-25.0" layoutY="87.0" prefHeight="576.0" prefWidth="877.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Ajouter">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="1253.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="523.0" prefWidth="811.0">
                      <children>
-                        <Button fx:id="btnAjouter" layoutX="557.0" layoutY="461.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="67.0" prefWidth="138.0" style="-fx-background-color: #0066FF;" text="Ajouter">
+                        <Button fx:id="btnAjouter" layoutX="557.0" layoutY="432.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="0.0" prefWidth="138.0" style="-fx-background-color: #0066FF;" text="Ajouter">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Button>
-                        <TextField fx:id="matriculeMedecinText" layoutX="502.0" layoutY="109.0" prefHeight="60.0" prefWidth="250.0">
+                        <TextField fx:id="matriculeMedecinText" layoutX="502.0" layoutY="109.0" prefHeight="46.0" prefWidth="250.0">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
@@ -35,26 +35,26 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="idPatientText" layoutX="506.0" layoutY="185.0" prefHeight="60.0" prefWidth="240.0">
+                        <TextField fx:id="idPatientText" layoutX="506.0" layoutY="185.0" prefHeight="46.0" prefWidth="240.0">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
-                        <Label layoutX="302.0" layoutY="196.0" prefHeight="50.0" prefWidth="179.0" text="Identifiant Patient">
+                        <Label layoutX="302.0" layoutY="183.0" prefHeight="50.0" prefWidth="179.0" text="Identifiant Patient">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="298.0" layoutY="273.0" prefHeight="50.0" prefWidth="186.0" text="Date Consultation">
+                        <Label layoutX="299.0" layoutY="260.0" prefHeight="50.0" prefWidth="186.0" text="Date Consultation">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="dateConsultationText" layoutX="508.0" layoutY="262.0" prefHeight="60.0" prefWidth="240.0" />
-                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="60.0" prefWidth="240.0" promptText="en TND">
+                        <DatePicker fx:id="dateConsultationText" layoutX="508.0" layoutY="262.0" prefHeight="46.0" prefWidth="240.0" />
+                        <TextField fx:id="montantText" layoutX="508.0" layoutY="347.0" prefHeight="36.0" prefWidth="240.0" promptText="en TND">
                            <font>
                               <Font size="20.0" />
                            </font></TextField>
-                        <Label layoutX="296.0" layoutY="349.0" prefHeight="50.0" prefWidth="164.0" text="Montant">
+                        <Label layoutX="328.0" layoutY="348.0" prefHeight="50.0" prefWidth="164.0" text="Montant">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -66,13 +66,13 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="consultationTable" layoutX="32.0" layoutY="107.0" prefHeight="527.0" prefWidth="1209.0" style="-fx-background-color: #E9E9E9;">
+                        <TableView fx:id="consultationTable" layoutX="115.0" layoutY="107.0" prefHeight="369.0" prefWidth="589.0" style="-fx-background-color: #E9E9E9;">
                           <columns>
-                            <TableColumn fx:id="idColonne" prefWidth="150.0" text="Identifiant" />
-                            <TableColumn fx:id="matriculeColonne" prefWidth="187.0" text="Matricule Medecin" />
-                              <TableColumn fx:id="idPatientColonne" prefWidth="289.0" text="Identifant Patient" />
-                              <TableColumn fx:id="dateConsultationColonne" prefWidth="343.0" text="Date Consultation" />
-                              <TableColumn fx:id="montantColonne" prefWidth="238.0" text="Montant" />
+                            <TableColumn fx:id="idColonne" prefWidth="75.0" text="Identifiant" />
+                            <TableColumn fx:id="matriculeColonne" prefWidth="175.0" text="Matricule Medecin" />
+                              <TableColumn fx:id="idPatientColonne" prefWidth="174.0" text="Identifant Patient" />
+                              <TableColumn fx:id="dateConsultationColonne" prefWidth="168.0" text="Date Consultation" />
+                              <TableColumn fx:id="montantColonne" prefWidth="615.0" text="Montant" />
                           </columns>
                         </TableView>
                         <Button fx:id="btnSupprimer" layoutX="1006.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnSupprimer" style="-fx-background-color: #0066FF;" text="Supprimer">
@@ -83,7 +83,7 @@
                            <font>
                               <Font size="20.0" />
                            </font></Button>
-                        <Button fx:id="btnPdf" layoutX="20.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnPdf" style="-fx-background-color: #e51818;" text="PDF">
+                        <Button fx:id="btnPdf" layoutX="168.0" layoutY="489.0" mnemonicParsing="false" onAction="#btnPdf" prefHeight="46.0" prefWidth="127.0" style="-fx-background-color: #e51818;" text="Download">
                            <font>
                               <Font size="20.0" />
                            </font></Button>
@@ -99,12 +99,12 @@
                            </font>
                         </Label>
                         <ChoiceBox fx:id="ordreChoice" layoutX="209.0" layoutY="53.0" prefWidth="150.0" />
-                        <Button fx:id="btnTrier" layoutX="388.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="36.0" prefWidth="97.0" style="-fx-background-color: #0066FF;" text="Trier">
+                        <Button fx:id="btnTrier" layoutX="388.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnTrier" prefHeight="9.0" prefWidth="97.0" style="-fx-background-color: #0066FF;" text="Trier">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Button>
-                        <Button fx:id="btnExcel" layoutX="96.0" layoutY="639.0" mnemonicParsing="false" onAction="#btnExcel" style="-fx-background-color: #00ff55;" text="Excel">
+                        <Button fx:id="btnExcel" layoutX="319.0" layoutY="490.0" mnemonicParsing="false" onAction="#btnExcel" prefHeight="44.0" prefWidth="118.0" style="-fx-background-color: #00ff55;" text="Excel">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -118,7 +118,7 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Label layoutX="520.0" layoutY="14.0" prefHeight="36.0" prefWidth="228.0" text="     Consultation">
+      <Label layoutX="272.0" layoutY="43.0" prefHeight="36.0" prefWidth="228.0" text="     Consultation">
          <font>
             <Font size="25.0" />
          </font>

@@ -321,10 +321,9 @@ private void importerEx(ActionEvent event) {
     private void qr(MouseEvent event) {
         Stage qrStage = new Stage();
             produit p;
-        
         p=tabProduit.getSelectionModel().getSelectedItem();
         ProduitCrud pd=new ProduitCrud();
-        //pd.Qr(qrStage,p);
+        pd.Qr(qrStage,p);
     }
 
 

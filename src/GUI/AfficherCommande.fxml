@@ -7,15 +7,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" fx:id="tabcommande" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.AffichercommandeController">
+<AnchorPane id="AnchorPane" fx:id="tabcommande" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AffichercommandeController">
    <children>
       <Text fill="#371acd" layoutX="211.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes des commandes" textAlignment="CENTER" wrappingWidth="148.6640625">
          <font>
             <Font name="Tahoma Bold" size="13.0" />
          </font>
       </Text>
-      <TableView fx:id="tabCommande" layoutX="193.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tabCommande" layoutX="193.0" layoutY="100.0" prefHeight="200.0" prefWidth="201.0">
         <columns>
           <TableColumn fx:id="colprix" prefWidth="107.0" text="prix" />
           <TableColumn fx:id="colquantite" prefWidth="92.0" text="quantite" />
